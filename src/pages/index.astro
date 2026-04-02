@@ -18,17 +18,38 @@ import MailIcon from '@svgs/mail.svg'
   description="We offer certified home and commercial inspections throughout Kentucky. Get fast scheduling, digital reporting, and expert analysis from KY's most trusted inspection team."
 >
   <main>
-    <!-- Why Us Section -->
-    <section class="py-section-md px-page">
-      <div class="gap-gutter grid md:grid-cols-12">
-        <div class="md:pr-gutter md:col-span-5 md:col-start-2">
-          <Image
-            src={whyUs}
-            alt="Why Us"
-            class="h-full max-h-140 w-full rounded-2xl"
-          />
+    <!-- Services -->
+    <section class="px-page py-section-md bg-light-1">
+      <div class="gap-el-lg grid md:grid-cols-12">
+        <div class="md:col-span-7">
+          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
+            Precision Services
+          </span>
+          <h2 class="text-title-md font-semibold">Inspection Solutions</h2>
         </div>
-        <div class="py-el-xl md:col-span-5">
+        <p class="text-dark-1 text-body-md mt-auto md:col-span-5">
+          Tailored assessments for every stage of property ownership, from
+          historic downtown lofts to sprawling suburban estates.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="py-section-md px-page">
+      <div class="gap-gutter mx-auto grid max-w-7xl md:grid-cols-12">
+        <div class="md:pr-gutter md:col-span-6 lg:col-span-5 lg:col-start-2">
+          <div
+            class="inset-shadow aspect-square h-full max-h-140 w-full overflow-hidden rounded-2xl md:aspect-auto"
+          >
+            <Image
+              id="why-us-image"
+              src={whyUs}
+              alt="Why Us"
+              class="h-full w-full scale-[1.3] object-cover"
+            />
+          </div>
+        </div>
+        <div class="py-el-xl md:col-span-6 lg:col-span-5">
           <span
             class="px-el-md py-el-sm bg-warm-1 text-light-1 mb-el-xl text-body-sm inline-block rounded-sm uppercase"
             >The Reliable Edge</span

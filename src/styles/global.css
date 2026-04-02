@@ -23,6 +23,9 @@
   --color-background: #fafaf9;
   --color-background-alt: #e3ead7;
 
+  /* Shadow variables */
+  --shadow-inset-subtle: inset 0 0 16px 0 rgba(0, 0, 0, 0.2);
+
   /* Font Variables */
   --font-body: var(--font-geist);
   /* Clamps go from 1024px to 640px */
@@ -87,5 +90,17 @@
 
   .no-scrollbars::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
+  }
+
+  .inset-shadow {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: var(--shadow-inset-subtle);
+      pointer-events: none;
+    }
   }
 }

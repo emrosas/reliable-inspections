@@ -12,3 +12,26 @@
 //     toggleMenu()
 //   })
 // })
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const whyUsImage = document.querySelector('#why-us-image')
+if (whyUsImage) {
+  gsap.fromTo(
+    whyUsImage,
+    { yPercent: -12 },
+    {
+      yPercent: 12,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: '#why-us',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    }
+  )
+}
