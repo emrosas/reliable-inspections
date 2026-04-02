@@ -1,0 +1,50 @@
+---
+// Head
+import { Font } from 'astro:assets'
+import { SEO } from 'astro-seo'
+
+// Components
+import Navbar from '@components/Navbar.astro'
+import Footer from '@components/Footer.astro'
+
+// Styles
+import '../styles/global.css'
+
+// Props
+interface Props {
+  title: string
+  description: string
+}
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Font cssVariable="--font-geist" />
+    <SEO
+      title={title}
+      titleDefault="Astro Starter Template"
+      description={description}
+      openGraph={{
+        basic: {
+          title:
+            'A starter template to create Astro projects faster. Packed with bare minimum features to get the most out of Astro.',
+          image: '',
+          type: 'website',
+        },
+      }}
+      extend={{
+        link: [{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+      }}
+    />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Navbar />
+    <slot />
+    <Footer />
+    <script src="../lib/main.ts"></script>
+  </body>
+</html>
