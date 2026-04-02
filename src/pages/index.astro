@@ -1,10 +1,94 @@
 ---
+// Components
 import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+
+// Images
+import placeholder from '@images/placeholder.jpg'
+import whyUs from '@images/why-us.jpg'
+
+//SVG
+import HomeIcon from '@svgs/home.svg'
+import PhoneIcon from '@svgs/phone.svg'
+import MailIcon from '@svgs/mail.svg'
 ---
 
 <Layout
   title="Reliable Inspections"
   description="We offer certified home and commercial inspections throughout Kentucky. Get fast scheduling, digital reporting, and expert analysis from KY's most trusted inspection team."
 >
-  <main class="px-page"></main>
+  <main>
+    <!-- Why Us Section -->
+    <section class="py-section-md px-page">
+      <div class="gap-gutter grid md:grid-cols-12">
+        <div class="md:pr-gutter md:col-span-5 md:col-start-2">
+          <Image
+            src={whyUs}
+            alt="Why Us"
+            class="h-full max-h-140 w-full rounded-2xl"
+          />
+        </div>
+        <div class="py-el-xl md:col-span-5">
+          <span
+            class="px-el-md py-el-sm bg-warm-1 text-light-1 mb-el-xl text-body-sm inline-block rounded-sm uppercase"
+            >The Reliable Edge</span
+          >
+          <h2 class="text-title-lg mb-el-xl font-semibold">
+            Built on Integrity and <span class="text-green-1">Precision.</span>
+          </h2>
+          <ul class="gap-el-xl flex flex-col">
+            <li class="flex">
+              <div
+                class="bg-background-alt mr-el-xl flex size-12 shrink-0 items-center justify-center rounded-lg"
+              >
+                <HomeIcon class="text-green-3 size-9" />
+              </div>
+              <div>
+                <h3 class="text-body-md mb-el-sm leading-none font-semibold">
+                  Industry Standards
+                </h3>
+                <p class="text-body-sm text-dark-1">
+                  Our protocols exceed state requirements, utilizing thermal
+                  imaging and moisture detection as standard practices.
+                </p>
+              </div>
+            </li>
+            <li class="flex">
+              <div
+                class="bg-background-alt mr-el-xl flex size-12 shrink-0 items-center justify-center rounded-lg"
+              >
+                <PhoneIcon class="text-green-3 size-9" />
+              </div>
+              <div>
+                <h3 class="text-body-md mb-el-sm leading-none font-semibold">
+                  Certified Professionals
+                </h3>
+                <p class="text-body-sm text-dark-1">
+                  Every inspector on our team is InterNACHI certified and has a
+                  background in structural engineering or trades.
+                </p>
+              </div>
+            </li>
+            <li class="flex">
+              <div
+                class="bg-background-alt mr-el-xl flex size-12 shrink-0 items-center justify-center rounded-lg"
+              >
+                <MailIcon class="text-green-3 size-9" />
+              </div>
+              <div>
+                <h3 class="text-body-md mb-el-sm leading-none font-semibold">
+                  Detailed Reporting
+                </h3>
+                <p class="text-body-sm text-dark-1">
+                  Receive a digital, interactive report within 24 hours
+                  featuring high- res video clips and a simplified summary for
+                  quick reading.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

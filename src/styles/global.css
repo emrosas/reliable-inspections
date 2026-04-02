@@ -21,6 +21,7 @@
   --color-light-3: #d8d3c4;
   --color-light-4: #c2bda7;
   --color-background: #fafaf9;
+  --color-background-alt: #e3ead7;
 
   /* Font Variables */
   --font-body: var(--font-geist);

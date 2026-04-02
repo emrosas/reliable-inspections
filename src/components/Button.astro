@@ -3,19 +3,18 @@ import { tv, type VariantProps } from 'tailwind-variants/lite'
 import type { HTMLAttributes } from 'astro/types'
 
 const button = tv({
-  base: 'inline-flex items-center justify-center rounded-lg active:opacity-80 cursor-pointer transition shrink-0 text-center font-medium',
+  base: 'inline-flex items-center justify-center active:opacity-80 cursor-pointer transition shrink-0 text-center',
   variants: {
     intent: {
-      primary: 'bg-linear-to-tr from-green-5 to-green-4 text-white',
-      secondary: 'bg-brand-100 hover:bg-brand-200 text-brand-900',
-      outline:
-        'bg-transparent hover:bg-brand-500/10 border border-brand-500 text-brand-500',
-      ghost: 'bg-transparent hover:bg-brand-500/10 text-brand-500',
+      primary: 'bg-linear-to-tr from-green-5 to-green-3 text-white',
+      secondary: '',
+      outline: '',
+      ghost: '',
     },
     size: {
-      lg: 'text-body-lg py-3 px-6 gap-el-sm',
-      md: 'text-body-md py-2 px-4 gap-el-xs',
-      sm: 'text-body-sm py-1.5 px-3 gap-[0.375rem]',
+      lg: '',
+      md: 'text-body-md py-el-md px-el-lg gap-el-xs rounded-sm',
+      sm: '',
     },
   },
   defaultVariants: {
