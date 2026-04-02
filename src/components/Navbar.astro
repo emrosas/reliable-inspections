@@ -1,23 +1,16 @@
 ---
+// Components
 import Button from '@components/Button.astro'
-import Favicon from '@svgs/favicon.svg'
+
+// SVGs
+import Logo from '@svgs/logo.svg'
+import Lettermark from '@svgs/lettermark.svg'
 ---
 
 <nav class="p-page gap-gutter flex items-center justify-between">
-  <a
-    href="/"
-    class="rounded-md bg-sky-500 p-4 py-2 text-2xl font-medium text-white"
-    ><Favicon class="mr-1 inline size-10" /> Astro Starter</a
-  >
-  <ul
-    id="menu"
-    class="p-page fixed top-1/2 right-4 hidden rounded-xl border border-black/15 bg-white data-open:block"
-  >
-    <li>First</li>
-    <li>Second</li>
-    <li>Third</li>
-  </ul>
-  <Button aria-expanded="false" aria-controls="menu" id="menu-button"
-    >Open Menu</Button
-  >
+  <a href="/" class="">
+    <Logo class="mr-2 inline-block w-8" />
+    <Lettermark class="mt-1 inline-block h-6" />
+  </a>
+  <Button>Request Consultation</Button>
 </nav>

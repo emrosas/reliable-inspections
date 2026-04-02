@@ -1,10 +1,109 @@
 ---
-
+// SVGs
+import LogoHorizontal from '@svgs/logo-horizontal.svg'
+import Erre from '@svgs/erre.svg'
+import Facebook from '@svgs/facebook.svg'
+import Instagram from '@svgs/instagram.svg'
+import LinkedIn from '@svgs/linkedin.svg'
 ---
 
-<footer class="p-page mt-auto flex items-center justify-between">
-  <a href="/" class="font-medium">Minimal Astro Starter Template</a>
-  <a href="https://github.com/emrosas" class="underline hover:text-sky-600"
-    >Created by emrosas</a
+<footer class="p-page gap-gutter bg-light-2 mt-auto flex flex-col">
+  <div class="gap-gutter grid sm:grid-cols-2 md:grid-cols-12">
+    <div class="md:col-span-3">
+      <LogoHorizontal class="mb-el-lg h-16" />
+      <p class="text-body-sm text-dark-1">
+        Exceeding industry standards to ensure every Kentuckian has a safe place
+        to call home.
+      </p>
+    </div>
+    <div
+      class="gap-gutter flex flex-wrap sm:row-span-2 sm:flex-col sm:flex-nowrap md:col-span-6 md:row-span-1 md:flex-row"
+    >
+      <div>
+        <h4 class="text-green-3 text-body-md mb-el-lg font-semibold">
+          Contact Us
+        </h4>
+        <ul class="gap-el-lg text-brown-2 flex flex-col">
+          <li>
+            <strong class="mr-el-sm font-semibold">Address:</strong>
+            <a href="/" class="hover:underline" target="_blank"
+              >123 Bluegrass Way, Lexington, KY</a
+            >
+          </li>
+          <li>
+            <strong class="mr-el-sm font-semibold">Phone:</strong>
+            <a href="tel:+15029018427" class="hover:underline"
+              >+1 (502) 901-8427</a
+            >
+          </li>
+          <li>
+            <strong class="mr-el-sm font-semibold">Email:</strong>
+            <a
+              href="mailto:mike@reliableinspectionsky.com"
+              class="hover:underline">mike@reliableinspectionsky.com</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-green-3 text-body-md mb-el-lg font-semibold">
+          Navigation
+        </h4>
+        <ul class="gap-x-el-xl gap-y-el-lg text-brown-2 flex flex-wrap">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li><a href="/" class="hover:underline">About</a></li>
+          <li><a href="/" class="hover:underline">Services</a></li>
+          <li><a href="/" class="hover:underline">Blog</a></li>
+          <li><a href="/" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="md:col-span-3">
+      <h4 class="text-green-3 text-body-md mb-el-lg font-semibold">
+        Social Media
+      </h4>
+      <ul class="gap-el-lg text-brown-2 flex flex-col">
+        <li class="flex items-center">
+          <Facebook class="mr-2 inline-block size-5" /><a
+            href="/"
+            class="hover:underline">Reliable Inspections Kentucky</a
+          >
+        </li>
+        <li class="flex items-center">
+          <Instagram class="mr-2 inline-block size-5" /><a
+            href="/"
+            class="hover:underline">@reliableinspections_ky</a
+          >
+        </li>
+        <li class="flex items-center">
+          <LinkedIn class="mr-2 inline-block size-5" /><a
+            href="/"
+            class="hover:underline">Reliable Inspections Kentucky</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="pt-gutter text-light gap-gutter text-dark-1 flex flex-col-reverse items-center border-t md:flex-row"
   >
+    <p class="grow text-center sm:text-left">
+      Reliable Inspections LLC. © 2026. All rights reserved.
+    </p>
+    <div class="gap-el-xl flex flex-col items-center sm:flex-row">
+      <ul class="gap-el-xl flex">
+        <li>
+          <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/terms-of-service" class="hover:underline"
+            >Terms of Service</a
+          >
+        </li>
+      </ul>
+      <a href="https://erreagency.com" aria-label="Made by Erre Agency">
+        <Erre class="h-8" />
+      </a>
+    </div>
+  </div>
 </footer>
