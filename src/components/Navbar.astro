@@ -12,26 +12,28 @@ import NavbarLink from './NavbarLink.astro'
 const url = Astro.url.pathname
 ---
 
-<nav
-  class="px-page gap-gutter sticky top-0 z-50 grid grid-cols-2 items-center justify-between bg-white py-4 lg:grid-cols-[2fr_3fr_2fr]"
->
-  <a href="/" class="@container" aria-label="Go Home">
-    <Logo class="mr-2 inline-block w-8 sm:hidden @min-[300px]:inline-block" />
-    <LogoHorizontal class="hidden h-12 w-auto sm:@max-[300px]:inline-block" />
-    <Lettermark class="mt-1 hidden h-6 @min-[300px]:inline-block" />
-  </a>
-  <ul class="gap-gutter mt-1 hidden items-center justify-center lg:flex">
-    <NavbarLink url="/" label="Home" />
-    <NavbarLink url="/about" label="About" />
-    <NavbarLink url="/services" label="Services" />
-    <NavbarLink url="/blog" label="Blog" />
-    <NavbarLink url="/contact" label="Contact" />
-  </ul>
-  <div class="hidden sm:block">
-    <Button class="justify-self-end sm:flex"
-      >Request Consultation<ArrowRight class="size-6" /></Button
-    >
-  </div>
-  <div class="bg-green-1 block size-8 justify-self-end rounded-md sm:hidden">
+<nav class="px-page sticky top-0 z-50 bg-white py-4">
+  <div
+    class="contained gap-gutter grid grid-cols-2 items-center justify-between lg:grid-cols-[2fr_3fr_2fr]"
+  >
+    <a href="/" class="@container" aria-label="Go Home">
+      <Logo class="mr-2 inline-block w-8 sm:hidden @min-[300px]:inline-block" />
+      <LogoHorizontal class="hidden h-12 w-auto sm:@max-[300px]:inline-block" />
+      <Lettermark class="mt-1 hidden h-6 @min-[300px]:inline-block" />
+    </a>
+    <ul class="gap-gutter mt-1 hidden items-center justify-center lg:flex">
+      <NavbarLink url="/" label="Home" />
+      <NavbarLink url="/about" label="About" />
+      <NavbarLink url="/services" label="Services" />
+      <NavbarLink url="/blog" label="Blog" />
+      <NavbarLink url="/contact" label="Contact" />
+    </ul>
+    <div class="hidden sm:block">
+      <Button class="justify-self-end sm:flex"
+        >Request Consultation<ArrowRight class="size-6" /></Button
+      >
+    </div>
+    <div class="bg-green-1 block size-8 justify-self-end rounded-md sm:hidden">
+    </div>
   </div>
 </nav>

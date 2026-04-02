@@ -92,6 +92,10 @@
     display: none; /* For Chrome, Safari, and Opera */
   }
 
+  .contained {
+    @apply mx-auto max-w-7xl;
+  }
+
   .inset-shadow {
     position: relative;
     &::after {
