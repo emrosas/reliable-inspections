@@ -51,7 +51,7 @@ document
             height: targetHeight,
             duration: 0.35,
             ease: 'power2.inOut',
-            onComplete: () => gsap.set(wrapper, { height: 'auto' }),
+            onComplete: () => { gsap.set(wrapper, { height: 'auto' }) },
           }
         )
       }
