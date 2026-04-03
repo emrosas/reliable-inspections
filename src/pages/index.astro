@@ -11,6 +11,8 @@ import whyUs from '@images/why-us.jpg'
 import HomeIcon from '@svgs/home.svg'
 import PhoneIcon from '@svgs/phone.svg'
 import MailIcon from '@svgs/mail.svg'
+import StarIcon from '@svgs/star.svg'
+import PlusIcon from '@svgs/plus.svg'
 ---
 
 <Layout
@@ -213,6 +215,268 @@ import MailIcon from '@svgs/mail.svg'
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="px-page py-section-md bg-green-5">
+      <div class="contained mb-section-sm text-center">
+        <h2 class="text-title-md mb-el-md text-light-1 font-semibold">
+          Trusted by Kentucky's Best
+        </h2>
+        <p class="text-body-md text-light-4">
+          Real experiences from homeowners, buyers, and real estate
+          professionals across the Commonwealth.
+        </p>
+      </div>
+      <ul
+        class="contained gap-gutter pt-el-lg grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
+      >
+        <li
+          class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
+        >
+          <div class="gap-el-xs flex">
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+          </div>
+          <p class="text-body-md text-light-4 font-light">
+            "The level of detail in their digital report saved us from a $20,000
+            foundation issue. I won't buy another property in Lexington without
+            calling Reliable first."
+          </p>
+          <div class="gap-el-lg flex items-center">
+            <div
+              class="bg-light-3 size-12 shrink-0 overflow-hidden rounded-full"
+            >
+              <Image
+                src={placeholder}
+                alt="David Henderson"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <p class="text-body-sm text-light-1 font-semibold">
+                David Henderson
+              </p>
+              <p class="text-body-xs text-light-4 uppercase">
+                Homeowner, Lexington
+              </p>
+            </div>
+          </div>
+        </li>
+        <li
+          class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
+        >
+          <div class="gap-el-xs flex">
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+          </div>
+          <p class="text-body-md text-light-4 font-light">
+            "As a realtor, I need inspectors who are thorough but not alarmist.
+            Reliable Inspections provides the most balanced and professional
+            reports in the business."
+          </p>
+          <div class="gap-el-lg flex items-center">
+            <div
+              class="bg-light-3 size-12 shrink-0 overflow-hidden rounded-full"
+            >
+              <Image
+                src={placeholder}
+                alt="Sarah Miller"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <p class="text-body-sm text-light-1 font-semibold">
+                Sarah Miller
+              </p>
+              <p class="text-body-xs text-light-4 uppercase">
+                Real Estate Pro, Louisville
+              </p>
+            </div>
+          </div>
+        </li>
+        <li
+          class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
+        >
+          <div class="gap-el-xs flex">
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+            <StarIcon class="text-warm-1 size-5" />
+          </div>
+          <p class="text-body-md text-light-4 font-light">
+            "Impressive technology and professionalism. Their thermal imaging
+            caught a hidden pipe leak that was invisible to the naked eye.
+            Highly recommend."
+          </p>
+          <div class="gap-el-lg flex items-center">
+            <div
+              class="bg-light-3 size-12 shrink-0 overflow-hidden rounded-full"
+            >
+              <Image
+                src={placeholder}
+                alt="Marcus Chen"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <p class="text-body-sm text-light-1 font-semibold">Marcus Chen</p>
+              <p class="text-body-xs text-light-4 uppercase">
+                Property Investor, Frankfort
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="px-page py-section-lg">
+      <div class="contained">
+        <div class="gap-gutter grid md:grid-cols-12">
+          <div class="md:col-span-5">
+            <div class="top-section-lg sticky">
+              <h2 class="text-title-md mb-el-sm font-semibold">FAQs</h2>
+              <p class="text-body-md text-dark-1">
+                Our team of certified experts is ready to provide you with the
+                most detailed property report in the state.
+              </p>
+            </div>
+          </div>
+          <div class="md:col-span-7">
+            <details
+              class="group border-light-4 py-el-xl border-b first:border-t"
+            >
+              <summary
+                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
+              >
+                <div
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
+                >
+                  <PlusIcon
+                    class="size-6 transition-transform duration-200 group-open:rotate-45"
+                  />
+                </div>
+                <span class="text-body-lg font-medium"
+                  >How much does a home inspection cost?</span
+                >
+              </summary>
+              <p
+                class="mt-el-lg text-body-md text-dark-1"
+                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
+              >
+                Typically between $300 and $500, depending on the size and age
+                of the home. We provide transparent, flat-rate pricing with no
+                hidden fees.
+              </p>
+            </details>
+            <details class="group border-light-4 py-el-xl border-b">
+              <summary
+                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
+              >
+                <div
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
+                >
+                  <PlusIcon
+                    class="size-6 transition-transform duration-200 group-open:rotate-45"
+                  />
+                </div>
+                <span class="text-body-lg font-medium"
+                  >Who hires the home inspector?</span
+                >
+              </summary>
+              <p
+                class="mt-el-lg text-body-md text-dark-1"
+                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
+              >
+                Typically the buyer of the home chooses and hires the home
+                inspector. There are occasions that the seller has a pre-listing
+                inspection done, though this is rare.
+              </p>
+            </details>
+            <details class="group border-light-4 py-el-xl border-b">
+              <summary
+                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
+              >
+                <div
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
+                >
+                  <PlusIcon
+                    class="size-6 transition-transform duration-200 group-open:rotate-45"
+                  />
+                </div>
+                <span class="text-body-lg font-medium"
+                  >How long does a home inspection take?</span
+                >
+              </summary>
+              <p
+                class="mt-el-lg text-body-md text-dark-1"
+                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
+              >
+                Most inspections take between 2 and 4 hours. Larger or older
+                homes may take longer. You'll receive your full digital report
+                within 24 hours of completion.
+              </p>
+            </details>
+            <details class="group border-light-4 py-el-xl border-b">
+              <summary
+                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
+              >
+                <div
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
+                >
+                  <PlusIcon
+                    class="size-6 transition-transform duration-200 group-open:rotate-45"
+                  />
+                </div>
+                <span class="text-body-lg font-medium"
+                  >Should I be present during the inspection?</span
+                >
+              </summary>
+              <p
+                class="mt-el-lg text-body-md text-dark-1"
+                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
+              >
+                We strongly encourage it. Being present allows you to ask
+                questions in real time and get a firsthand understanding of the
+                property's condition from our inspector.
+              </p>
+            </details>
+            <details class="group border-light-4 py-el-xl border-b">
+              <summary
+                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
+              >
+                <div
+                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
+                >
+                  <PlusIcon
+                    class="size-6 transition-transform duration-200 group-open:rotate-45"
+                  />
+                </div>
+                <span class="text-body-lg font-medium"
+                  >What does a home inspection include?</span
+                >
+              </summary>
+              <p
+                class="mt-el-lg text-body-md text-dark-1"
+                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
+              >
+                We inspect all major systems including the roof, foundation,
+                HVAC, plumbing, electrical, and more. Our standard inspection
+                includes thermal imaging and moisture detection at no extra
+                cost.
+              </p>
+            </details>
+          </div>
         </div>
       </div>
     </section>
