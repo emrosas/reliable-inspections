@@ -1,0 +1,75 @@
+---
+//Components
+import Layout from '@layouts/Layout.astro'
+import CtaSection from '@components/CTA.astro'
+
+//Helpers
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('blog')
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+)
+---
+
+<Layout
+  title="Blog"
+  description="Insights, guides, and expert advice on home and commercial property inspections from the Reliable Inspections team."
+>
+  <main>
+    <!-- Header -->
+    <header class="px-page py-section-md bg-light-1">
+      <div class="contained">
+        <span class="text-body-sm text-warm-4 mb-el-sm uppercase inline-block">
+          Resources
+        </span>
+        <h1 class="text-title-lg font-semibold">Inspection Insights</h1>
+        <p class="text-body-md text-dark-1 mt-el-lg max-w-2xl">
+          Expert articles and guides to help you understand property
+          inspections, protect your investment, and make informed decisions.
+        </p>
+      </div>
+    </header>
+
+    <!-- Posts Grid -->
+    <section class="px-page py-section-md">
+      <div class="contained">
+        <ul class="gap-gutter grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))]">
+          {
+            sortedPosts.map((post) => (
+              <li class="flex flex-col rounded-xl border border-light-4 overflow-hidden">
+                <div class="p-el-xl flex flex-col flex-1 gap-el-md">
+                  <div class="flex items-center gap-el-sm text-body-sm text-green-1">
+                    <time datetime={post.data.date.toISOString()}>
+                      {post.data.date.toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}
+                    </time>
+                    <span aria-hidden="true">&bull;</span>
+                    <span>{post.data.readTime}</span>
+                  </div>
+                  <h2 class="text-body-lg font-semibold leading-snug">
+                    {post.data.title}
+                  </h2>
+                  <p class="text-body-sm text-dark-1 flex-1">
+                    {post.data.description}
+                  </p>
+                  <a
+                    href={`/blog/${post.id}`}
+                    class="text-body-sm text-green-1 font-medium underline-offset-2 hover:underline mt-el-sm inline-block"
+                  >
+                    Read article &rarr;
+                  </a>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <CtaSection />
+  </main>
+</Layout>

@@ -2,17 +2,23 @@
 // Components
 import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
+import Button from '@/components/Button.astro'
+import GoldLabel from '@/components/GoldLabel.astro'
+import CtaSection from '@components/CTA.astro'
+import FaqSection from '@components/FAQ.astro'
 
 // Images
+import hero from '@images/hero.jpg'
 import placeholder from '@images/placeholder.jpg'
 import whyUs from '@images/why-us.jpg'
 
 //SVG
+import Ashi from '@svgs/ashi-certified.svg'
+import ArrowRight from '@svgs/arrow-right.svg'
 import HomeIcon from '@svgs/home.svg'
 import PhoneIcon from '@svgs/phone.svg'
 import MailIcon from '@svgs/mail.svg'
 import StarIcon from '@svgs/star.svg'
-import PlusIcon from '@svgs/plus.svg'
 ---
 
 <Layout
@@ -22,19 +28,57 @@ import PlusIcon from '@svgs/plus.svg'
   <main>
     <!-- Hero -->
     <header class="px-page py-section-sm">
-      <div class="contained"></div>
+      <div class="contained gap-gutter grid items-center md:grid-cols-2">
+        <div id="hero-content">
+          <GoldLabel text="The Reliable Edge" />
+          <h1 id="hero-title" class="text-title-lg mb-el-xl font-semibold">
+            Your Peace of Mind, <span class="text-green-1">Our Garantee</span>
+          </h1>
+          <p id="hero-paragraph" class="text-body-lg text-dark-1 mb-el-lg">
+            Thorough, architectural-grade inspections for Kentucky homeowners
+            and investors. We see what others miss, ensuring your foundation is
+            as solid as your future.
+          </p>
+          <div class="pt-el-xl gap-el-lg flex">
+            <Button>
+              Request Consultation
+              <ArrowRight class="size-6" />
+            </Button>
+            <Button intent="secondary"> Read More </Button>
+          </div>
+        </div>
+        <div
+          class="relative aspect-square h-full max-h-140 w-full md:aspect-auto"
+        >
+          <div
+            id="hero-image-container"
+            class="inset-shadow h-full w-full overflow-hidden rounded-2xl"
+          >
+            <Image
+              id="hero-image"
+              src={hero}
+              alt="A Kentucky home seen from outside."
+              class="h-full w-full scale-[1.3] object-cover"
+            />
+          </div>
+          <Ashi
+            id="hero-ashi"
+            class="absolute -bottom-6 left-1/2 z-20 h-26 -translate-x-1/2 lg:-left-8 lg:translate-x-0"
+          />
+        </div>
+      </div>
     </header>
 
     <!-- Services -->
-    <section class="px-page py-section-md bg-light-1">
+    <section id="services" class="px-page py-section-md bg-light-1">
       <div class="gap-el-lg mb-section-sm contained grid md:grid-cols-12">
-        <div class="md:col-span-7">
+        <div data-animate-stagger="" class="md:col-span-7">
           <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
             Precision Services
           </span>
           <h2 class="text-title-md font-semibold">Inspection Solutions</h2>
         </div>
-        <p class="text-dark-1 text-body-md mt-auto md:col-span-5">
+        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
           Tailored assessments for every stage of property ownership, from
           historic downtown lofts to sprawling suburban estates.
         </p>
@@ -42,7 +86,7 @@ import PlusIcon from '@svgs/plus.svg'
       <ul
         class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
       >
-        <li class="p-el-md rounded-xl bg-white">
+        <li data-animate class="p-el-md rounded-xl bg-white">
           <Image
             src={placeholder}
             alt="Placeholder"
@@ -54,11 +98,11 @@ import PlusIcon from '@svgs/plus.svg'
             </h3>
             <p class="text-body-sm text-dark-1">
               A top‑to‑bottom evaluation of all major systems and components to
-              help buyers understand a home’s true condition.
+              help buyers understand a home's true condition.
             </p>
           </div>
         </li>
-        <li class="p-el-md rounded-xl bg-white">
+        <li data-animate class="p-el-md rounded-xl bg-white">
           <Image
             src={placeholder}
             alt="Placeholder"
@@ -70,11 +114,11 @@ import PlusIcon from '@svgs/plus.svg'
             </h3>
             <p class="text-body-sm text-dark-1">
               A top‑to‑bottom evaluation of all major systems and components to
-              help buyers understand a home’s true condition.
+              help buyers understand a home's true condition.
             </p>
           </div>
         </li>
-        <li class="p-el-md rounded-xl bg-white">
+        <li data-animate class="p-el-md rounded-xl bg-white">
           <Image
             src={placeholder}
             alt="Placeholder"
@@ -86,11 +130,11 @@ import PlusIcon from '@svgs/plus.svg'
             </h3>
             <p class="text-body-sm text-dark-1">
               A top‑to‑bottom evaluation of all major systems and components to
-              help buyers understand a home’s true condition.
+              help buyers understand a home's true condition.
             </p>
           </div>
         </li>
-        <li class="p-el-md rounded-xl bg-white">
+        <li data-animate class="p-el-md rounded-xl bg-white">
           <Image
             src={placeholder}
             alt="Placeholder"
@@ -102,11 +146,11 @@ import PlusIcon from '@svgs/plus.svg'
             </h3>
             <p class="text-body-sm text-dark-1">
               A top‑to‑bottom evaluation of all major systems and components to
-              help buyers understand a home’s true condition.
+              help buyers understand a home's true condition.
             </p>
           </div>
         </li>
-        <li class="p-el-md rounded-xl bg-white">
+        <li data-animate class="p-el-md rounded-xl bg-white">
           <Image
             src={placeholder}
             alt="Placeholder"
@@ -118,11 +162,11 @@ import PlusIcon from '@svgs/plus.svg'
             </h3>
             <p class="text-body-sm text-dark-1">
               A top‑to‑bottom evaluation of all major systems and components to
-              help buyers understand a home’s true condition.
+              help buyers understand a home's true condition.
             </p>
           </div>
         </li>
-        <li class="p-el-md rounded-xl bg-white">
+        <li data-animate class="p-el-md rounded-xl bg-white">
           <Image
             src={placeholder}
             alt="Placeholder"
@@ -134,7 +178,7 @@ import PlusIcon from '@svgs/plus.svg'
             </h3>
             <p class="text-body-sm text-dark-1">
               A top‑to‑bottom evaluation of all major systems and components to
-              help buyers understand a home’s true condition.
+              help buyers understand a home's true condition.
             </p>
           </div>
         </li>
@@ -146,6 +190,7 @@ import PlusIcon from '@svgs/plus.svg'
       <div class="gap-gutter mx-auto grid max-w-7xl md:grid-cols-12">
         <div class="md:pr-gutter md:col-span-6 lg:col-span-5 lg:col-start-2">
           <div
+            data-animate="fade-in"
             class="inset-shadow aspect-square h-full max-h-140 w-full overflow-hidden rounded-2xl md:aspect-auto"
           >
             <Image
@@ -157,14 +202,11 @@ import PlusIcon from '@svgs/plus.svg'
           </div>
         </div>
         <div class="py-el-xl md:col-span-6 lg:col-span-5">
-          <span
-            class="px-el-md py-el-sm bg-warm-1 text-light-1 mb-el-xl text-body-sm inline-block rounded-sm uppercase"
-            >The Reliable Edge</span
-          >
-          <h2 class="text-title-md mb-el-xl font-semibold">
+          <GoldLabel data-animate text="The Reliable Edge" />
+          <h2 data-animate class="text-title-md mb-el-xl font-semibold">
             Built on Integrity and <span class="text-green-1">Precision.</span>
           </h2>
-          <ul class="gap-el-xl flex flex-col">
+          <ul data-animate-stagger class="gap-el-xl flex flex-col">
             <li class="flex">
               <div
                 class="bg-background-alt mr-el-xl flex size-12 shrink-0 items-center justify-center rounded-lg"
@@ -221,7 +263,7 @@ import PlusIcon from '@svgs/plus.svg'
 
     <!-- Testimonials -->
     <section class="px-page py-section-md bg-green-5">
-      <div class="contained mb-section-sm text-center">
+      <div data-animate-stagger class="contained mb-section-sm text-center">
         <h2 class="text-title-md mb-el-md text-light-1 font-semibold">
           Trusted by Kentucky's Best
         </h2>
@@ -231,9 +273,11 @@ import PlusIcon from '@svgs/plus.svg'
         </p>
       </div>
       <ul
-        class="contained gap-gutter pt-el-lg grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
+        class="contained¿ gap-gutter pt-el-lg grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
       >
         <li
+          data-animate
+          data-animate-stagger
           class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
         >
           <div class="gap-el-xs flex">
@@ -269,6 +313,8 @@ import PlusIcon from '@svgs/plus.svg'
           </div>
         </li>
         <li
+          data-animate
+          data-animate-stagger
           class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
         >
           <div class="gap-el-xs flex">
@@ -304,6 +350,8 @@ import PlusIcon from '@svgs/plus.svg'
           </div>
         </li>
         <li
+          data-animate
+          data-animate-stagger
           class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
         >
           <div class="gap-el-xs flex">
@@ -339,146 +387,12 @@ import PlusIcon from '@svgs/plus.svg'
       </ul>
     </section>
 
-    <!-- FAQ -->
-    <section class="px-page py-section-lg">
-      <div class="contained">
-        <div class="gap-gutter grid md:grid-cols-12">
-          <div class="md:col-span-5">
-            <div class="top-section-lg sticky">
-              <h2 class="text-title-md mb-el-sm font-semibold">FAQs</h2>
-              <p class="text-body-md text-dark-1">
-                Our team of certified experts is ready to provide you with the
-                most detailed property report in the state.
-              </p>
-            </div>
-          </div>
-          <div class="md:col-span-7">
-            <details
-              class="group border-light-4 py-el-xl border-b first:border-t"
-            >
-              <summary
-                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-              >
-                <div
-                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-                >
-                  <PlusIcon
-                    class="size-6 transition-transform duration-200 group-open:rotate-45"
-                  />
-                </div>
-                <span class="text-body-lg font-medium"
-                  >How much does a home inspection cost?</span
-                >
-              </summary>
-              <p
-                class="mt-el-lg text-body-md text-dark-1"
-                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
-              >
-                Typically between $300 and $500, depending on the size and age
-                of the home. We provide transparent, flat-rate pricing with no
-                hidden fees.
-              </p>
-            </details>
-            <details class="group border-light-4 py-el-xl border-b">
-              <summary
-                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-              >
-                <div
-                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-                >
-                  <PlusIcon
-                    class="size-6 transition-transform duration-200 group-open:rotate-45"
-                  />
-                </div>
-                <span class="text-body-lg font-medium"
-                  >Who hires the home inspector?</span
-                >
-              </summary>
-              <p
-                class="mt-el-lg text-body-md text-dark-1"
-                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
-              >
-                Typically the buyer of the home chooses and hires the home
-                inspector. There are occasions that the seller has a pre-listing
-                inspection done, though this is rare.
-              </p>
-            </details>
-            <details class="group border-light-4 py-el-xl border-b">
-              <summary
-                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-              >
-                <div
-                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-                >
-                  <PlusIcon
-                    class="size-6 transition-transform duration-200 group-open:rotate-45"
-                  />
-                </div>
-                <span class="text-body-lg font-medium"
-                  >How long does a home inspection take?</span
-                >
-              </summary>
-              <p
-                class="mt-el-lg text-body-md text-dark-1"
-                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
-              >
-                Most inspections take between 2 and 4 hours. Larger or older
-                homes may take longer. You'll receive your full digital report
-                within 24 hours of completion.
-              </p>
-            </details>
-            <details class="group border-light-4 py-el-xl border-b">
-              <summary
-                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-              >
-                <div
-                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-                >
-                  <PlusIcon
-                    class="size-6 transition-transform duration-200 group-open:rotate-45"
-                  />
-                </div>
-                <span class="text-body-lg font-medium"
-                  >Should I be present during the inspection?</span
-                >
-              </summary>
-              <p
-                class="mt-el-lg text-body-md text-dark-1"
-                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
-              >
-                We strongly encourage it. Being present allows you to ask
-                questions in real time and get a firsthand understanding of the
-                property's condition from our inspector.
-              </p>
-            </details>
-            <details class="group border-light-4 py-el-xl border-b">
-              <summary
-                class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-              >
-                <div
-                  class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-                >
-                  <PlusIcon
-                    class="size-6 transition-transform duration-200 group-open:rotate-45"
-                  />
-                </div>
-                <span class="text-body-lg font-medium"
-                  >What does a home inspection include?</span
-                >
-              </summary>
-              <p
-                class="mt-el-lg text-body-md text-dark-1"
-                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
-              >
-                We inspect all major systems including the roof, foundation,
-                HVAC, plumbing, electrical, and more. Our standard inspection
-                includes thermal imaging and moisture detection at no extra
-                cost.
-              </p>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
+    <CtaSection />
+
+    <FaqSection />
   </main>
 </Layout>
+
+<script>
+  import '@lib/home'
+</script>

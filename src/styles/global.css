@@ -83,6 +83,10 @@
     @apply leading-relaxed;
   }
 
+  section {
+    @apply scroll-mt-section-sm;
+  }
+
   .no-scrollbars {
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */

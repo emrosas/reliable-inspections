@@ -1,0 +1,51 @@
+---
+//Components
+import { Image } from 'astro:assets'
+import Button from '@components/Button.astro'
+
+//Images
+import pipes from '@images/pipes.png'
+
+//SVG
+import StarEmblem from '@svgs/star-emblem.svg'
+import ArrowRight from '@svgs/arrow-right.svg'
+---
+
+<!-- CTA -->
+<section class="bg-light-1 overflow-hidden md:flex">
+  <!-- Top on mobile (rotated 90°), left on desktop (natural) -->
+  <div class="relative h-52 overflow-hidden md:contents">
+    <Image
+      data-animate="fade-in"
+      src={pipes}
+      alt=""
+      aria-hidden="true"
+      class="absolute top-1/2 left-1/2 h-[100vw] w-52 -translate-x-1/2 -translate-y-1/2 rotate-90 object-cover object-right md:static md:h-auto md:w-72 md:translate-x-0 md:translate-y-0 md:rotate-0 md:self-stretch md:object-left"
+    />
+  </div>
+  <!-- Content -->
+  <div
+    data-animate-stagger
+    class="px-page py-section-sm md:py-section-md flex flex-1 flex-col items-center justify-center text-center"
+  >
+    <StarEmblem class="mb-el-xl size-20" />
+    <h2 class="text-title-lg mb-el-sm font-semibold">
+      Ready for your own inspection?
+    </h2>
+    <p class="text-body-md text-dark-1 mb-el-xl max-w-2xl">
+      Our team of certified experts is ready to provide you with the most
+      detailed property report in the state.
+    </p>
+    <Button>Request Consultation<ArrowRight class="size-6" /></Button>
+  </div>
+  <!-- Bottom on mobile (rotated, mirrored), right on desktop (mirrored) -->
+  <div class="relative h-52 overflow-hidden md:contents">
+    <Image
+      data-animate="fade-in"
+      src={pipes}
+      alt=""
+      aria-hidden="true"
+      class="absolute top-1/2 left-1/2 h-[100vw] w-52 -translate-x-1/2 -translate-y-1/2 -scale-x-100 -scale-y-100 rotate-90 object-cover object-right md:static md:h-auto md:w-72 md:translate-x-0 md:translate-y-0 md:rotate-0 md:self-stretch"
+    />
+  </div>
+</section>
