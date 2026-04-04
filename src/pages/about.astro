@@ -1,8 +1,20 @@
 ---
-//Components
+// Components
 import Layout from '@layouts/Layout.astro'
+import Button from '@components/Button.astro'
+import GoldLabel from '@components/GoldLabel.astro'
+import PageHero from '@components/PageHero.astro'
 import FaqSection from '@components/FAQ.astro'
 import CtaSection from '@components/CTA.astro'
+
+// Images
+import placeholder from '@images/placeholder.jpg'
+
+// SVGs
+import ArrowRight from '@svgs/arrow-right.svg'
+import IntegrityIcon from '@svgs/integrity.svg'
+import PrecisionIcon from '@svgs/precision.svg'
+import CareIcon from '@svgs/care.svg'
 ---
 
 <Layout
@@ -11,71 +23,139 @@ import CtaSection from '@components/CTA.astro'
 >
   <main>
     <!-- Hero -->
-    <header class="px-page py-section-md bg-light-1">
-      <div class="contained grid gap-gutter md:grid-cols-12">
-        <div class="md:col-span-8 md:col-start-3 text-center">
-          <span class="text-body-sm text-warm-4 mb-el-sm uppercase inline-block">
-            Our Story
-          </span>
-          <h1 class="text-title-lg mb-el-lg font-semibold">
-            About Reliable Inspections
-          </h1>
-          <p class="text-body-md text-dark-1">
-            Founded in Lexington, Kentucky, Reliable Inspections was built on a
-            simple belief: every property buyer and owner deserves complete,
-            honest information. Our InterNACHI-certified inspectors bring
-            backgrounds in structural engineering and the trades to every
-            inspection — ensuring you get the most thorough assessment available
-            in the Commonwealth.
-          </p>
-        </div>
-      </div>
-    </header>
+    <PageHero
+      label="Our Story"
+      paragraph="We provide more than just a checklist. We deliver the peace of mind that comes from meticulous, architecturally-informed property evaluations across the Bluegrass State."
+      image={placeholder}
+      imageAlt="The Reliable Inspections team on site."
+    >
+      <Fragment slot="title">
+        Our mission is to Elevate
+        <span class="text-green-1"> Property Standards. </span>
+      </Fragment>
+      <Fragment slot="cta">
+        <Button>
+          Request Consultation
+          <ArrowRight class="size-6" />
+        </Button>
+      </Fragment>
+    </PageHero>
 
-    <!-- Mission -->
+    <!-- Our Story -->
     <section class="px-page py-section-md">
-      <div class="contained grid gap-gutter md:grid-cols-12">
+      <div class="contained gap-gutter grid md:grid-cols-12">
+        <!-- Left: title, description, stat cards -->
         <div class="md:col-span-5">
-          <h2 class="text-title-md mb-el-lg font-semibold">
-            Our Mission
+          <h2 data-animate class="text-title-md mb-el-lg font-semibold">
+            Our Story
           </h2>
-          <p class="text-body-md text-dark-1 mb-el-lg">
-            We set out to raise the standard for property inspections across
-            Kentucky. That means going beyond a checklist — we use thermal
-            imaging and moisture detection on every inspection, deliver
-            interactive digital reports within 24 hours, and stay available to
-            answer your questions long after the inspection is done.
+          <p data-animate class="text-body-md text-dark-1 mb-el-xl">
+            We seek to provide you with insights on your properties by using
+            industry standards.
+          </p>
+          <ul data-animate-stagger class="gap-gutter grid grid-cols-2">
+            <li class="border-light-3 bg-light-1 p-el-lg rounded-xl border">
+              <p class="text-title-sm text-green-4 mb-el-xs font-semibold">
+                4,200+
+              </p>
+              <p class="text-body-xs text-dark-1 tracking-wide uppercase">
+                Properties Inspected
+              </p>
+            </li>
+            <li class="border-light-3 bg-light-1 p-el-lg rounded-xl border">
+              <p class="text-title-sm text-green-4 mb-el-xs font-semibold">
+                99.8%
+              </p>
+              <p class="text-body-xs text-dark-1 tracking-wide uppercase">
+                Client Satisfaction
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: narrative paragraphs -->
+        <div
+          data-animate-stagger
+          class="gap-el-xl md:pt-el-xl flex flex-col md:col-span-6 md:col-start-7"
+        >
+          <p class="text-body-md text-dark-1">
+            Founded in the heart of Lexington, Reliable Inspections began with a
+            singular vision: to bring architectural precision to the residential
+            inspection industry. Our founder, a veteran structural consultant,
+            noticed a gap between standard municipal checklists and the
+            comprehensive understanding homeowners actually needed.
           </p>
           <p class="text-body-md text-dark-1">
-            From first-time homebuyers in Louisville to commercial developers in
-            Frankfort, we serve clients across the state with the same level of
-            care and precision.
+            What started as a one-man operation has grown into Kentucky's
+            premier inspection firm. We've built our reputation on the belief
+            that quality shouldn't be a premium service — it should be the
+            standard. We don't just look for problems; we look for solutions and
+            longevity.
           </p>
-        </div>
-        <div class="md:col-span-6 md:col-start-7">
-          <div class="rounded-2xl bg-light-1 p-el-xl h-full">
-            <h3 class="text-body-lg mb-el-lg font-semibold">By the Numbers</h3>
-            <ul class="gap-el-xl flex flex-col">
-              <li class="border-b border-light-4 pb-el-xl">
-                <p class="text-title-md font-semibold text-green-1">2,400+</p>
-                <p class="text-body-sm text-dark-1">Inspections completed across Kentucky</p>
-              </li>
-              <li class="border-b border-light-4 pb-el-xl">
-                <p class="text-title-md font-semibold text-green-1">24 hrs</p>
-                <p class="text-body-sm text-dark-1">Average report delivery time</p>
-              </li>
-              <li>
-                <p class="text-title-md font-semibold text-green-1">100%</p>
-                <p class="text-body-sm text-dark-1">InterNACHI-certified inspector team</p>
-              </li>
-            </ul>
-          </div>
+          <p class="text-body-md text-dark-1">
+            Today, our commitment to quality remains unshakable. Whether it's a
+            historic Victorian in Louisville or a new build in Bowling Green, we
+            approach every square foot with the same artisanal attention to
+            detail.
+          </p>
         </div>
       </div>
     </section>
 
-    <FaqSection />
+    <!-- Core Principles -->
+    <section class="px-page py-section-md">
+      <div class="contained">
+        <div data-animate class="mb-section-sm text-center">
+          <GoldLabel text="Core Principles" />
+          <h2 class="text-title-md font-semibold">
+            Built on Foundational Values
+          </h2>
+        </div>
+        <ul class="gap-gutter grid md:grid-cols-3">
+          <li
+            data-animate-stagger
+            data-animate
+            class="border-light-3 p-el-xl rounded-xl border"
+          >
+            <IntegrityIcon class="text-green-2 mb-el-xl size-12" />
+            <h3 class="text-body-lg mb-el-md font-semibold">Integrity</h3>
+            <p class="text-body-sm text-dark-1">
+              Our reports are unbiased and thorough. We answer only to our
+              clients, ensuring transparency in every discovery, no matter how
+              small.
+            </p>
+          </li>
+          <li
+            data-animate-stagger
+            data-animate
+            class="border-light-3 p-el-xl rounded-xl border"
+          >
+            <PrecisionIcon class="text-green-2 mb-el-xl size-12" />
+            <h3 class="text-body-lg mb-el-md font-semibold">Precision</h3>
+            <p class="text-body-sm text-dark-1">
+              Our reports are unbiased and thorough. We answer only to our
+              clients, ensuring transparency in every discovery, no matter how
+              small.
+            </p>
+          </li>
+          <li
+            data-animate-stagger
+            data-animate
+            class="border-light-3 p-el-xl rounded-xl border"
+          >
+            <CareIcon class="text-green-2 mb-el-xl size-12" />
+            <h3 class="text-body-lg mb-el-md font-semibold">Client Care</h3>
+            <p class="text-body-sm text-dark-1">
+              Our reports are unbiased and thorough. We answer only to our
+              clients, ensuring transparency in every discovery, no matter how
+              small.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <CtaSection />
+    <FaqSection />
   </main>
 </Layout>

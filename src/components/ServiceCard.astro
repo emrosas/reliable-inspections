@@ -1,0 +1,25 @@
+---
+// Images
+import { Image } from 'astro:assets'
+import placeholder from '@images/placeholder.jpg'
+
+// Types
+export interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<li data-animate class="p-el-md rounded-xl bg-white">
+  <Image
+    src={placeholder}
+    alt={title}
+    class="aspect-video w-full rounded-lg object-cover"
+  />
+  <div class="mt-el-xl">
+    <h3 class="text-body-lg mb-el-sm font-semibold">{title}</h3>
+    <p class="text-body-sm text-dark-1">{description}</p>
+  </div>
+</li>

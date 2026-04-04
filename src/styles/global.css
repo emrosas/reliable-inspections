@@ -100,6 +100,22 @@
     @apply mx-auto max-w-7xl;
   }
 
+  .grid-bg {
+    background-image:
+      radial-gradient(
+        50% 100% at 50% 0%,
+        rgba(250, 250, 249, 0.5) 0%,
+        #fafaf9 100%
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(65, 83, 98, 0.25) 0px,
+        rgba(65, 83, 98, 0.25) 1px,
+        transparent 1px,
+        transparent 100px
+      );
+  }
+
   .inset-shadow {
     position: relative;
     &::after {
