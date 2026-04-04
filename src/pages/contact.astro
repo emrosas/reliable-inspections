@@ -1,11 +1,17 @@
 ---
-//Components
+// Components
 import Layout from '@layouts/Layout.astro'
 import Button from '@components/Button.astro'
 import BannerHero from '@components/BannerHero.astro'
 
 // Images
 import contactImage from '@images/contact.jpg'
+
+// SVGs
+import HomeIcon from '@svgs/home.svg'
+import PhoneIcon from '@svgs/phone.svg'
+import MailIcon from '@svgs/mail.svg'
+import ArrowRight from '@svgs/arrow-right.svg'
 ---
 
 <Layout
@@ -28,78 +34,124 @@ import contactImage from '@images/contact.jpg'
       </p>
     </BannerHero>
 
-    <!-- Contact Form -->
+    <!-- Contact -->
     <section class="px-page py-section-md">
       <div class="contained gap-gutter grid md:grid-cols-12">
-        <div class="md:col-span-8 md:col-start-3">
+
+        <!-- Left: contact information -->
+        <div data-animate class="md:col-span-5">
+          <h2 class="text-title-sm mb-el-md font-semibold">
+            Contact Information
+          </h2>
+          <p class="text-body-md text-dark-1 mb-el-xl">
+            Our team is active across the Bluegrass State. Reach out directly
+            or visit our Lexington headquarters.
+          </p>
+          <ul class="gap-el-lg flex flex-col">
+            <li class="flex items-start gap-el-md">
+              <div class="bg-background-alt flex size-10 shrink-0 items-center justify-center rounded-lg">
+                <HomeIcon class="text-green-3 size-5" />
+              </div>
+              <div>
+                <p class="text-body-sm font-semibold">Address:</p>
+                <p class="text-body-sm text-dark-1">123 Bluegrass Way, Lexington, KY</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-el-md">
+              <div class="bg-background-alt flex size-10 shrink-0 items-center justify-center rounded-lg">
+                <PhoneIcon class="text-green-3 size-5" />
+              </div>
+              <div>
+                <p class="text-body-sm font-semibold">Phone:</p>
+                <p class="text-body-sm text-dark-1">(859) 555-0123</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-el-md">
+              <div class="bg-background-alt flex size-10 shrink-0 items-center justify-center rounded-lg">
+                <MailIcon class="text-green-3 size-5" />
+              </div>
+              <div>
+                <p class="text-body-sm font-semibold">Email:</p>
+                <p class="text-body-sm text-dark-1">hello@reliableinspections.com</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: contact form -->
+        <div data-animate class="rounded-2xl border border-light-3 bg-white p-el-xl md:col-span-7">
           <form class="gap-el-lg flex flex-col" action="#" method="POST">
-            <!-- Name -->
-            <div class="gap-el-sm flex flex-col">
-              <label for="name" class="text-body-sm text-dark-3 font-medium">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Jane Smith"
-                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 rounded-sm border bg-white transition focus:outline-none"
-              />
+            <!-- Name + Email -->
+            <div class="gap-gutter grid sm:grid-cols-2">
+              <div class="gap-el-sm flex flex-col">
+                <label for="name" class="text-body-sm text-dark-3 font-medium">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 focus:outline-none focus:ring-1 focus:ring-green-2 transition"
+                />
+              </div>
+              <div class="gap-el-sm flex flex-col">
+                <label for="email" class="text-body-sm text-dark-3 font-medium">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="john@example.com"
+                  class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 focus:outline-none focus:ring-1 focus:ring-green-2 transition"
+                />
+              </div>
             </div>
 
-            <!-- Email -->
-            <div class="gap-el-sm flex flex-col">
-              <label for="email" class="text-body-sm text-dark-3 font-medium">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="jane@example.com"
-                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 rounded-sm border bg-white transition focus:outline-none"
-              />
-            </div>
-
-            <!-- Phone (optional) -->
-            <div class="gap-el-sm flex flex-col">
-              <label for="phone" class="text-body-sm text-dark-3 font-medium">
-                Phone Number <span class="text-dark-1 font-normal"
-                  >(optional)</span
-                >
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="(555) 555-5555"
-                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 rounded-sm border bg-white transition focus:outline-none"
-              />
+            <!-- Phone + Property Address -->
+            <div class="gap-gutter grid sm:grid-cols-2">
+              <div class="gap-el-sm flex flex-col">
+                <label for="phone" class="text-body-sm text-dark-3 font-medium">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(555) 000-0000"
+                  class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 focus:outline-none focus:ring-1 focus:ring-green-2 transition"
+                />
+              </div>
+              <div class="gap-el-sm flex flex-col">
+                <label for="property" class="text-body-sm text-dark-3 font-medium">Property Address</label>
+                <input
+                  type="text"
+                  id="property"
+                  name="property"
+                  placeholder="123 Street, City, KY"
+                  class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 focus:outline-none focus:ring-1 focus:ring-green-2 transition"
+                />
+              </div>
             </div>
 
             <!-- Message -->
             <div class="gap-el-sm flex flex-col">
-              <label for="message" class="text-body-sm text-dark-3 font-medium">
-                Message
-              </label>
+              <label for="message" class="text-body-sm text-dark-3 font-medium">How can we help?</label>
               <textarea
                 id="message"
                 name="message"
                 required
-                rows="6"
-                placeholder="Tell us about the property and what you're looking for..."
-                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 resize-none rounded-sm border bg-white transition focus:outline-none"
+                rows="5"
+                placeholder="Tell us about the property and your timeline…"
+                class="resize-none rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 focus:outline-none focus:ring-1 focus:ring-green-2 transition"
               ></textarea>
             </div>
 
             <!-- Submit -->
-            <div>
-              <Button type="submit">Send Message</Button>
-            </div>
+            <Button type="submit" class="w-full">
+              Send Message
+              <ArrowRight class="size-5" />
+            </Button>
           </form>
         </div>
+
       </div>
     </section>
   </main>
