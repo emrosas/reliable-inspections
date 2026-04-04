@@ -1,10 +1,14 @@
 ---
 //Components
 import Layout from '@layouts/Layout.astro'
+import BannerHero from '@components/BannerHero.astro'
 import CtaSection from '@components/CTA.astro'
 
 //Helpers
 import { getCollection } from 'astro:content'
+
+// Images
+import blogImage from '@images/blog.png'
 
 const posts = await getCollection('blog')
 const sortedPosts = posts.sort(
@@ -17,19 +21,26 @@ const sortedPosts = posts.sort(
   description="Insights, guides, and expert advice on home and commercial property inspections from the Reliable Inspections team."
 >
   <main>
-    <!-- Header -->
-    <header class="px-page py-section-md bg-light-1">
-      <div class="contained">
-        <span class="text-body-sm text-warm-4 mb-el-sm uppercase inline-block">
-          Resources
-        </span>
-        <h1 class="text-title-lg font-semibold">Inspection Insights</h1>
-        <p class="text-body-md text-dark-1 mt-el-lg max-w-2xl">
-          Expert articles and guides to help you understand property
-          inspections, protect your investment, and make informed decisions.
-        </p>
+    <!-- Hero -->
+    <BannerHero
+      label="Connect with us."
+      image={blogImage}
+      imageAlt="Kentucky homes at sunset."
+    >
+      <Fragment slot="title">
+        We are here for Kentucky <span class="text-warm-1">Property Owners.</span>
+      </Fragment>
+      <div class="mx-auto flex max-w-md items-center gap-el-sm rounded-lg bg-white px-el-lg py-el-md">
+        <svg class="text-dark-1 size-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+        <input
+          type="search"
+          placeholder="Search articles, guides, or laws..."
+          class="text-body-sm text-dark-3 placeholder:text-dark-1 w-full bg-transparent focus:outline-none"
+        />
       </div>
-    </header>
+    </BannerHero>
 
     <!-- Posts Grid -->
     <section class="px-page py-section-md">

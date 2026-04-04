@@ -2,6 +2,10 @@
 //Components
 import Layout from '@layouts/Layout.astro'
 import Button from '@components/Button.astro'
+import BannerHero from '@components/BannerHero.astro'
+
+// Images
+import contactImage from '@images/contact.jpg'
 ---
 
 <Layout
@@ -9,40 +13,29 @@ import Button from '@components/Button.astro'
   description="Get in touch with Reliable Inspections to schedule your home or commercial property inspection across Kentucky."
 >
   <main>
-    <!-- Header -->
-    <header class="px-page py-section-md bg-light-1">
-      <div class="contained grid gap-gutter md:grid-cols-12">
-        <div class="md:col-span-8 md:col-start-3 text-center">
-          <span class="text-body-sm text-warm-4 mb-el-sm uppercase inline-block">
-            Get in Touch
-          </span>
-          <h1 class="text-title-lg mb-el-lg font-semibold">
-            Contact Us
-          </h1>
-          <p class="text-body-md text-dark-1">
-            Ready to schedule an inspection or have questions? Fill out the form
-            below and a member of our team will get back to you within one
-            business day.
-          </p>
-        </div>
-      </div>
-    </header>
+    <!-- Hero -->
+    <BannerHero
+      label="Connect with us."
+      image={contactImage}
+      imageAlt="A Kentucky property seen from the exterior."
+    >
+      <Fragment slot="title">
+        Get in <span class="text-warm-1">Touch.</span>
+      </Fragment>
+      <p class="text-body-lg text-light-4 mx-auto max-w-3xl text-balance">
+        Whether you're buying your first home or managing a commercial
+        portfolio, our precision inspections provide the clarity you need.
+      </p>
+    </BannerHero>
 
     <!-- Contact Form -->
     <section class="px-page py-section-md">
-      <div class="contained grid gap-gutter md:grid-cols-12">
+      <div class="contained gap-gutter grid md:grid-cols-12">
         <div class="md:col-span-8 md:col-start-3">
-          <form
-            class="gap-el-lg flex flex-col"
-            action="#"
-            method="POST"
-          >
+          <form class="gap-el-lg flex flex-col" action="#" method="POST">
             <!-- Name -->
             <div class="gap-el-sm flex flex-col">
-              <label
-                for="name"
-                class="text-body-sm font-medium text-dark-3"
-              >
+              <label for="name" class="text-body-sm text-dark-3 font-medium">
                 Full Name
               </label>
               <input
@@ -51,16 +44,13 @@ import Button from '@components/Button.astro'
                 name="name"
                 required
                 placeholder="Jane Smith"
-                class="rounded-sm border border-light-4 bg-white px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 focus:outline-none transition"
+                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 rounded-sm border bg-white transition focus:outline-none"
               />
             </div>
 
             <!-- Email -->
             <div class="gap-el-sm flex flex-col">
-              <label
-                for="email"
-                class="text-body-sm font-medium text-dark-3"
-              >
+              <label for="email" class="text-body-sm text-dark-3 font-medium">
                 Email Address
               </label>
               <input
@@ -69,33 +59,29 @@ import Button from '@components/Button.astro'
                 name="email"
                 required
                 placeholder="jane@example.com"
-                class="rounded-sm border border-light-4 bg-white px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 focus:outline-none transition"
+                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 rounded-sm border bg-white transition focus:outline-none"
               />
             </div>
 
             <!-- Phone (optional) -->
             <div class="gap-el-sm flex flex-col">
-              <label
-                for="phone"
-                class="text-body-sm font-medium text-dark-3"
-              >
-                Phone Number <span class="text-dark-1 font-normal">(optional)</span>
+              <label for="phone" class="text-body-sm text-dark-3 font-medium">
+                Phone Number <span class="text-dark-1 font-normal"
+                  >(optional)</span
+                >
               </label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 placeholder="(555) 555-5555"
-                class="rounded-sm border border-light-4 bg-white px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 focus:outline-none transition"
+                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 rounded-sm border bg-white transition focus:outline-none"
               />
             </div>
 
             <!-- Message -->
             <div class="gap-el-sm flex flex-col">
-              <label
-                for="message"
-                class="text-body-sm font-medium text-dark-3"
-              >
+              <label for="message" class="text-body-sm text-dark-3 font-medium">
                 Message
               </label>
               <textarea
@@ -104,7 +90,7 @@ import Button from '@components/Button.astro'
                 required
                 rows="6"
                 placeholder="Tell us about the property and what you're looking for..."
-                class="rounded-sm border border-light-4 bg-white px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 focus:outline-none transition resize-none"
+                class="border-light-4 px-el-lg py-el-md text-body-md text-dark-3 placeholder:text-dark-1 focus:border-green-1 resize-none rounded-sm border bg-white transition focus:outline-none"
               ></textarea>
             </div>
 

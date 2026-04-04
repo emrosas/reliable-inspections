@@ -1,0 +1,38 @@
+---
+// Components
+import { Image } from 'astro:assets'
+import GoldLabel from '@components/GoldLabel.astro'
+
+// Types
+import type { ImageMetadata } from 'astro'
+
+export interface Props {
+  label: string
+  image: ImageMetadata
+  imageAlt: string
+}
+
+const { label, image, imageAlt } = Astro.props
+---
+
+<header class="px-page py-section-md relative overflow-hidden">
+  <Image
+    src={image}
+    alt={imageAlt}
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(180deg, rgba(40, 54, 24, 0.50) 50%, var(--color-green-5) 100%)"
+  >
+  </div>
+  <div class="contained relative z-10 text-center">
+    <GoldLabel text={label} />
+    <h1
+      class="text-title-lg mb-el-lg text-light-1 mx-auto max-w-4xl font-semibold"
+    >
+      <slot name="title" />
+    </h1>
+    <slot />
+  </div>
+</header>
