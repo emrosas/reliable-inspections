@@ -8,12 +8,18 @@ interface Props extends HTMLAttributes<'a'> {
 
 const { url, label } = Astro.props
 const pathname = Astro.url.pathname
+const base = url.split('#')[0]
+const isActive = url.includes('#')
+  ? false
+  : base === '/'
+    ? pathname === '/'
+    : pathname.startsWith(base)
 ---
 
 <li class="text-dark-2 group hover:text-green-1 relative">
   <a
     href={url}
-    class:list={[url === pathname ? 'text-green-1' : '', 'transition']}
+    class:list={[isActive ? 'text-green-1' : '', 'transition']}
   >
     {label}
   </a>

@@ -7,8 +7,6 @@ import CtaSection from '@components/CTA.astro'
 import { Image } from 'astro:assets'
 import { getCollection, render } from 'astro:content'
 
-//Images
-import placeholder from '@images/placeholder.jpg'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
@@ -53,8 +51,8 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
           <!-- Hero Image -->
           <div class="my-el-xl">
             <Image
-              src={placeholder}
-              alt={post.data.title}
+              src={post.data.image}
+              alt={post.data.imageAlt}
               class="aspect-video w-full rounded-xl object-cover"
             />
           </div>

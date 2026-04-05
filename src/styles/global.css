@@ -65,6 +65,20 @@
   navigation: auto;
 }
 
+/* Fix white flash: default mix-blend-mode: plus-lighter adds colors together
+   during crossfade, producing white on light backgrounds */
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+/* Prevent layer flickering on all transitioning elements */
+::view-transition-old(*),
+::view-transition-new(*) {
+  backface-visibility: hidden;
+  will-change: opacity;
+}
+
 @layer base {
   nav {
     view-transition-name: nav;
