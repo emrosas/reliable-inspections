@@ -23,6 +23,14 @@ import MagnifierIcon from '@svgs/magnifier.svg'
 import CertifiedIcon from '@svgs/certified.svg'
 import ReportIcon from '@svgs/report.svg'
 import StarIcon from '@svgs/star.svg'
+import NinetyDayIcon from '@svgs/90-day.svg'
+import SewerGuardIcon from '@svgs/sewer-guard.svg'
+import MoldSafeIcon from '@svgs/mold-safe.svg'
+import PlatinumIcon from '@svgs/platinum.svg'
+import ninetyDayImg from '@images/90-day.png'
+import sewerGuardImg from '@images/sewer-guard.png'
+import moldSafeImg from '@images/mold-safe.png'
+import platinumImg from '@images/platinum.png'
 
 const services = await getCollection('services')
 ---
@@ -78,6 +86,91 @@ const services = await getCollection('services')
           ))
         }
       </ul>
+
+      <!-- Warranties -->
+      <div class="contained mt-section-sm">
+        <h2
+          data-animate
+          class="text-title-sm mb-section-sm text-center font-semibold"
+        >
+          Our Included <span class="text-green-1">FREE</span> Warranties.
+        </h2>
+        <ul
+          data-animate-stagger
+          class="gap-gutter grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))]"
+        >
+          <!-- 90-Day Warranty -->
+          <li
+            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"dd
+            style="border-color: #A42536;"
+          >
+            <NinetyDayIcon class="absolute -top-7 size-14 rounded-full" />
+            <Image
+              src={ninetyDayImg}
+              alt="90-Day Warranty"
+              class="mb-el-md h-12 object-contain"
+            />
+            <p class="text-body-sm text-dark-1">
+              You need a professional you can rely on even after the job is
+              complete. That&apos;s why we support all our inspections with a
+              90-Day Limited Structural and Mechanical Warranty.
+            </p>
+          </li>
+
+          <!-- SewerGard -->
+          <li
+            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"dd
+            style="border-color: #FBBF11;"
+          >
+            <SewerGuardIcon class="absolute -top-7 size-14 rounded-full" />
+            <Image
+              src={sewerGuardImg}
+              alt="SewerGard"
+              class="mb-el-md h-12 object-contain"
+            />
+            <p class="text-body-sm text-dark-1">
+              Offered for a period of 90 days following the date of the
+              inspection, SewerGard covers your water line and sewer against
+              failure due to normal wear and tear, giving you peace of mind.
+            </p>
+          </li>
+
+          <!-- MoldSafe -->
+          <li
+            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"dd
+            style="border-color: #DD5631;"
+          >
+            <MoldSafeIcon class="absolute -top-7 size-14 rounded-full" />
+            <Image
+              src={moldSafeImg}
+              alt="MoldSafe"
+              class="mb-el-md h-12 object-contain"
+            />
+            <p class="text-body-sm text-dark-1">
+              For up to 90 days after the inspection date, if you move into your
+              new home and discover mold that was not identified during the
+              inspection, you are covered for remediation.
+            </p>
+          </li>
+
+          <!-- Platinum -->
+          <li
+            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"dd
+            style="border-color: #296CA3;"
+          >
+            <PlatinumIcon class="absolute -top-7 size-14 rounded-full" />
+            <Image
+              src={platinumImg}
+              alt="Platinum Roof Protection Plan"
+              class="mb-el-md h-12 object-contain"
+            />
+            <p class="text-body-sm text-dark-1">
+              Handles the repair of leaks to your home&apos;s roof for a period
+              of 5 years following the date of the inspection.
+            </p>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Why Us -->
