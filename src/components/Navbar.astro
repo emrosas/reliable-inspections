@@ -1,5 +1,6 @@
 ---
 // Components
+import NavbarLink from './NavbarLink.astro'
 import Button from '@components/Button.astro'
 
 // SVGs
@@ -7,14 +8,23 @@ import Logo from '@svgs/logo.svg'
 import Lettermark from '@svgs/lettermark.svg'
 import LogoHorizontal from '@svgs/logo-horizontal.svg'
 import ArrowRight from '@svgs/arrow-right.svg'
-import NavbarLink from './NavbarLink.astro'
+import MenuIcon from '@svgs/menu.svg'
+import CloseIcon from '@svgs/close.svg'
 
-const url = Astro.url.pathname
+const pathname = Astro.url.pathname
+
+const mobileLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/#services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+]
 ---
 
-<nav class="px-page sticky top-0 z-50 bg-white py-4 shadow">
+<nav id="navbar" class="px-page sticky top-0 z-50 bg-white py-4 shadow">
   <div
-    class="contained gap-gutter grid grid-cols-2 items-center justify-between lg:grid-cols-[2fr_3fr_2fr]"
+    class="contained gap-gutter grid grid-cols-2 items-center lg:grid-cols-[2fr_3fr_2fr]"
   >
     <a href="/" class="@container" aria-label="Go Home">
       <Logo class="mr-2 inline-block w-8 sm:hidden @min-[300px]:inline-block" />
@@ -28,12 +38,171 @@ const url = Astro.url.pathname
       <NavbarLink url="/blog" label="Blog" />
       <NavbarLink url="/contact" label="Contact" />
     </ul>
-    <div class="hidden sm:block">
-      <Button class="justify-self-end sm:flex"
-        >Request Consultation<ArrowRight class="size-6" /></Button
+    <div class="gap-el-sm flex items-center justify-end">
+      <div class="hidden sm:block">
+        <Button>Request Consultation<ArrowRight class="size-6" /></Button>
+      </div>
+      <Button
+        id="menu-button"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+        intent="terciary"
+        size="square"
+        class="lg:hidden"
       >
-    </div>
-    <div class="bg-green-1 block size-8 justify-self-end rounded-md sm:hidden">
+        <span class="relative block size-full">
+          <MenuIcon id="menu-icon" class="absolute inset-0 size-full" />
+          <CloseIcon
+            id="close-icon"
+            class="absolute inset-0 size-full opacity-0"
+          />
+        </span>
+      </Button>
     </div>
   </div>
 </nav>
+
+<!-- Backdrop -->
+<div
+  id="menu-backdrop"
+  class="bg-dark-3/70 fixed inset-0 z-30 backdrop-blur-xs"
+  aria-hidden="true"
+>
+</div>
+
+<!-- Mobile menu -->
+<div
+  id="mobile-menu"
+  class="fixed inset-x-0 top-0 z-40 bg-white shadow-xl"
+  aria-hidden="true"
+  inert
+>
+  <div id="mobile-menu-inner" class="px-page pb-el-xl">
+    <ul class="border-light-3 flex flex-col border-t">
+      {
+        mobileLinks.map(({ href, label }) => {
+          const base = href.split('#')[0]
+          const isActive = href.includes('#')
+            ? false
+            : base === '/'
+              ? pathname === '/'
+              : pathname.startsWith(base)
+          return (
+            <li>
+              <a
+                href={href}
+                class:list={[
+                  'text-body-lg py-el-lg border-light-3 flex w-full items-center border-b font-medium transition',
+                  isActive ? 'text-green-1' : 'text-dark-2 hover:text-green-1',
+                ]}
+              >
+                {label}
+              </a>
+            </li>
+          )
+        })
+      }
+    </ul>
+    <div class="mt-el-xl">
+      <Button class="w-full justify-center">
+        Request Consultation
+        <ArrowRight class="size-6" />
+      </Button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import gsap from 'gsap'
+
+  const navbar = document.getElementById('navbar')!
+  const button = document.getElementById('menu-button')!
+  const menuIcon = document.getElementById('menu-icon')!
+  const closeIcon = document.getElementById('close-icon')!
+  const menu = document.getElementById('mobile-menu')!
+  const menuInner = document.getElementById('mobile-menu-inner')!
+  const backdrop = document.getElementById('menu-backdrop')!
+  const listItems = menuInner.querySelectorAll('li')
+  const ctaWrapper = menuInner.querySelector<HTMLElement>('div')!
+
+  let isOpen = false
+
+  function syncNavHeight() {
+    menu.style.paddingTop = `${navbar.offsetHeight}px`
+  }
+
+  syncNavHeight()
+  window.addEventListener('resize', syncNavHeight, { passive: true })
+
+  // Initial state
+  gsap.set(menu, { y: '-100%' })
+  gsap.set(backdrop, { autoAlpha: 0 })
+  gsap.set([listItems, ctaWrapper], { autoAlpha: 0, y: -12 })
+
+  function openMenu() {
+    isOpen = true
+    button.setAttribute('aria-expanded', 'true')
+    button.setAttribute('aria-label', 'Close navigation menu')
+    menu.removeAttribute('inert')
+    menu.setAttribute('aria-hidden', 'false')
+    document.body.style.overflow = 'hidden'
+
+    gsap.to(backdrop, { autoAlpha: 1, duration: 0.25, ease: 'power2.out' })
+    gsap.to(menu, { y: '0%', duration: 0.38, ease: 'power3.out' })
+    gsap.to([listItems, ctaWrapper], {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.3,
+      ease: 'power3.out',
+      stagger: 0.055,
+      delay: 0.18,
+    })
+    gsap.to(menuIcon, { autoAlpha: 0, duration: 0.15 })
+    gsap.to(closeIcon, { autoAlpha: 1, duration: 0.15, delay: 0.1 })
+  }
+
+  function closeMenu() {
+    isOpen = false
+    button.setAttribute('aria-expanded', 'false')
+    button.setAttribute('aria-label', 'Open navigation menu')
+    document.body.style.overflow = ''
+
+    gsap.to([listItems, ctaWrapper], {
+      autoAlpha: 0,
+      y: -12,
+      duration: 0.18,
+      ease: 'power3.in',
+      stagger: { each: 0.04, from: 'end' },
+    })
+    gsap.to(backdrop, {
+      autoAlpha: 0,
+      duration: 0.3,
+      ease: 'power2.in',
+      delay: 0.08,
+    })
+    gsap.to(menu, {
+      y: '-100%',
+      duration: 0.38,
+      ease: 'power3.in',
+      delay: 0.08,
+      onComplete: () => {
+        menu.setAttribute('inert', '')
+        menu.setAttribute('aria-hidden', 'true')
+      },
+    })
+    gsap.to(closeIcon, { autoAlpha: 0, duration: 0.15 })
+    gsap.to(menuIcon, { autoAlpha: 1, duration: 0.15, delay: 0.1 })
+  }
+
+  button.addEventListener('click', () => {
+    if (isOpen) closeMenu()
+    else openMenu()
+  })
+
+  backdrop.addEventListener('click', closeMenu)
+
+  menuInner.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu)
+  })
+</script>
