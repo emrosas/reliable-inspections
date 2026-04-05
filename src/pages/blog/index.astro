@@ -51,6 +51,7 @@ const sortedPosts = posts.sort(
           ></path>
         </svg>
         <input
+          id="blog-search"
           type="search"
           placeholder="Search articles, guides, or laws..."
           class="text-body-sm text-dark-3 placeholder:text-dark-1 w-full bg-transparent focus:outline-none"
@@ -67,9 +68,9 @@ const sortedPosts = posts.sort(
           {
             sortedPosts.map((post) => (
               <li
-                data-animate
-                data-animate-stagger
                 class="border-light-4 flex flex-col overflow-hidden rounded-xl border"
+                data-title={post.data.title.toLowerCase()}
+                data-description={post.data.description.toLowerCase()}
               >
                 <Image
                   src={post.data.image}
@@ -111,3 +112,19 @@ const sortedPosts = posts.sort(
     <CtaSection />
   </main>
 </Layout>
+
+<script>
+  const input = document.getElementById('blog-search') as HTMLInputElement
+  const posts = document.querySelectorAll<HTMLLIElement>('[data-title]')
+
+  input?.addEventListener('input', () => {
+    const query = input.value.toLowerCase().trim()
+    posts.forEach((post) => {
+      const matches =
+        !query ||
+        post.dataset.title?.includes(query) ||
+        post.dataset.description?.includes(query)
+      post.style.display = matches ? '' : 'none'
+    })
+  })
+</script>
