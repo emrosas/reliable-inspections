@@ -3,6 +3,8 @@ title: "What Home Inspectors Actually Look For."
 description: "A comprehensive guide to the systems and components covered in a standard Kentucky home inspection."
 date: 2024-01-15
 readTime: "8 min read"
+image: ../../assets/images/placeholder.jpg
+imageAlt: "A home inspector examining the roof of a Kentucky property."
 ---
 
 ## The Roof and Exterior

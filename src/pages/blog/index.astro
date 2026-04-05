@@ -1,6 +1,7 @@
 ---
 //Components
 import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
 import BannerHero from '@components/BannerHero.astro'
 import CtaSection from '@components/CTA.astro'
 
@@ -28,11 +29,26 @@ const sortedPosts = posts.sort(
       imageAlt="Kentucky homes at sunset."
     >
       <Fragment slot="title">
-        We are here for Kentucky <span class="text-warm-1">Property Owners.</span>
+        We are here for Kentucky <span class="text-warm-1"
+          >Property Owners.</span
+        >
       </Fragment>
-      <div class="mx-auto flex max-w-md items-center gap-el-sm rounded-lg bg-white px-el-lg py-el-md">
-        <svg class="text-dark-1 size-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      <div
+        class="gap-el-sm px-el-lg py-el-md mx-auto flex max-w-md items-center rounded-lg bg-white"
+      >
+        <svg
+          class="text-dark-1 size-5 shrink-0"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+          ></path>
         </svg>
         <input
           type="search"
@@ -45,12 +61,23 @@ const sortedPosts = posts.sort(
     <!-- Posts Grid -->
     <section class="px-page py-section-md">
       <div class="contained">
-        <ul class="gap-gutter grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))]">
+        <ul
+          class="gap-gutter grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))]"
+        >
           {
             sortedPosts.map((post) => (
-              <li class="flex flex-col rounded-xl border border-light-4 overflow-hidden">
-                <div class="p-el-xl flex flex-col flex-1 gap-el-md">
-                  <div class="flex items-center gap-el-sm text-body-sm text-green-1">
+              <li
+                data-animate
+                data-animate-stagger
+                class="border-light-4 flex flex-col overflow-hidden rounded-xl border"
+              >
+                <Image
+                  src={post.data.image}
+                  alt={post.data.imageAlt}
+                  class="aspect-video w-full object-cover"
+                />
+                <div class="p-el-xl gap-el-md flex flex-1 flex-col">
+                  <div class="gap-el-sm text-body-sm text-green-1 flex items-center">
                     <time datetime={post.data.date.toISOString()}>
                       {post.data.date.toLocaleDateString('en-US', {
                         month: 'short',
@@ -61,7 +88,7 @@ const sortedPosts = posts.sort(
                     <span aria-hidden="true">&bull;</span>
                     <span>{post.data.readTime}</span>
                   </div>
-                  <h2 class="text-body-lg font-semibold leading-snug">
+                  <h2 class="text-body-lg leading-snug font-semibold">
                     {post.data.title}
                   </h2>
                   <p class="text-body-sm text-dark-1 flex-1">
@@ -69,7 +96,7 @@ const sortedPosts = posts.sort(
                   </p>
                   <a
                     href={`/blog/${post.id}`}
-                    class="text-body-sm text-green-1 font-medium underline-offset-2 hover:underline mt-el-sm inline-block"
+                    class="text-body-sm text-green-1 mt-el-sm inline-block font-medium underline-offset-2 hover:underline"
                   >
                     Read article &rarr;
                   </a>

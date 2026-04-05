@@ -3,6 +3,8 @@ title: "Understanding Commercial Property Risks."
 description: "A deep dive into the structural and liability concerns specific to office and industrial spaces in Lexington."
 date: 2024-02-28
 readTime: "12 min read"
+image: ../../assets/images/placeholder.jpg
+imageAlt: "Aerial view of a commercial property in Lexington, Kentucky."
 ---
 
 ## Exercitation commodo do eiusmod do.

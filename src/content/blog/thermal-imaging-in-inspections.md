@@ -3,6 +3,8 @@ title: "How Thermal Imaging Changed Home Inspections."
 description: "Why we include thermal imaging as standard practice and what it reveals that the naked eye cannot."
 date: 2023-12-10
 readTime: "6 min read"
+image: ../../assets/images/placeholder.jpg
+imageAlt: "Thermal imaging camera scanning a wall for hidden moisture."
 ---
 
 ## Seeing Beyond the Surface
