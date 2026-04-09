@@ -3,10 +3,13 @@ import { defineConfig, fontProviders } from 'astro/config'
 
 import tailwindcss from '@tailwindcss/vite'
 import svelte from '@astrojs/svelte'
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [svelte()],
+  // Update this to your production domain when you go live
+  site: 'https://reliable-inspections-y8i9r.sevalla.page',
+  integrations: [svelte(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

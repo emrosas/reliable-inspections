@@ -32,7 +32,7 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: ['erick@erreagency.com', 'mike@reliableinspectionsky.com'],
+          to: ['erick@erreagency.com', 'mike@myreliablehomeinspections.com'],
           fields: [
             { name: 'Full Name', value: name },
             { name: 'Email', value: email },

@@ -16,6 +16,173 @@ interface Props {
   description: string
 }
 const { title, description } = Astro.props
+
+const siteUrl = 'https://reliable-inspections-y8i9r.sevalla.page'
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString()
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${siteUrl}/#business`,
+      name: 'Reliable Inspections',
+      description:
+        "Kentucky's premier certified home and commercial property inspection company. Serving Mount Washington, Louisville, Lexington, Frankfort, Bowling Green, and all of Kentucky with InterNACHI-certified inspectors.",
+      url: siteUrl,
+      telephone: '+15029018427',
+      email: 'mike@myreliablehomeinspections.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '436 Laverne Court',
+        addressLocality: 'Mount Washington',
+        addressRegion: 'KY',
+        postalCode: '40047',
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 37.9984,
+        longitude: -85.5468,
+      },
+      areaServed: [
+        { '@type': 'State', name: 'Kentucky' },
+        {
+          '@type': 'City',
+          name: 'Mount Washington',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+        {
+          '@type': 'City',
+          name: 'Washington',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+        {
+          '@type': 'City',
+          name: 'Louisville',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+        {
+          '@type': 'City',
+          name: 'Lexington',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+        {
+          '@type': 'City',
+          name: 'Frankfort',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+        {
+          '@type': 'City',
+          name: 'Bowling Green',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+        {
+          '@type': 'City',
+          name: 'Elizabethtown',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+        {
+          '@type': 'City',
+          name: 'Bardstown',
+          containedInPlace: { '@type': 'State', name: 'Kentucky' },
+        },
+      ],
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/favicon.svg`,
+      },
+      image: `${siteUrl}/og.jpg`,
+      priceRange: '$300-$500',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Property Inspection Services in Kentucky',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Full Residential Home Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: "Pre-Purchase Buyer's Inspection",
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Pre-Listing Seller\'s Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Condominium / Townhouse Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Multi-Unit & Rental Property Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Commercial Property Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'New Home Pre-Delivery Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'New Home Year-End Warranty Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'General Home Maintenance Inspection',
+              areaServed: 'Kentucky',
+            },
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      name: 'Reliable Inspections',
+      url: siteUrl,
+      description:
+        'Certified home and commercial property inspection services throughout Kentucky',
+    },
+  ],
+}
 ---
 
 <!doctype html>
@@ -30,15 +197,42 @@ const { title, description } = Astro.props
       description={description}
       openGraph={{
         basic: {
-          title: 'Reliable Inspections',
-          image: 'https://reliable-inspections-y8i9r.sevalla.page/og.jpg',
+          title: title,
+          image: `${siteUrl}/og.jpg`,
           type: 'website',
         },
+        optional: {
+          description: description,
+          siteName: 'Reliable Inspections',
+        },
+      }}
+      twitter={{
+        card: 'summary_large_image',
+        title: title,
+        description: description,
+        image: `${siteUrl}/og.jpg`,
       }}
       extend={{
-        link: [{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+        link: [
+          { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+          { rel: 'canonical', href: canonicalURL },
+        ],
+        meta: [
+          { name: 'geo.region', content: 'US-KY' },
+          { name: 'geo.placename', content: 'Mount Washington, Kentucky' },
+          { name: 'geo.position', content: '37.9984;-85.5468' },
+          { name: 'ICBM', content: '37.9984, -85.5468' },
+        ],
       }}
     />
+    <!-- Structured Data: LocalBusiness + WebSite -->
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(localBusinessSchema)}
+    />
+    <!-- Page-specific structured data slot -->
+    <slot name="head" />
     <!-- Fathom - beautiful, simple website analytics -->
     <script
       src="https://cdn.usefathom.com/script.js"

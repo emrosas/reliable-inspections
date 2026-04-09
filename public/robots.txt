@@ -1,0 +1,48 @@
+# robots.txt — Reliable Inspections
+# Allow all crawlers, including AI/LLM bots
+
+User-agent: *
+Allow: /
+
+# Major search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI & LLM crawlers — explicitly allowed so AI search tools can index this site
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://reliable-inspections-y8i9r.sevalla.page/sitemap-index.xml

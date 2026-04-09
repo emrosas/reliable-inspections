@@ -36,9 +36,60 @@ const services = await getCollection('services')
 ---
 
 <Layout
-  title="Reliable Inspections"
-  description="We offer certified home and commercial inspections throughout Kentucky. Get fast scheduling, digital reporting, and expert analysis from KY's most trusted inspection team."
+  title="Home Inspection Services in Kentucky | Reliable Inspections"
+  description="Certified home and commercial property inspectors serving Mount Washington, Louisville, Lexington, Frankfort, and all of Kentucky. 4,200+ inspections. InterNACHI-certified. Digital reports in 24 hrs."
 >
+  <script
+    is:inline
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How much does a home inspection cost in Kentucky?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Typically between $300 and $500, depending on the size and age of the home. Reliable Inspections provides transparent, flat-rate pricing with no hidden fees.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does a home inspection take?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Most inspections take between 2 and 4 hours. Larger or older homes may take longer. You\'ll receive your full digital report within 24 hours of completion.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What does a home inspection include?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We inspect all major systems including the roof, foundation, HVAC, plumbing, electrical, and more. Our standard inspection includes thermal imaging and moisture detection at no extra cost.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Who hires the home inspector?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Typically the buyer of the home chooses and hires the home inspector. There are occasions where the seller has a pre-listing inspection done to identify issues before putting the home on the market.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Should I be present during the inspection?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We strongly encourage it. Being present allows you to ask questions in real time and get a firsthand understanding of the property\'s condition from our inspector.',
+          },
+        },
+      ],
+    })}
+  />
   <main>
     <!-- Hero -->
     <PageHero
