@@ -16,12 +16,13 @@ const blog = defineCollection({
 })
 
 const services = defineCollection({
-  loader: file('src/content/services.json'),
-  schema: z.object({
-    id: z.string(),
-    title: z.string(),
-    description: z.string(),
-  }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/services' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image().optional(),
+    }),
 })
 
 export const collections = { blog, services }

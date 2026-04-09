@@ -15,7 +15,7 @@ import { getCollection } from 'astro:content'
 // Images
 import hero from '@images/hero.jpg'
 import whyUs from '@images/why-us.jpg'
-import placeholder from '@images/placeholder.jpg'
+import home from '@images/home.jpg'
 
 // SVGs
 import ArrowRight from '@svgs/arrow-right.svg'
@@ -82,6 +82,7 @@ const services = await getCollection('services')
             <ServiceCard
               title={service.data.title}
               description={service.data.description}
+              image={service.data.image}
             />
           ))
         }
@@ -288,7 +289,7 @@ const services = await getCollection('services')
               class="bg-light-3 size-12 shrink-0 overflow-hidden rounded-full"
             >
               <Image
-                src={placeholder}
+                src={home}
                 alt="David Henderson"
                 class="h-full w-full object-cover"
               />
@@ -325,7 +326,7 @@ const services = await getCollection('services')
               class="bg-light-3 size-12 shrink-0 overflow-hidden rounded-full"
             >
               <Image
-                src={placeholder}
+                src={home}
                 alt="Sarah Miller"
                 class="h-full w-full object-cover"
               />
@@ -362,7 +363,7 @@ const services = await getCollection('services')
               class="bg-light-3 size-12 shrink-0 overflow-hidden rounded-full"
             >
               <Image
-                src={placeholder}
+                src={home}
                 alt="Marcus Chen"
                 class="h-full w-full object-cover"
               />

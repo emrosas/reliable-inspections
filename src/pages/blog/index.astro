@@ -9,7 +9,7 @@ import CtaSection from '@components/CTA.astro'
 import { getCollection } from 'astro:content'
 
 // Images
-import blogImage from '@images/blog.png'
+import blog from '@images/blog.jpg'
 
 const posts = await getCollection('blog')
 const sortedPosts = posts.sort(
@@ -25,7 +25,7 @@ const sortedPosts = posts.sort(
     <!-- Hero -->
     <BannerHero
       label="Connect with us."
-      image={blogImage}
+      image={blog}
       imageAlt="Kentucky homes at sunset."
     >
       <Fragment slot="title">
