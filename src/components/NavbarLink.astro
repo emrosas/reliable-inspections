@@ -16,11 +16,8 @@ const isActive = url.includes('#')
     : pathname.startsWith(base)
 ---
 
-<li class="text-dark-2 group hover:text-green-1 relative">
-  <a
-    href={url}
-    class:list={[isActive ? 'text-green-1' : '', 'transition']}
-  >
+<li class="text-dark-2 group hover:text-blue-1 relative">
+  <a href={url} class:list={[isActive ? 'text-blue-1' : '', 'transition']}>
     {label}
   </a>
   <span

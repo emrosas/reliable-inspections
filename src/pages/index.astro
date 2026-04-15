@@ -100,14 +100,63 @@ const services = await getCollection('services')
       showBadge
     >
       <Fragment slot="title">
-        Your Peace of Mind, <span class="text-green-1">Our Guarantee</span>
+        Your Peace of Mind, <span class="text-blue-1">Our Guarantee</span>
       </Fragment>
       <Fragment slot="cta">
-        <Button>
+        <Button href="/contact">
           Request Consultation
           <ArrowRight class="size-6" />
         </Button>
-        <Button intent="secondary">Read More</Button>
+        <Button intent="secondary" href="/#services">View Services</Button>
+      </Fragment>
+      <Fragment slot="below-cta">
+        <div class="max-w-xl">
+          <p class="text-body-sm text-blue-2 mb-el-sm font-semibold uppercase">
+            Our warranties
+          </p>
+          <ul class="gap-el-sm grid grid-cols-4 md:grid-cols-5">
+            <li
+              class="rounded-lg border-2 bg-white/90 px-3 py-3"
+              style="border-color: #A42536;"
+            >
+              <Image
+                src={ninetyDayImg}
+                alt="90-Day Warranty"
+                class="h-auto w-full object-contain"
+              />
+            </li>
+            <li
+              class="rounded-lg border-2 bg-white/90 px-3 py-3"
+              style="border-color: #FBBF11;"
+            >
+              <Image
+                src={sewerGuardImg}
+                alt="SewerGard"
+                class="h-auto w-full object-contain"
+              />
+            </li>
+            <li
+              class="rounded-lg border-2 bg-white/90 px-3 py-3"
+              style="border-color: #DD5631;"
+            >
+              <Image
+                src={moldSafeImg}
+                alt="MoldSafe"
+                class="h-auto w-full object-contain"
+              />
+            </li>
+            <li
+              class="rounded-lg border-2 bg-white/90 px-3 py-3"
+              style="border-color: #296CA3;"
+            >
+              <Image
+                src={platinumImg}
+                alt="Platinum Roof Protection Plan"
+                class="h-auto w-full object-contain"
+              />
+            </li>
+          </ul>
+        </div>
       </Fragment>
     </PageHero>
 
@@ -145,7 +194,7 @@ const services = await getCollection('services')
           data-animate
           class="text-title-sm mb-section-sm text-center font-semibold"
         >
-          Our Included <span class="text-green-1">FREE</span> Warranties.
+          Our Included <span class="text-blue-1">FREE</span> Warranties.
         </h2>
         <ul
           class="gap-gutter grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))]"
@@ -247,14 +296,14 @@ const services = await getCollection('services')
         <div class="py-el-xl md:col-span-6 lg:col-span-5">
           <GoldLabel data-animate text="The Reliable Edge" />
           <h2 data-animate class="text-title-md mb-el-xl font-semibold">
-            Built on Integrity and <span class="text-green-1">Precision.</span>
+            Built on Integrity and <span class="text-blue-1">Precision.</span>
           </h2>
           <ul data-animate-stagger class="gap-el-xl flex flex-col">
             <li class="flex">
               <div
                 class="bg-background-alt mr-el-xl flex size-12 shrink-0 items-center justify-center rounded-lg"
               >
-                <MagnifierIcon class="text-green-3 size-9" />
+                <MagnifierIcon class="text-blue-3 size-9" />
               </div>
               <div>
                 <h3 class="text-body-md mb-el-sm leading-none font-semibold">
@@ -270,7 +319,7 @@ const services = await getCollection('services')
               <div
                 class="bg-background-alt mr-el-xl flex size-12 shrink-0 items-center justify-center rounded-lg"
               >
-                <CertifiedIcon class="text-green-3 size-9" />
+                <CertifiedIcon class="text-blue-3 size-9" />
               </div>
               <div>
                 <h3 class="text-body-md mb-el-sm leading-none font-semibold">
@@ -286,7 +335,7 @@ const services = await getCollection('services')
               <div
                 class="bg-background-alt mr-el-xl flex size-12 shrink-0 items-center justify-center rounded-lg"
               >
-                <ReportIcon class="text-green-3 size-9" />
+                <ReportIcon class="text-blue-3 size-9" />
               </div>
               <div>
                 <h3 class="text-body-md mb-el-sm leading-none font-semibold">
@@ -305,7 +354,7 @@ const services = await getCollection('services')
     </section>
 
     <!-- Testimonials -->
-    <!-- <section class="px-page py-section-md bg-green-5">
+    <!-- <section class="px-page py-section-md bg-blue-5">
       <div data-animate-stagger class="contained mb-section-sm text-center">
         <h2 class="text-title-md mb-el-md text-light-1 font-semibold">
           Trusted by Kentucky's Best
@@ -321,7 +370,7 @@ const services = await getCollection('services')
         <li
           data-animate
           data-animate-stagger
-          class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
+          class="p-el-xl gap-el-lg border-blue-2 bg-blue-4/50 flex flex-col rounded-xl border"
         >
           <div class="gap-el-xs flex">
             <StarIcon class="text-warm-1 size-5" />
@@ -358,7 +407,7 @@ const services = await getCollection('services')
         <li
           data-animate
           data-animate-stagger
-          class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
+          class="p-el-xl gap-el-lg border-blue-2 bg-blue-4/50 flex flex-col rounded-xl border"
         >
           <div class="gap-el-xs flex">
             <StarIcon class="text-warm-1 size-5" />
@@ -395,7 +444,7 @@ const services = await getCollection('services')
         <li
           data-animate
           data-animate-stagger
-          class="p-el-xl gap-el-lg border-green-2 bg-green-4/50 flex flex-col rounded-xl border"
+          class="p-el-xl gap-el-lg border-blue-2 bg-blue-4/50 flex flex-col rounded-xl border"
         >
           <div class="gap-el-xs flex">
             <StarIcon class="text-warm-1 size-5" />

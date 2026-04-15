@@ -33,9 +33,16 @@ const { label, paragraph, image, imageAlt, showBadge = false } = Astro.props
       >
         {paragraph}
       </p>
-      <div class="pt-el-xl gap-el-lg flex">
+      <div class="pt-el-xl gap-el-lg flex flex-wrap">
         <slot name="cta" />
       </div>
+      {
+        Astro.slots.has('below-cta') && (
+          <div class="mt-section-sm">
+            <slot name="below-cta" />
+          </div>
+        )
+      }
     </div>
     <div class="relative aspect-square h-full max-h-140 w-full md:aspect-auto">
       <div

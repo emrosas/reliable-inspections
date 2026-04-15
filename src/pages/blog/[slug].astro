@@ -7,7 +7,6 @@ import CtaSection from '@components/CTA.astro'
 import { Image } from 'astro:assets'
 import { getCollection, render } from 'astro:content'
 
-
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
   return posts.map((post) => ({
@@ -33,13 +32,13 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
         <div class="md:col-span-8 md:col-start-3">
           <!-- Header -->
           <header class="mb-el-xl">
-            <h1 class="text-title-lg font-semibold mb-el-md">
+            <h1 class="text-title-lg mb-el-md font-semibold">
               {post.data.title}
             </h1>
             <p class="text-body-md text-dark-1 mb-el-lg">
               {post.data.description}
             </p>
-            <div class="flex items-center gap-el-sm text-body-sm text-green-1">
+            <div class="gap-el-sm text-body-sm text-blue-1 flex items-center">
               <time datetime={post.data.date.toISOString()}>
                 {formattedDate}
               </time>
@@ -59,7 +58,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
 
           <!-- Body -->
           <div
-            class="[&_h2]:text-title-sm [&_h2]:font-semibold [&_h2]:text-dark-3 [&_h2]:mb-el-md [&_h2]:mt-el-xl [&_h3]:text-body-lg [&_h3]:font-semibold [&_h3]:text-dark-3 [&_h3]:mb-el-sm [&_h3]:mt-el-lg [&_p]:text-body-md [&_p]:text-dark-1 [&_p]:mb-el-md [&_ul]:list-disc [&_ul]:pl-el-xl [&_ul]:text-body-md [&_ul]:text-dark-1 [&_ul]:mb-el-md [&_li]:mb-el-sm"
+            class="[&_h2]:text-title-sm [&_h2]:text-dark-3 [&_h2]:mb-el-md [&_h2]:mt-el-xl [&_h3]:text-body-lg [&_h3]:text-dark-3 [&_h3]:mb-el-sm [&_h3]:mt-el-lg [&_p]:text-body-md [&_p]:text-dark-1 [&_p]:mb-el-md [&_ul]:pl-el-xl [&_ul]:text-body-md [&_ul]:text-dark-1 [&_ul]:mb-el-md [&_li]:mb-el-sm [&_h2]:font-semibold [&_h3]:font-semibold [&_ul]:list-disc"
           >
             <Content />
           </div>

@@ -32,7 +32,7 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: ['erick@erreagency.com', 'mike@myreliablehomeinspections.com'],
+          to: ['erick@erreagency.com', 'mike@reliableinspectionsky.com'],
           fields: [
             { name: 'Full Name', value: name },
             { name: 'Email', value: email },
@@ -67,7 +67,7 @@
   {#if status === 'success'}
     <div class="flex flex-col items-center justify-center py-el-xl text-center gap-el-lg">
       <div class="flex size-14 items-center justify-center rounded-full bg-background-alt">
-        <svg class="text-green-2 size-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <svg class="text-blue-2 size-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
         </svg>
       </div>
@@ -77,7 +77,7 @@
       </div>
       <button
         onclick={() => (status = 'idle')}
-        class="text-body-sm text-green-2 underline-offset-2 hover:underline"
+        class="text-body-sm text-blue-2 underline-offset-2 hover:underline"
       >
         Send another message
       </button>
@@ -96,7 +96,7 @@
             required
             placeholder="John Doe"
             bind:value={name}
-            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-green-2"
+            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-blue-2"
           />
         </div>
         <div class="flex flex-col gap-el-sm">
@@ -108,7 +108,7 @@
             required
             placeholder="john@example.com"
             bind:value={email}
-            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-green-2"
+            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-blue-2"
           />
         </div>
       </div>
@@ -123,7 +123,7 @@
             name="phone"
             placeholder="(555) 000-0000"
             bind:value={phone}
-            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-green-2"
+            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-blue-2"
           />
         </div>
         <div class="flex flex-col gap-el-sm">
@@ -134,7 +134,7 @@
             name="property"
             placeholder="123 Street, City, KY"
             bind:value={property}
-            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-green-2"
+            class="rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-blue-2"
           />
         </div>
       </div>
@@ -149,7 +149,7 @@
           rows="5"
           placeholder="Tell us about the property and your timeline…"
           bind:value={message}
-          class="resize-none rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-green-2"
+          class="resize-none rounded-sm bg-light-4/15 px-el-lg py-el-md text-body-sm text-dark-3 placeholder:text-dark-1 transition focus:outline-none focus:ring-1 focus:ring-blue-2"
         ></textarea>
       </div>
 
@@ -162,7 +162,7 @@
       <button
         type="submit"
         disabled={status === 'loading'}
-        class="inline-flex w-full items-center justify-center gap-el-xs rounded-sm bg-linear-to-tr from-green-5 to-green-3 px-el-lg py-el-md text-body-md text-white transition active:opacity-80 disabled:opacity-60 disabled:cursor-not-allowed"
+        class="inline-flex w-full items-center justify-center gap-el-xs rounded-sm bg-linear-to-tr from-blue-5 to-blue-3 px-el-lg py-el-md text-body-md text-white transition active:opacity-80 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {#if status === 'loading'}
           Sending…

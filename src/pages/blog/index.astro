@@ -78,7 +78,7 @@ const sortedPosts = posts.sort(
                   class="aspect-video w-full object-cover"
                 />
                 <div class="p-el-xl gap-el-md flex flex-1 flex-col">
-                  <div class="gap-el-sm text-body-sm text-green-1 flex items-center">
+                  <div class="gap-el-sm text-body-sm text-blue-1 flex items-center">
                     <time datetime={post.data.date.toISOString()}>
                       {post.data.date.toLocaleDateString('en-US', {
                         month: 'short',
@@ -97,7 +97,7 @@ const sortedPosts = posts.sort(
                   </p>
                   <a
                     href={`/blog/${post.id}`}
-                    class="text-body-sm text-green-1 mt-el-sm inline-block font-medium underline-offset-2 hover:underline"
+                    class="text-body-sm text-blue-1 mt-el-sm inline-block font-medium underline-offset-2 hover:underline"
                   >
                     Read article &rarr;
                   </a>

@@ -3,25 +3,25 @@
 @theme {
   /* Color variables */
   --color-dark-1: #415362;
-  --color-dark-2: #212c31;
+  --color-dark-2: #26374d;
   --color-dark-3: #1a2127;
-  --color-green-1: #608900;
-  --color-green-2: #606c38;
-  --color-green-3: #4b5b2f;
-  --color-green-4: #283618;
-  --color-green-5: #1e2612;
+  --color-blue-1: #005aa3;
+  --color-blue-2: #536d82;
+  --color-blue-3: #2f465b;
+  --color-blue-4: #182536;
+  --color-blue-5: #121c26;
   --color-warm-1: #dda15e;
   --color-warm-2: #bf8445;
   --color-warm-3: #c46f3c;
   --color-warm-4: #9e502c;
   --color-brown-1: #8c6a48;
   --color-brown-2: #73563a;
-  --color-light-1: #f9f7e8;
-  --color-light-2: #efeddf;
-  --color-light-3: #d8d3c4;
-  --color-light-4: #c2bda7;
-  --color-background: #fafaf9;
-  --color-background-alt: #e3ead7;
+  --color-light-1: #f2f5f8;
+  --color-light-2: #dde6ed;
+  --color-light-3: #c4d1d8;
+  --color-light-4: #9cb2bf;
+  --color-background: #f9fafa;
+  --color-background-alt: #d7e1ea;
 
   /* Shadow variables */
   --shadow-inset-subtle: inset 0 0 16px 0 rgba(0, 0, 0, 0.2);

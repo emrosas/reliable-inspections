@@ -40,7 +40,9 @@ const mobileLinks = [
     </ul>
     <div class="gap-el-sm flex items-center justify-end">
       <div class="hidden sm:block">
-        <Button>Request Consultation<ArrowRight class="size-6" /></Button>
+        <Button href="/contact"
+          >Request Consultation<ArrowRight class="size-6" /></Button
+        >
       </div>
       <Button
         id="menu-button"
@@ -96,7 +98,7 @@ const mobileLinks = [
                 href={href}
                 class:list={[
                   'text-body-lg py-el-lg border-light-3 flex w-full items-center border-b font-medium transition',
-                  isActive ? 'text-green-1' : 'text-dark-2 hover:text-green-1',
+                  isActive ? 'text-blue-1' : 'text-dark-2 hover:text-blue-1',
                 ]}
               >
                 {label}
