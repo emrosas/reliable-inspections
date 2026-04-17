@@ -66,11 +66,7 @@ const addons = await getCollection('addons')
       >
         {
           services.map((service) => (
-            <ServiceCard
-              title={service.data.title}
-              description={service.data.description}
-              image={service.data.image}
-            />
+            <ServiceCard {...service.data} />
           ))
         }
       </ul>
@@ -97,11 +93,7 @@ const addons = await getCollection('addons')
       >
         {
           addons.map((addon) => (
-            <ServiceCard
-              title={addon.data.title}
-              description={addon.data.description}
-              image={addon.data.image}
-            />
+            <ServiceCard {...addon.data} />
           ))
         }
       </ul>

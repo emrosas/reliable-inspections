@@ -15,24 +15,27 @@ const blog = defineCollection({
     }),
 })
 
+const inspectionSchema = ({ image }: { image: Function }) =>
+  z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    description: z.string(),
+    extraTitle: z.string().optional(),
+    extraItems: z.array(z.string()).optional(),
+    extraDescription: z.string().optional(),
+    bestFor: z.string().optional(),
+    whenToConsider: z.array(z.string()).optional(),
+    image: image().optional(),
+  })
+
 const services = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/services' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      image: image().optional(),
-    }),
+  schema: inspectionSchema,
 })
 
 const addons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/addons' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      image: image().optional(),
-    }),
+  schema: inspectionSchema,
 })
 
 export const collections = { blog, services, addons }

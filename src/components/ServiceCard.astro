@@ -1,27 +1,201 @@
 ---
-// Images
+// Components
 import { Image } from 'astro:assets'
+import Button from '@components/Button.astro'
 import type { ImageMetadata } from 'astro'
 import placeholder from '@images/placeholder.jpg'
+
+// SVGs
+import ArrowRight from '@svgs/arrow-right.svg'
+import CloseIcon from '@svgs/close.svg'
 
 // Types
 export interface Props {
   title: string
+  subtitle?: string
   description: string
+  extraTitle?: string
+  extraItems?: string[]
+  extraDescription?: string
+  bestFor?: string
+  whenToConsider?: string[]
   image?: ImageMetadata
 }
 
-const { title, description, image } = Astro.props
+const {
+  title,
+  subtitle,
+  description,
+  extraTitle,
+  extraItems,
+  extraDescription,
+  bestFor,
+  whenToConsider,
+  image,
+} = Astro.props
 ---
 
-<li data-animate class="p-el-md rounded-xl bg-white">
+<li data-animate class="service-card p-el-md flex flex-col rounded-xl bg-white">
   <Image
     src={image ?? placeholder}
     alt={title}
     class="aspect-video w-full rounded-lg object-cover"
   />
-  <div class="mt-el-xl">
+  <div class="mt-el-xl flex grow flex-col items-start">
     <h3 class="text-body-lg mb-el-sm font-semibold">{title}</h3>
-    <p class="text-body-sm text-dark-1">{description}</p>
+    <p class="text-body-sm text-dark-1 mb-el-lg line-clamp-2">{description}</p>
+    <Button
+      intent="ghost"
+      size="xs"
+      class="service-modal-trigger mt-auto"
+      type="button"
+    >
+      Learn more <ArrowRight class="size-4" />
+    </Button>
   </div>
+
+  <!-- Modal -->
+  <dialog
+    style="--inset: var(--spacing-page)"
+    class="service-modal backdrop:bg-dark-3/70 p-el-md pb-el-lg m-auto w-[min(100%-var(--inset)*2,42rem)] overflow-y-auto overscroll-contain rounded-xl bg-white shadow-xl backdrop:backdrop-blur-xs"
+  >
+    <div class="relative">
+      <button
+        type="button"
+        class="service-modal-close text-dark-3 absolute top-3 right-3 z-10 flex size-9 cursor-pointer items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition hover:bg-white"
+        aria-label="Close"
+      >
+        <CloseIcon class="size-5" />
+      </button>
+      <Image
+        src={image ?? placeholder}
+        alt={title}
+        class="aspect-video w-full rounded-lg object-cover"
+      />
+      <div class="mt-el-xl">
+        <h3 class="text-body-lg font-semibold">{title}</h3>
+        {
+          subtitle && (
+            <p class="text-body-sm text-warm-4 mt-el-xs font-medium">
+              {subtitle}
+            </p>
+          )
+        }
+        <p class="text-body-sm text-dark-1 mt-el-md leading-relaxed">
+          {description}
+        </p>
+
+        {
+          extraTitle && (
+            <div class="mt-el-lg">
+              <h4 class="text-body-md mb-el-sm font-semibold">{extraTitle}</h4>
+              {extraDescription && (
+                <p class="text-body-sm text-dark-1 leading-relaxed">
+                  {extraDescription}
+                </p>
+              )}
+              {extraItems && extraItems.length > 0 && (
+                <ul class="gap-el-xs flex flex-col">
+                  {extraItems.map((item) => (
+                    <li class="text-body-sm text-dark-1 gap-el-sm flex items-start">
+                      <svg
+                        class="text-warm-1 mt-0.5 size-4 shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m4.5 12.75 6 6 9-13.5"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )
+        }
+
+        {
+          bestFor && (
+            <div class="border-light-3 mt-el-lg pt-el-md border-t">
+              <h4 class="text-body-sm mb-el-xs font-semibold">Best for</h4>
+              <p class="text-body-sm text-dark-1">{bestFor}</p>
+            </div>
+          )
+        }
+
+        {
+          whenToConsider && whenToConsider.length > 0 && (
+            <div class="border-light-3 mt-el-lg pt-el-md border-t">
+              <h4 class="text-body-sm mb-el-sm font-semibold">
+                When to consider
+              </h4>
+              <ul class="gap-el-xs flex flex-col">
+                {whenToConsider.map((item) => (
+                  <li class="text-body-sm text-dark-1 gap-el-sm flex items-start">
+                    <svg
+                      class="text-warm-1 mt-0.5 size-4 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </dialog>
 </li>
+
+<script>
+  // Astro <script> tags are deferred modules — the DOM is ready when this runs.
+  // No need for astro:page-load (requires <ClientRouter />, which this project doesn't use).
+  document.querySelectorAll<HTMLLIElement>('.service-card').forEach((card) => {
+    const trigger = card.querySelector<HTMLButtonElement>(
+      '.service-modal-trigger'
+    )
+    const modal = card.querySelector<HTMLDialogElement>('.service-modal')
+    if (!trigger || !modal) return
+
+    const closeBtn = modal.querySelector<HTMLButtonElement>(
+      '.service-modal-close'
+    )
+
+    trigger.addEventListener('click', () => {
+      modal.showModal()
+      document.body.style.overflow = 'hidden'
+    })
+
+    closeBtn?.addEventListener('click', () => {
+      modal.close()
+    })
+
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close()
+    })
+
+    // Restore body scroll whenever the dialog closes (button, backdrop, or Escape)
+    modal.addEventListener('close', () => {
+      document.body.style.overflow = ''
+    })
+  })
+</script>
