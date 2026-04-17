@@ -25,4 +25,14 @@ const services = defineCollection({
     }),
 })
 
-export const collections = { blog, services }
+const addons = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/addons' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image().optional(),
+    }),
+})
+
+export const collections = { blog, services, addons }

@@ -33,6 +33,7 @@ import moldSafeImg from '@images/mold-safe.png'
 import platinumImg from '@images/platinum.png'
 
 const services = await getCollection('services')
+const addons = await getCollection('addons')
 ---
 
 <Layout
@@ -162,6 +163,7 @@ const services = await getCollection('services')
 
     <!-- Services -->
     <section id="services" class="px-page py-section-md bg-light-1">
+      <!-- Services header -->
       <div class="gap-el-lg mb-section-sm contained grid md:grid-cols-12">
         <div data-animate-stagger="" class="md:col-span-7">
           <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
@@ -169,20 +171,68 @@ const services = await getCollection('services')
           </span>
           <h2 class="text-title-md font-semibold">Inspection Solutions</h2>
         </div>
-        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
-          Tailored assessments for every stage of property ownership, from
-          historic downtown lofts to sprawling suburban estates.
-        </p>
+        <div data-animate class="mt-auto flex flex-col gap-el-lg md:col-span-5">
+          <p class="text-dark-1 text-body-md">
+            Tailored assessments for every stage of property ownership, from
+            historic downtown lofts to sprawling suburban estates.
+          </p>
+          <a
+            href="/services"
+            class="text-body-sm text-blue-1 inline-flex items-center gap-el-xs self-start font-medium underline-offset-2 hover:underline"
+          >
+            View all services <ArrowRight class="size-4" />
+          </a>
+        </div>
       </div>
+      <!-- Services grid (first 3) -->
       <ul
         class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
       >
         {
-          services.map((service) => (
+          services.slice(0, 3).map((service) => (
             <ServiceCard
               title={service.data.title}
               description={service.data.description}
               image={service.data.image}
+            />
+          ))
+        }
+      </ul>
+
+      <!-- Add-ons separator -->
+      <hr class="contained mt-section-sm border-light-3" />
+
+      <!-- Add-ons header -->
+      <div class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12">
+        <div data-animate-stagger="" class="md:col-span-7">
+          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
+            Enhanced Coverage
+          </span>
+          <h2 class="text-title-md font-semibold">Inspection Add-ons</h2>
+        </div>
+        <div data-animate class="mt-auto flex flex-col gap-el-lg md:col-span-5">
+          <p class="text-dark-1 text-body-md">
+            Specialized tests and evaluations to uncover what standard
+            inspections can't — paired with any service for total peace of mind.
+          </p>
+          <a
+            href="/services"
+            class="text-body-sm text-blue-1 inline-flex items-center gap-el-xs self-start font-medium underline-offset-2 hover:underline"
+          >
+            View all services <ArrowRight class="size-4" />
+          </a>
+        </div>
+      </div>
+      <!-- Add-ons grid (first 3) -->
+      <ul
+        class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
+      >
+        {
+          addons.slice(0, 3).map((addon) => (
+            <ServiceCard
+              title={addon.data.title}
+              description={addon.data.description}
+              image={addon.data.image}
             />
           ))
         }

@@ -16,7 +16,7 @@ const pathname = Astro.url.pathname
 const mobileLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/#services', label: 'Services' },
+  { href: '/services', label: 'Services' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -34,7 +34,7 @@ const mobileLinks = [
     <ul class="gap-gutter mt-1 hidden items-center justify-center lg:flex">
       <NavbarLink url="/" label="Home" />
       <NavbarLink url="/about" label="About" />
-      <NavbarLink url="/#services" label="Services" />
+      <NavbarLink url="/services" label="Services" />
       <NavbarLink url="/blog" label="Blog" />
       <NavbarLink url="/contact" label="Contact" />
     </ul>

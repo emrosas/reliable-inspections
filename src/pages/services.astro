@@ -1,0 +1,244 @@
+---
+// Components
+import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import BannerHero from '@components/BannerHero.astro'
+import ServiceCard from '@components/ServiceCard.astro'
+import GoldLabel from '@components/GoldLabel.astro'
+import Button from '@components/Button.astro'
+import CtaSection from '@components/CTA.astro'
+import FaqSection from '@components/FAQ.astro'
+
+// Helpers
+import { getCollection } from 'astro:content'
+
+// Images
+import homeImg from '@images/home.jpg'
+import placeholder from '@images/placeholder.jpg'
+
+// SVGs
+import ArrowRight from '@svgs/arrow-right.svg'
+
+const services = await getCollection('services')
+const addons = await getCollection('addons')
+---
+
+<Layout
+  title="Home Inspection Services & Add-ons in Kentucky | Reliable Inspections"
+  description="Browse our full range of certified inspection services — from full residential and commercial inspections to specialty add-ons like radon testing, mold testing, sewer scope, and more."
+>
+  <main>
+    <!-- Hero -->
+    <BannerHero
+      label="What We Offer"
+      image={homeImg}
+      imageAlt="A Kentucky home seen from the exterior."
+    >
+      <Fragment slot="title">
+        Every Inspection, <span class="text-warm-1">Every Property.</span>
+      </Fragment>
+      <p class="text-body-lg text-light-1 mx-auto max-w-3xl text-balance">
+        From comprehensive property evaluations to targeted specialty tests,
+        we offer the full range of inspection services Kentucky homeowners and
+        investors trust to make confident decisions.
+      </p>
+    </BannerHero>
+
+    <!-- Services & Add-ons -->
+    <section class="px-page py-section-md bg-light-1">
+
+      <!-- Services header -->
+      <div class="gap-el-lg mb-section-sm contained grid md:grid-cols-12">
+        <div data-animate-stagger="" class="md:col-span-7">
+          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
+            Precision Services
+          </span>
+          <h2 class="text-title-md font-semibold">Inspection Solutions</h2>
+        </div>
+        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
+          Tailored assessments for every stage of property ownership, from
+          historic downtown lofts to sprawling suburban estates.
+        </p>
+      </div>
+      <!-- All services grid -->
+      <ul
+        class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
+      >
+        {
+          services.map((service) => (
+            <ServiceCard
+              title={service.data.title}
+              description={service.data.description}
+              image={service.data.image}
+            />
+          ))
+        }
+      </ul>
+
+      <!-- Add-ons separator -->
+      <hr class="contained mt-section-sm border-light-3" />
+
+      <!-- Add-ons header -->
+      <div class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12">
+        <div data-animate-stagger="" class="md:col-span-7">
+          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
+            Enhanced Coverage
+          </span>
+          <h2 class="text-title-md font-semibold">Inspection Add-ons</h2>
+        </div>
+        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
+          Specialized tests and evaluations to uncover what standard
+          inspections can't — paired with any service for total peace of mind.
+        </p>
+      </div>
+      <!-- All add-ons grid -->
+      <ul
+        class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
+      >
+        {
+          addons.map((addon) => (
+            <ServiceCard
+              title={addon.data.title}
+              description={addon.data.description}
+              image={addon.data.image}
+            />
+          ))
+        }
+      </ul>
+
+    </section>
+
+    <!-- Perks -->
+    <section class="px-page py-section-md bg-blue-5">
+      <div class="contained">
+        <div data-animate-stagger class="mb-section-sm text-center">
+          <GoldLabel text="Going the Extra Mile" />
+          <h2 class="text-title-md text-light-1 mx-auto max-w-2xl font-semibold">
+            Savings Built Into Every Booking
+          </h2>
+        </div>
+        <div class="gap-gutter grid items-stretch md:grid-cols-2">
+
+          <!-- Military & First Responders -->
+          <div
+            data-animate
+            class="gap-el-xl flex flex-col"
+          >
+            <Image
+              src={placeholder}
+              alt="Military and first responders discount"
+              class="aspect-video w-full rounded-lg object-cover"
+            />
+            <div>
+              <h3 class="text-title-sm text-light-1 mb-el-md font-semibold">
+                Military & First Responder Discount
+              </h3>
+              <p class="text-body-md text-light-4">
+                We're honored to serve those who serve our communities and
+                country. Active duty military, veterans, law enforcement,
+                firefighters, and EMTs receive 10% off all inspection services.
+                Simply mention your affiliation when you schedule.
+              </p>
+            </div>
+            <ul class="gap-el-sm flex flex-col">
+              {
+                [
+                  'Active duty military & veterans',
+                  'Law enforcement officers',
+                  'Firefighters, EMTs & paramedics',
+                  'Public health & education personnel',
+                ].map((item) => (
+                  <li class="text-body-sm text-light-4 flex items-center gap-el-md">
+                    <svg
+                      class="text-warm-1 size-4 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+            <div class="mt-auto pt-el-md">
+              <Button href="/contact">
+                Book & Save
+                <ArrowRight class="size-6" />
+              </Button>
+            </div>
+          </div>
+
+          <!-- Price Match -->
+          <div
+            data-animate
+            class="gap-el-xl flex flex-col"
+          >
+            <Image
+              src={placeholder}
+              alt="Price match guarantee"
+              class="aspect-video w-full rounded-lg object-cover"
+            />
+            <div>
+              <h3 class="text-title-sm text-light-1 mb-el-md font-semibold">
+                Price Match Guarantee
+              </h3>
+              <p class="text-body-md text-light-4">
+                We're committed to keeping your costs low without cutting
+                corners on quality. Found a lower price from a certified,
+                licensed inspection company in our Kentucky service area?
+                Provide a written quote and we'll match it — no questions asked.
+              </p>
+            </div>
+            <ul class="gap-el-sm flex flex-col">
+              {
+                [
+                  'Must be a certified & licensed inspector',
+                  'Within our Kentucky service area',
+                  'Written quote required',
+                  'Matched with no questions asked',
+                ].map((item) => (
+                  <li class="text-body-sm text-light-4 flex items-center gap-el-md">
+                    <svg
+                      class="text-light-3 size-4 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+            <div class="mt-auto pt-el-md">
+              <Button href="/contact">
+                Get a FREE Quote
+                <ArrowRight class="size-6" />
+              </Button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <CtaSection />
+
+    <FaqSection />
+  </main>
+</Layout>
