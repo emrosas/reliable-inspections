@@ -1,4 +1,5 @@
 ---
+status: "draft"
 title: "Understanding Commercial Property Risks."
 description: "A deep dive into the structural and liability concerns specific to office and industrial spaces in Lexington."
 date: 2024-02-28

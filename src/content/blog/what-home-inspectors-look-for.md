@@ -1,4 +1,5 @@
 ---
+status: "draft"
 title: "What Home Inspectors Actually Look For."
 description: "A comprehensive guide to the systems and components covered in a standard Kentucky home inspection."
 date: 2024-01-15

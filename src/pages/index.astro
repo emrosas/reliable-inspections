@@ -18,6 +18,7 @@ import whyUs from '@images/why-us.jpg'
 import home from '@images/home.jpg'
 
 // SVGs
+import Phone from '@svgs/phone.svg'
 import ArrowRight from '@svgs/arrow-right.svg'
 import MagnifierIcon from '@svgs/magnifier.svg'
 import CertifiedIcon from '@svgs/certified.svg'
@@ -104,11 +105,11 @@ const addons = await getCollection('addons')
         Your Peace of Mind, <span class="text-blue-1">Our Guarantee</span>
       </Fragment>
       <Fragment slot="cta">
-        <Button href="/contact">
-          Get a FREE Quote
-          <ArrowRight class="size-6" />
-        </Button>
-        <Button intent="secondary" href="tel:+15029018427">Call Us Now</Button>
+        <Button href="/contact"> Get a FREE Quote </Button>
+        <Button intent="secondary" href="tel:+15029018427">
+          <Phone class="size-el-lg mr-1" />
+          (502) 901-8427</Button
+        >
       </Fragment>
       <Fragment slot="below-cta">
         <div class="max-w-xl">
@@ -171,14 +172,14 @@ const addons = await getCollection('addons')
           </span>
           <h2 class="text-title-md font-semibold">Inspection Solutions</h2>
         </div>
-        <div data-animate class="mt-auto flex flex-col gap-el-lg md:col-span-5">
+        <div data-animate class="gap-el-lg mt-auto flex flex-col md:col-span-5">
           <p class="text-dark-1 text-body-md">
             Tailored assessments for every stage of property ownership, from
             historic downtown lofts to sprawling suburban estates.
           </p>
           <a
             href="/services"
-            class="text-body-sm text-blue-1 inline-flex items-center gap-el-xs self-start font-medium underline-offset-2 hover:underline"
+            class="text-body-sm text-blue-1 gap-el-xs inline-flex items-center self-start font-medium underline-offset-2 hover:underline"
           >
             View all services <ArrowRight class="size-4" />
           </a>
@@ -189,9 +190,9 @@ const addons = await getCollection('addons')
         class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
       >
         {
-          services.slice(0, 3).map((service) => (
-            <ServiceCard {...service.data} />
-          ))
+          services
+            .slice(0, 3)
+            .map((service) => <ServiceCard {...service.data} />)
         }
       </ul>
 
@@ -199,21 +200,23 @@ const addons = await getCollection('addons')
       <hr class="contained mt-section-sm border-light-3" />
 
       <!-- Add-ons header -->
-      <div class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12">
+      <div
+        class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12"
+      >
         <div data-animate-stagger="" class="md:col-span-7">
           <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
             Enhanced Coverage
           </span>
           <h2 class="text-title-md font-semibold">Inspection Add-ons</h2>
         </div>
-        <div data-animate class="mt-auto flex flex-col gap-el-lg md:col-span-5">
+        <div data-animate class="gap-el-lg mt-auto flex flex-col md:col-span-5">
           <p class="text-dark-1 text-body-md">
             Specialized tests and evaluations to uncover what standard
             inspections can't — paired with any service for total peace of mind.
           </p>
           <a
             href="/services"
-            class="text-body-sm text-blue-1 inline-flex items-center gap-el-xs self-start font-medium underline-offset-2 hover:underline"
+            class="text-body-sm text-blue-1 gap-el-xs inline-flex items-center self-start font-medium underline-offset-2 hover:underline"
           >
             View all services <ArrowRight class="size-4" />
           </a>
@@ -223,11 +226,7 @@ const addons = await getCollection('addons')
       <ul
         class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
       >
-        {
-          addons.slice(0, 3).map((addon) => (
-            <ServiceCard {...addon.data} />
-          ))
-        }
+        {addons.slice(0, 3).map((addon) => <ServiceCard {...addon.data} />)}
       </ul>
 
       <!-- Warranties -->
@@ -384,9 +383,8 @@ const addons = await getCollection('addons')
                   Detailed Reporting
                 </h3>
                 <p class="text-body-sm text-dark-1">
-                  Receive a digital, interactive report within 24 hours
-                  featuring high- res video clips and a simplified summary for
-                  quick reading.
+                  Receive a complete digital report within 24 hours of your
+                  inspection with a simplified summary for quick reading.
                 </p>
               </div>
             </li>

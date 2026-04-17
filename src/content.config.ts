@@ -12,6 +12,7 @@ const blog = defineCollection({
       readTime: z.string(),
       image: image(),
       imageAlt: z.string(),
+      status: z.enum(['published', 'draft', 'archived']).default('published'),
     }),
 })
 

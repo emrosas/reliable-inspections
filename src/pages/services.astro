@@ -15,6 +15,8 @@ import { getCollection } from 'astro:content'
 // Images
 import homeImg from '@images/home.jpg'
 import placeholder from '@images/placeholder.jpg'
+import firefighters from '@images/firefighters.jpg'
+import priceMatch from '@images/price-match.jpg'
 
 // SVGs
 import ArrowRight from '@svgs/arrow-right.svg'
@@ -38,15 +40,14 @@ const addons = await getCollection('addons')
         Every Inspection, <span class="text-warm-1">Every Property.</span>
       </Fragment>
       <p class="text-body-lg text-light-1 mx-auto max-w-3xl text-balance">
-        From comprehensive property evaluations to targeted specialty tests,
-        we offer the full range of inspection services Kentucky homeowners and
+        From comprehensive property evaluations to targeted specialty tests, we
+        offer the full range of inspection services Kentucky homeowners and
         investors trust to make confident decisions.
       </p>
     </BannerHero>
 
     <!-- Services & Add-ons -->
     <section class="px-page py-section-md bg-light-1">
-
       <!-- Services header -->
       <div class="gap-el-lg mb-section-sm contained grid md:grid-cols-12">
         <div data-animate-stagger="" class="md:col-span-7">
@@ -64,18 +65,16 @@ const addons = await getCollection('addons')
       <ul
         class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
       >
-        {
-          services.map((service) => (
-            <ServiceCard {...service.data} />
-          ))
-        }
+        {services.map((service) => <ServiceCard {...service.data} />)}
       </ul>
 
       <!-- Add-ons separator -->
       <hr class="contained mt-section-sm border-light-3" />
 
       <!-- Add-ons header -->
-      <div class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12">
+      <div
+        class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12"
+      >
         <div data-animate-stagger="" class="md:col-span-7">
           <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
             Enhanced Coverage
@@ -83,21 +82,16 @@ const addons = await getCollection('addons')
           <h2 class="text-title-md font-semibold">Inspection Add-ons</h2>
         </div>
         <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
-          Specialized tests and evaluations to uncover what standard
-          inspections can't — paired with any service for total peace of mind.
+          Specialized tests and evaluations to uncover what standard inspections
+          can't — paired with any service for total peace of mind.
         </p>
       </div>
       <!-- All add-ons grid -->
       <ul
         class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
       >
-        {
-          addons.map((addon) => (
-            <ServiceCard {...addon.data} />
-          ))
-        }
+        {addons.map((addon) => <ServiceCard {...addon.data} />)}
       </ul>
-
     </section>
 
     <!-- Perks -->
@@ -105,19 +99,17 @@ const addons = await getCollection('addons')
       <div class="contained">
         <div data-animate-stagger class="mb-section-sm text-center">
           <GoldLabel text="Going the Extra Mile" />
-          <h2 class="text-title-md text-light-1 mx-auto max-w-2xl font-semibold">
+          <h2
+            class="text-title-md text-light-1 mx-auto max-w-2xl font-semibold"
+          >
             Savings Built Into Every Booking
           </h2>
         </div>
         <div class="gap-gutter grid items-stretch md:grid-cols-2">
-
           <!-- Military & First Responders -->
-          <div
-            data-animate
-            class="gap-el-xl flex flex-col"
-          >
+          <div data-animate class="gap-el-xl flex flex-col">
             <Image
-              src={placeholder}
+              src={firefighters}
               alt="Military and first responders discount"
               class="aspect-video w-full rounded-lg object-cover"
             />
@@ -140,7 +132,7 @@ const addons = await getCollection('addons')
                   'Firefighters, EMTs & paramedics',
                   'Public health & education personnel',
                 ].map((item) => (
-                  <li class="text-body-sm text-light-4 flex items-center gap-el-md">
+                  <li class="text-body-sm text-light-4 gap-el-md flex items-center">
                     <svg
                       class="text-warm-1 size-4 shrink-0"
                       fill="none"
@@ -160,21 +152,15 @@ const addons = await getCollection('addons')
                 ))
               }
             </ul>
-            <div class="mt-auto pt-el-md">
-              <Button href="/contact">
-                Book & Save
-                <ArrowRight class="size-6" />
-              </Button>
+            <div class="pt-el-md mt-auto">
+              <Button intent="secondary" href="/contact"> Book & Save </Button>
             </div>
           </div>
 
           <!-- Price Match -->
-          <div
-            data-animate
-            class="gap-el-xl flex flex-col"
-          >
+          <div data-animate class="gap-el-xl flex flex-col">
             <Image
-              src={placeholder}
+              src={priceMatch}
               alt="Price match guarantee"
               class="aspect-video w-full rounded-lg object-cover"
             />
@@ -197,9 +183,9 @@ const addons = await getCollection('addons')
                   'Written quote required',
                   'Matched with no questions asked',
                 ].map((item) => (
-                  <li class="text-body-sm text-light-4 flex items-center gap-el-md">
+                  <li class="text-body-sm text-light-4 gap-el-md flex items-center">
                     <svg
-                      class="text-light-3 size-4 shrink-0"
+                      class="text-warm-1 size-4 shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke-width="2.5"
@@ -217,14 +203,12 @@ const addons = await getCollection('addons')
                 ))
               }
             </ul>
-            <div class="mt-auto pt-el-md">
-              <Button href="/contact">
+            <div class="pt-el-md mt-auto">
+              <Button intent="secondary" href="/contact">
                 Get a FREE Quote
-                <ArrowRight class="size-6" />
               </Button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
