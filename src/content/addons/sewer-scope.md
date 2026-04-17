@@ -9,4 +9,5 @@ whenToConsider:
   - Older homes with aging sewer lines
   - Purchasing a home without prior sewer inspection
   - Signs of yard saturation or plumbing issues
+image: ../../assets/images/add-ons/sewer.jpg
 ---

@@ -8,4 +8,5 @@ extraItems:
   - Repair verification
   - Follow-up inspections
 bestFor: Buyers, sellers, or homeowners needing a focused evaluation
+image: ../../assets/images/services/re-inspection.jpg
 ---

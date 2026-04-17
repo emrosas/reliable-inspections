@@ -9,4 +9,5 @@ whenToConsider:
   - Previous water damage or leaks
   - Allergy or respiratory concerns
   - Before buying or selling a home
+image: ../../assets/images/add-ons/mold.jpg
 ---

@@ -9,4 +9,5 @@ whenToConsider:
   - Homes with basements or crawlspaces
   - Living in areas with known radon levels
   - For long-term health peace of mind
+image: ../../assets/images/add-ons/radon.jpg
 ---

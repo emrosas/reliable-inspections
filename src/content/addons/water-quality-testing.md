@@ -9,4 +9,5 @@ whenToConsider:
   - Concerns about taste, smell, or discoloration
   - Buying a home in a rural or unfamiliar area
   - For overall health and safety awareness
+image: ../../assets/images/add-ons/water.jpg
 ---

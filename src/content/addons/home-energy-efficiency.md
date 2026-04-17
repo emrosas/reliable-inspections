@@ -9,4 +9,5 @@ whenToConsider:
   - Uneven temperatures between rooms
   - Drafty windows or doors
   - Planning energy-efficient upgrades
+image: ../../assets/images/add-ons/home-energy-efficiency.jpg
 ---

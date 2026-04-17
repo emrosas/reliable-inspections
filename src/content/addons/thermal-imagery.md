@@ -9,4 +9,5 @@ whenToConsider:
   - Energy efficiency concerns
   - Uneven heating or cooling
   - As an added layer to a full inspection
+image: ../../assets/images/add-ons/thermal.jpg
 ---

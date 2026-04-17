@@ -9,4 +9,5 @@ whenToConsider:
   - Properties with wood structures
   - Signs of damage or pest activity
   - Required inspections for lenders
+image: ../../assets/images/add-ons/termites.jpg
 ---
