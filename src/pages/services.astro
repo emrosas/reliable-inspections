@@ -45,54 +45,6 @@ const addons = await getCollection('addons')
       </p>
     </BannerHero>
 
-    <!-- Services & Add-ons -->
-    <section class="px-page py-section-md bg-light-1">
-      <!-- Services header -->
-      <div class="gap-el-lg mb-section-sm contained grid md:grid-cols-12">
-        <div data-animate-stagger="" class="md:col-span-7">
-          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
-            Precision Services
-          </span>
-          <h2 class="text-title-md font-semibold">Inspection Solutions</h2>
-        </div>
-        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
-          Tailored assessments for every stage of property ownership, from
-          historic downtown lofts to sprawling suburban estates.
-        </p>
-      </div>
-      <!-- All services grid -->
-      <ul
-        class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
-      >
-        {services.map((service) => <ServiceCard {...service.data} />)}
-      </ul>
-
-      <!-- Add-ons separator -->
-      <hr class="contained mt-section-sm border-light-3" />
-
-      <!-- Add-ons header -->
-      <div
-        class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12"
-      >
-        <div data-animate-stagger="" class="md:col-span-7">
-          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
-            Enhanced Coverage
-          </span>
-          <h2 class="text-title-md font-semibold">Inspection Add-ons</h2>
-        </div>
-        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
-          Specialized tests and evaluations to uncover what standard inspections
-          can't — paired with any service for total peace of mind.
-        </p>
-      </div>
-      <!-- All add-ons grid -->
-      <ul
-        class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
-      >
-        {addons.map((addon) => <ServiceCard {...addon.data} />)}
-      </ul>
-    </section>
-
     <!-- Perks -->
     <section class="px-page py-section-md bg-blue-5">
       <div class="contained">
@@ -210,6 +162,54 @@ const addons = await getCollection('addons')
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Services & Add-ons -->
+    <section class="px-page py-section-md bg-light-1">
+      <!-- Services header -->
+      <div class="gap-el-lg mb-section-sm contained grid md:grid-cols-12">
+        <div data-animate-stagger="" class="md:col-span-7">
+          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
+            Precision Services
+          </span>
+          <h2 class="text-title-md font-semibold">Inspection Solutions</h2>
+        </div>
+        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
+          Tailored assessments for every stage of property ownership, from
+          historic downtown lofts to sprawling suburban estates.
+        </p>
+      </div>
+      <!-- All services grid -->
+      <ul
+        class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
+      >
+        {services.map((service) => <ServiceCard {...service.data} />)}
+      </ul>
+
+      <!-- Add-ons separator -->
+      <hr class="contained mt-section-sm border-light-3" />
+
+      <!-- Add-ons header -->
+      <div
+        class="gap-el-lg mt-section-sm mb-section-sm contained grid md:grid-cols-12"
+      >
+        <div data-animate-stagger="" class="md:col-span-7">
+          <span class="text-body-sm text-warm-4 mb-el-sm uppercase">
+            Enhanced Coverage
+          </span>
+          <h2 class="text-title-md font-semibold">Inspection Add-ons</h2>
+        </div>
+        <p data-animate class="text-dark-1 text-body-md mt-auto md:col-span-5">
+          Specialized tests and evaluations to uncover what standard inspections
+          can't — paired with any service for total peace of mind.
+        </p>
+      </div>
+      <!-- All add-ons grid -->
+      <ul
+        class="gap-gutter contained grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
+      >
+        {addons.map((addon) => <ServiceCard {...addon.data} />)}
+      </ul>
     </section>
 
     <CtaSection />
