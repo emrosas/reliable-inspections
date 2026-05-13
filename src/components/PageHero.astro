@@ -54,6 +54,7 @@ const { label, paragraph, image, imageAlt, showBadge = false } = Astro.props
           src={image}
           alt={imageAlt}
           class="h-full w-full scale-[1.3] object-cover"
+          loading="eager"
         />
       </div>
       {

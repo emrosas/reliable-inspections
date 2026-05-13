@@ -27,9 +27,18 @@ const mobileLinks = [
     class="contained gap-gutter grid grid-cols-2 items-center lg:grid-cols-[2fr_3fr_2fr]"
   >
     <a href="/" class="@container" aria-label="Go Home">
-      <Logo class="mr-2 inline-block w-8 sm:hidden @min-[300px]:inline-block" />
-      <LogoHorizontal class="hidden h-12 w-auto sm:@max-[300px]:inline-block" />
-      <Lettermark class="mt-1 hidden h-6 @min-[300px]:inline-block" />
+      <Logo
+        aria-label="Logo"
+        class="mr-2 inline-block w-8 sm:hidden @min-[300px]:inline-block"
+      />
+      <LogoHorizontal
+        aria-label="Logo Horizontal"
+        class="hidden h-12 w-auto sm:@max-[300px]:inline-block"
+      />
+      <Lettermark
+        aria-label="Lettermark"
+        class="mt-1 hidden h-6 @min-[300px]:inline-block"
+      />
     </a>
     <ul class="gap-gutter mt-1 hidden items-center justify-center lg:flex">
       <NavbarLink url="/" label="Home" />

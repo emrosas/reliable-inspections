@@ -1,11 +1,11 @@
 ---
 status: "draft"
 title: "Understanding Commercial Property Risks."
-description: "A deep dive into the structural and liability concerns specific to office and industrial spaces in Lexington."
+description: "A deep dive into the structural and liability concerns specific to office and industrial spaces in Mount Washington."
 date: 2024-02-28
 readTime: "12 min read"
 image: ../../assets/images/placeholder.jpg
-imageAlt: "Aerial view of a commercial property in Lexington, Kentucky."
+imageAlt: "Aerial view of a commercial property in Mount Washington, Kentucky."
 ---
 
 ## Exercitation commodo do eiusmod do.

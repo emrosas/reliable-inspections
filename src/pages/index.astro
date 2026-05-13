@@ -118,44 +118,62 @@ const addons = await getCollection('addons')
           </p>
           <ul class="gap-el-sm grid grid-cols-4 md:grid-cols-5">
             <li
-              class="flex justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
+              class="flex items-center justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
               style="border-color: #A42536;"
             >
-              <Image
-                src={ninetyDayImg}
-                alt="90-Day Warranty"
-                class="h-auto w-full object-contain object-center"
-              />
+              <a href="#warranty-90-day" aria-label="View 90-Day Warranty">
+                <Image
+                  src={ninetyDayImg}
+                  alt="90-Day Warranty"
+                  class="h-auto w-full object-contain object-center"
+                  loading="eager"
+                />
+              </a>
             </li>
             <li
-              class="flex justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
+              class="flex items-center justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
               style="border-color: #FBBF11;"
             >
-              <Image
-                src={sewerGuardImg}
-                alt="SewerGard"
-                class="h-auto w-full object-contain object-center"
-              />
+              <a
+                href="#warranty-sewer-gard"
+                aria-label="View SewerGard Warranty"
+              >
+                <Image
+                  src={sewerGuardImg}
+                  alt="SewerGard"
+                  class="h-auto w-full object-contain object-center"
+                  loading="eager"
+                />
+              </a>
             </li>
             <li
-              class="flex justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
+              class="flex items-center justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
               style="border-color: #DD5631;"
             >
-              <Image
-                src={moldSafeImg}
-                alt="MoldSafe"
-                class="h-auto w-full object-contain object-center"
-              />
+              <a href="#warranty-mold-safe" aria-label="View MoldSafe Warranty">
+                <Image
+                  src={moldSafeImg}
+                  alt="MoldSafe"
+                  class="h-auto w-full object-contain object-center"
+                  loading="eager"
+                />
+              </a>
             </li>
             <li
-              class="flex justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
+              class="flex items-center justify-center rounded-lg border-2 bg-white/90 px-3 py-3"
               style="border-color: #296CA3;"
             >
-              <Image
-                src={platinumImg}
-                alt="Platinum Roof Protection Plan"
-                class="h-auto w-full object-contain object-center"
-              />
+              <a
+                href="#warranty-platinum"
+                aria-label="View Platinum Roof Protection Plan"
+              >
+                <Image
+                  src={platinumImg}
+                  alt="Platinum Roof Protection Plan"
+                  class="h-auto w-full object-contain object-center"
+                  loading="eager"
+                />
+              </a>
             </li>
           </ul>
         </div>
@@ -242,77 +260,162 @@ const addons = await getCollection('addons')
         >
           <!-- 90-Day Warranty -->
           <li
+            id="warranty-90-day"
             data-animate
-            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"
+            class="py-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white text-center"
             style="border-color: #A42536;"
           >
-            <NinetyDayIcon class="absolute -top-7 size-14 rounded-full" />
-            <Image
-              src={ninetyDayImg}
-              alt="90-Day Warranty"
-              class="mb-el-md h-12 object-contain"
-            />
-            <p class="text-body-sm text-dark-1">
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=90%20Day%20Warranty%20Custom%20Pro&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Download 90-Day Warranty PDF"
+              aria-label="Download 90-Day Warranty PDF"
+              class="absolute -top-7"
+            >
+              <NinetyDayIcon class="size-16 rounded-full" />
+            </a>
+            <iframe
+              loading="lazy"
+              src="https://www.iplayerhd.com/playerframe/progressive/EDBA8950-1CFE-4E64-9B7F-BA771B6FBF0D.aspx?autostart=false&responsive=true&cbartype=bottom&width=300&height=200"
+              title="90-Day Warranty explainer video"
+              aria-label="90-Day Warranty explainer video"
+              class="w-full rounded"
+              height="200"
+              allowfullscreen></iframe>
+            <h3 class="mt-el-md font-semibold">Peace of mind</h3>
+            <p class="text-dark-1 mb-el-sm text-xs">
               You need a professional you can rely on even after the job is
               complete. That&apos;s why we support all our inspections with a
               90-Day Limited Structural and Mechanical Warranty.
             </p>
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=90%20Day%20Warranty%20Custom%20Pro&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download 90-Day Warranty PDF"
+              class="text-xs font-medium text-blue-1 underline-offset-2 hover:underline"
+            >Download PDF</a>
           </li>
 
           <!-- SewerGard -->
           <li
+            id="warranty-sewer-gard"
             data-animate
-            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"
+            class="py-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white text-center"
             style="border-color: #FBBF11;"
           >
-            <SewerGuardIcon class="absolute -top-7 size-14 rounded-full" />
-            <Image
-              src={sewerGuardImg}
-              alt="SewerGard"
-              class="mb-el-md h-12 object-contain"
-            />
-            <p class="text-body-sm text-dark-1">
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=SewerGardBlank&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Download SewerGard Warranty PDF"
+              aria-label="Download SewerGard Warranty PDF"
+              class="absolute -top-7"
+            >
+              <SewerGuardIcon class="size-16 rounded-full" />
+            </a>
+            <iframe
+              loading="lazy"
+              src="https://www.iplayerhd.com/playerframe/639cb519-fbea-4bd9-9e7f-2417751a0cdb.aspx?autostart=false&responsive=true&width=300&height=200&cbartype=over"
+              title="SewerGard Warranty explainer video"
+              aria-label="SewerGard Warranty explainer video"
+              class="w-full rounded"
+              height="200"
+              allowfullscreen></iframe>
+            <h3 class="mt-el-md font-semibold">Strong water lines</h3>
+            <p class="text-dark-1 mb-el-sm text-xs">
               Offered for a period of 90 days following the date of the
               inspection, SewerGard covers your water line and sewer against
               failure due to normal wear and tear, giving you peace of mind.
             </p>
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=SewerGardBlank&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download SewerGard Warranty PDF"
+              class="text-xs font-medium text-blue-1 underline-offset-2 hover:underline"
+            >Download PDF</a>
           </li>
 
           <!-- MoldSafe -->
           <li
+            id="warranty-mold-safe"
             data-animate
-            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"
+            class="py-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white text-center"
             style="border-color: #DD5631;"
           >
-            <MoldSafeIcon class="absolute -top-7 size-14 rounded-full" />
-            <Image
-              src={moldSafeImg}
-              alt="MoldSafe"
-              class="mb-el-md h-12 object-contain"
-            />
-            <p class="text-body-sm text-dark-1">
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=MoldSafePolicy&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Download MoldSafe Warranty PDF"
+              aria-label="Download MoldSafe Warranty PDF"
+              class="absolute -top-7"
+            >
+              <MoldSafeIcon class="size-16 rounded-full" />
+            </a>
+            <iframe
+              loading="lazy"
+              src="https://www.iplayerhd.com/player/video/80022a62-a65b-49fa-bf1d-956d1a31f11c"
+              title="MoldSafe Warranty explainer video"
+              aria-label="MoldSafe Warranty explainer video"
+              class="w-full rounded"
+              height="200"
+              allowfullscreen></iframe>
+            <h3 class="mt-el-md font-semibold">No mold damage</h3>
+            <p class="text-dark-1 mb-el-sm text-xs">
               For up to 90 days after the inspection date, if you move into your
               new home and discover mold that was not identified during the
               inspection, you are covered for remediation.
             </p>
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=MoldSafePolicy&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download MoldSafe Warranty PDF"
+              class="text-xs font-medium text-blue-1 underline-offset-2 hover:underline"
+            >Download PDF</a>
           </li>
 
           <!-- Platinum -->
           <li
+            id="warranty-platinum"
             data-animate
-            class="pb-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white pt-10 text-center"
+            class="py-el-xl px-el-lg mt-el-xl relative flex flex-col items-center rounded-xl border-2 bg-white text-center"
             style="border-color: #296CA3;"
           >
-            <PlatinumIcon class="absolute -top-7 size-14 rounded-full" />
-            <Image
-              src={platinumImg}
-              alt="Platinum Roof Protection Plan"
-              class="mb-el-md h-12 object-contain"
-            />
-            <p class="text-body-sm text-dark-1">
-              Handles the repair of leaks to your home&apos;s roof for a period
-              of 5 years following the date of the inspection.
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=RoofProtectionPlanCertificate&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Download Platinum Roof Protection Plan PDF"
+              aria-label="Download Platinum Roof Protection Plan PDF"
+              class="absolute -top-7"
+            >
+              <PlatinumIcon class="size-16 rounded-full" />
+            </a>
+            <iframe
+              loading="lazy"
+              src="https://www.iplayerhd.com/player/video/e24aeaa3-d272-40ca-8cf3-0a77b52b4355"
+              title="Platinum Roof Protection Plan explainer video"
+              aria-label="Platinum Roof Protection Plan explainer video"
+              class="w-full rounded"
+              height="200"
+              allowfullscreen></iframe>
+            <h3 class="mt-el-md font-semibold">No leaky roofs</h3>
+            <p class="text-dark-1 mb-el-sm text-xs">
+              Platinum roof protection plan handles the repair of leaks to your
+              home&apos;s roof and works for a period of 5 years following the
+              date of the initial inspection.
             </p>
+            <a
+              href="https://recallchek.com/isg/GetFlier?name=RoofProtectionPlanCertificate&companyId=931430268"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download Platinum Roof Protection Plan PDF"
+              class="text-xs font-medium text-blue-1 underline-offset-2 hover:underline"
+            >Download PDF</a>
           </li>
         </ul>
       </div>

@@ -18,14 +18,71 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 const { Content } = await render(post)
 
+const siteUrl = 'https://reliable-inspections-y8i9r.sevalla.page'
+const postUrl = `${siteUrl}/blog/${post.id}`
+
 const formattedDate = post.data.date.toLocaleDateString('en-US', {
   month: 'short',
   day: 'numeric',
   year: 'numeric',
 })
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${postUrl}/#article`,
+      headline: post.data.title,
+      description: post.data.description,
+      datePublished: post.data.date.toISOString(),
+      dateModified: post.data.date.toISOString(),
+      url: postUrl,
+      inLanguage: 'en-US',
+      publisher: {
+        '@type': 'LocalBusiness',
+        '@id': `${siteUrl}/#business`,
+        name: 'Reliable Inspections',
+      },
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: siteUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Blog',
+          item: `${siteUrl}/blog`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: post.data.title,
+          item: postUrl,
+        },
+      ],
+    },
+  ],
+}
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
+  <script
+    slot="head"
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(articleSchema)}
+  />
   <main class="py-section-md px-page">
     <div class="contained">
       <div class="grid md:grid-cols-12">

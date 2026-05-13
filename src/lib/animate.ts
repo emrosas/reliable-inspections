@@ -6,10 +6,10 @@ gsap.registerPlugin(ScrollTrigger)
 type Preset = { from: gsap.TweenVars; to: gsap.TweenVars }
 
 const presets: Record<string, Preset> = {
-  'fade-up':    { from: { y: 30, autoAlpha: 0 }, to: { y: 0, autoAlpha: 1, duration: 0.6, ease: 'power3.out' } },
-  'fade-in':    { from: { autoAlpha: 0 },         to: { autoAlpha: 1,       duration: 0.6, ease: 'power3.out' } },
-  'fade-left':  { from: { x: -30, autoAlpha: 0 }, to: { x: 0, autoAlpha: 1, duration: 0.6, ease: 'power3.out' } },
-  'fade-right': { from: { x: 30, autoAlpha: 0 },  to: { x: 0, autoAlpha: 1, duration: 0.6, ease: 'power3.out' } },
+  'fade-up':    { from: { y: 30, opacity: 0 }, to: { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' } },
+  'fade-in':    { from: { opacity: 0 },        to: { opacity: 1,       duration: 0.6, ease: 'power3.out' } },
+  'fade-left':  { from: { x: -30, opacity: 0 }, to: { x: 0, opacity: 1, duration: 0.6, ease: 'power3.out' } },
+  'fade-right': { from: { x: 30, opacity: 0 },  to: { x: 0, opacity: 1, duration: 0.6, ease: 'power3.out' } },
 }
 
 function getPreset(name: string | undefined): Preset {

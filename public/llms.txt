@@ -2,7 +2,7 @@
 
 > Reliable Inspections is Kentucky's premier certified home and commercial property inspection company. Based in Mount Washington, KY (also known locally as Washington, KY), we serve homeowners, buyers, sellers, and real estate investors throughout the entire Commonwealth of Kentucky. Phone: +1 (502) 901-8427 | Email: mike@reliableinspectionsky.com | Address: Mount Washington, KY 40047
 
-Reliable Inspections provides InterNACHI-certified, architectural-grade property inspections across Kentucky — including Louisville, Lexington, Frankfort, Bowling Green, Elizabethtown, Bardstown, Mount Washington, and all surrounding communities. Our inspectors bring structural engineering expertise and thermal imaging technology to every evaluation. We have completed 4,200+ inspections with a 99.8% client satisfaction rate.
+Reliable Inspections provides InterNACHI-certified, architectural-grade property inspections across Kentucky — including Louisville, Mount Washington, Frankfort, Bowling Green, Elizabethtown, Bardstown, Mount Washington, and all surrounding communities. Our inspectors bring structural engineering expertise and thermal imaging technology to every evaluation. We have completed 4,200+ inspections with a 99.8% client satisfaction rate.
 
 Every inspection includes a full digital report delivered within 24 hours, plus four FREE warranties included at no extra cost:
 - 90-Day Structural & Mechanical Warranty
@@ -16,19 +16,20 @@ Certifications: InterNACHI certified. Inspectors have backgrounds in structural 
 
 ## Services
 
-- [Full Residential Home Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Comprehensive evaluation of all major home systems — roof, foundation, HVAC, plumbing, electrical, and more. Thermal imaging and moisture detection included at no extra cost.
-- [Pre-Purchase Buyer's Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Protect your investment before closing. Identify costly issues before you sign the contract.
-- [Pre-Listing Seller's Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Identify problems before listing to maximize your home's value and avoid surprises during buyer negotiations.
-- [Condominium / Townhouse Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Specialized inspection tailored to the unique structure and systems of condos and townhouses.
-- [Multi-Unit & Rental Property Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Assess investment properties, duplexes, and rental units throughout Kentucky.
-- [Commercial Property Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Professional assessment of commercial buildings, office spaces, and facilities.
-- [New Home Pre-Delivery Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Ensure your new construction meets all standards before move-in.
-- [New Home Year-End / Warranty Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Document warranty items before your builder's 1-year warranty expires.
-- [General Home Maintenance Inspection](https://reliable-inspections-y8i9r.sevalla.page/): Proactive annual assessment to plan maintenance and avoid costly future repairs.
+- [Full Residential Home Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Comprehensive evaluation of all major home systems — roof, foundation, HVAC, plumbing, electrical, and more. Thermal imaging and moisture detection included at no extra cost.
+- [Pre-Purchase Buyer's Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Protect your investment before closing. Identify costly issues before you sign the contract.
+- [Pre-Listing Seller's Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Identify problems before listing to maximize your home's value and avoid surprises during buyer negotiations.
+- [Condominium / Townhouse Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Specialized inspection tailored to the unique structure and systems of condos and townhouses.
+- [Multi-Unit & Rental Property Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Assess investment properties, duplexes, and rental units throughout Kentucky.
+- [Commercial Property Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Professional assessment of commercial buildings, office spaces, and facilities.
+- [New Home Pre-Delivery Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Ensure your new construction meets all standards before move-in.
+- [New Home Year-End / Warranty Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Document warranty items before your builder's 1-year warranty expires.
+- [General Home Maintenance Inspection](https://reliable-inspections-y8i9r.sevalla.page/services): Proactive annual assessment to plan maintenance and avoid costly future repairs.
 
 ## Pages
 
 - [Home](https://reliable-inspections-y8i9r.sevalla.page/): Full overview of services, included warranties, client testimonials, and FAQ. Best starting point to understand what Reliable Inspections offers.
+- [Services](https://reliable-inspections-y8i9r.sevalla.page/services): Complete list of residential and commercial inspection services plus available add-ons. Includes service descriptions, pricing context, and what each inspection covers.
 - [About Us](https://reliable-inspections-y8i9r.sevalla.page/about): Company history, mission ("Elevate Property Standards"), core values (Integrity, Precision, Client Care), and team background. Founded in Kentucky by a veteran structural consultant.
 - [Contact & Schedule](https://reliable-inspections-y8i9r.sevalla.page/contact): Schedule a home or commercial inspection in Kentucky. Includes a contact form, phone, email, and physical address. Serving all of Kentucky from Mount Washington, KY.
 - [Blog](https://reliable-inspections-y8i9r.sevalla.page/blog): Expert articles on home inspection best practices, technology, and property evaluation tips.
@@ -36,8 +37,6 @@ Certifications: InterNACHI certified. Inspectors have backgrounds in structural 
 ## Blog Articles
 
 - [How Thermal Imaging Changed Home Inspections](https://reliable-inspections-y8i9r.sevalla.page/blog/thermal-imaging-in-inspections): Why we include thermal imaging as a standard practice and what it reveals that the naked eye cannot — including hidden moisture, insulation gaps, and electrical hot spots.
-- [Understanding Commercial Property Risks](https://reliable-inspections-y8i9r.sevalla.page/blog/understanding-commercial-property-risks): Key risks to evaluate when inspecting commercial real estate in Kentucky, including structural, mechanical, and code compliance concerns.
-- [What Home Inspectors Look For](https://reliable-inspections-y8i9r.sevalla.page/blog/what-home-inspectors-look-for): A detailed breakdown of what certified home inspectors examine during a standard residential inspection in Kentucky.
 
 ## Frequently Asked Questions
 
