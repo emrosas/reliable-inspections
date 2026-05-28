@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap'
 // https://astro.build/config
 export default defineConfig({
   // Update this to your production domain when you go live
-  site: 'https://reliable-inspections-y8i9r.sevalla.page',
+  site: 'https://reliableinspectionsky.com',
   integrations: [svelte(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
