@@ -1,0 +1,445 @@
+---
+// Components
+import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import Button from '@components/Button.astro'
+import GoldLabel from '@components/GoldLabel.astro'
+
+// Images
+import heroImg from '@images/realtors-hero.png'
+import referralImg from '@images/realtors-referral.png'
+import clientsImg from '@images/realtors-clients.png'
+import mikeImg from '@images/realtors-mike.png'
+import pipes from '@images/pipes.png'
+import ninetyDayImg from '@images/90-day.png'
+import sewerGuardImg from '@images/sewer-guard.png'
+import moldSafeImg from '@images/mold-safe.png'
+import platinumImg from '@images/platinum.png'
+
+// SVGs
+import ArrowRight from '@svgs/arrow-right.svg'
+import StarEmblem from '@svgs/star-emblem.svg'
+
+// Warranty badges (same set featured on the homepage)
+const warranties = [
+  {
+    img: ninetyDayImg,
+    label: '90-Day Warranty',
+    href: '/#warranty-90-day',
+    color: '#A42536',
+  },
+  {
+    img: sewerGuardImg,
+    label: 'SewerGard',
+    href: '/#warranty-sewer-gard',
+    color: '#FBBF11',
+  },
+  {
+    img: moldSafeImg,
+    label: 'MoldSafe',
+    href: '/#warranty-mold-safe',
+    color: '#DD5631',
+  },
+  {
+    img: platinumImg,
+    label: 'Platinum Roof Protection Plan',
+    href: '/#warranty-platinum',
+    color: '#296CA3',
+  },
+]
+
+// What clients receive
+const clientBenefits = [
+  'A thorough and unbiased home inspection',
+  'Clear, educational explanations of important findings',
+  'Professional and respectful communication at all times',
+  'An easy-to-understand interactive digital report',
+  'Ongoing support when questions arise post-inspection',
+  'Greater confidence in their purchasing decision',
+]
+---
+
+<Layout
+  title="For Realtors | Your Trusted Kentucky Inspection Partner | Reliable Inspections"
+  description="A referral partner Kentucky realtors trust. Reliable Inspections delivers contextual reporting, transaction-first communication, and responsive scheduling to keep your closings smooth."
+>
+  <main>
+    <!-- Hero -->
+    <section class="px-page py-section-md bg-blue-5">
+      <div class="contained gap-gutter grid items-center md:grid-cols-2">
+        <div data-animate-stagger class="gap-el-xl flex flex-col items-start">
+          <GoldLabel text="Kentucky Realtor Partner" />
+          <h1 class="text-title-lg text-light-1 font-semibold">
+            Your Partner in
+            <span class="text-warm-1"> Smooth, Confident Closings</span>
+          </h1>
+          <p class="text-body-lg text-light-4 text-balance">
+            Helping Kentucky Realtors navigate inspections with clarity,
+            integrity, and speed. We protect your transactions and keep your
+            clients calm.
+          </p>
+          <div class="pt-el-lg gap-el-lg flex flex-wrap">
+            <Button href="/contact">
+              Schedule Your Next Inspection
+              <ArrowRight class="size-el-lg" />
+            </Button>
+            <Button intent="secondary" href="#why-us">
+              Learn Partner Benefits
+            </Button>
+          </div>
+        </div>
+        <div
+          data-animate="fade-in"
+          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl"
+        >
+          <Image
+            src={heroImg}
+            alt="A Kentucky home ready for inspection at dusk."
+            class="h-full w-full object-cover"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="px-page py-section-md bg-light-1">
+      <div class="contained">
+        <div data-animate class="mb-section-sm">
+          <GoldLabel text="Realtor Focus" />
+          <h2 class="text-title-md mb-el-md font-semibold">
+            Why Top-Performing Realtors Choose Reliable
+          </h2>
+          <p class="text-body-md text-dark-1 max-w-2xl">
+            We do not just find issues; we understand the delicate nature of
+            real estate transactions.
+          </p>
+        </div>
+        <ul class="gap-gutter grid md:grid-cols-3">
+          <li
+            data-animate-stagger
+            data-animate
+            class="gap-el-lg p-el-xl flex flex-col rounded-xl bg-white shadow-sm"
+          >
+            <div class="bg-light-1 w-fit rounded-lg p-3">
+              <svg
+                class="text-blue-3 size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8m8 4H8m8 4H8"></path>
+              </svg>
+            </div>
+            <h3 class="text-body-lg font-semibold">Contextual Reporting</h3>
+            <p class="text-body-sm text-dark-1">
+              We document findings with professional nuance, helping your buyers
+              distinguish between genuine deal-breakers and manageable
+              maintenance items.
+            </p>
+          </li>
+          <li
+            data-animate-stagger
+            data-animate
+            class="gap-el-lg p-el-xl flex flex-col rounded-xl bg-white shadow-sm"
+          >
+            <div class="bg-light-1 w-fit rounded-lg p-3">
+              <svg
+                class="text-blue-3 size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m11 17 2 2a1 1 0 1 0 3-3"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 3 1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"></path>
+              </svg>
+            </div>
+            <h3 class="text-body-lg font-semibold">Transaction-First</h3>
+            <p class="text-body-sm text-dark-1">
+              Our goal is the same as yours: a successful closing. We provide
+              clear, objective, and timely information that keeps your clients
+              calm and informed.
+            </p>
+          </li>
+          <li
+            data-animate-stagger
+            data-animate
+            class="gap-el-lg p-el-xl flex flex-col rounded-xl bg-white shadow-sm"
+          >
+            <div class="bg-light-1 w-fit rounded-lg p-3">
+              <svg
+                class="text-blue-3 size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="text-body-lg font-semibold">Responsive Scheduling</h3>
+            <p class="text-body-sm text-dark-1">
+              We know your timeline. We offer fast, flexible scheduling to keep
+              your transaction moving forward smoothly without delays.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Reputation -->
+    <section class="px-page py-section-md bg-white">
+      <div class="contained gap-gutter grid items-center md:grid-cols-2">
+        <div data-animate-stagger class="gap-el-lg flex flex-col items-start">
+          <GoldLabel text="Your Reputation Is Part of Every Referral" />
+          <h2 class="text-title-md font-semibold">
+            Refer with Complete Peace of Mind
+          </h2>
+          <p class="text-body-md text-dark-1">
+            When you recommend an inspector, their communication,
+            professionalism, and treatment of your client reflect directly on
+            you.
+          </p>
+          <p class="text-body-md text-dark-1">
+            Mike Bunch treats every referral with the same level of care,
+            responsiveness, and integrity that you would expect from your own
+            team. Your client's journey is guided in safe hands.
+          </p>
+          <blockquote
+            class="p-el-lg border-light-2 bg-light-1 text-body-sm rounded-lg border"
+          >
+            "Mike represents my team beautifully. He explains things with
+            perfect clarity, never alarmist, always professional." — Louisville
+            Area Realtor
+          </blockquote>
+        </div>
+        <div
+          data-animate="fade-in"
+          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl"
+        >
+          <Image
+            src={referralImg}
+            alt="A realtor and inspector shaking hands in front of a home."
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- What Clients Receive -->
+    <section class="px-page py-section-md bg-light-1">
+      <div class="contained gap-gutter grid items-center md:grid-cols-2">
+        <div
+          data-animate="fade-in"
+          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl md:order-1"
+        >
+          <Image
+            src={clientsImg}
+            alt="A couple reviewing their inspection report with the inspector."
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="gap-el-xl flex flex-col md:order-2">
+          <div data-animate>
+            <GoldLabel text="Delivering Value" />
+            <h2 class="text-title-md font-semibold">
+              What Your Clients Receive
+            </h2>
+          </div>
+          <ul data-animate-stagger class="gap-el-md flex flex-col">
+            {
+              clientBenefits.map((benefit) => (
+                <li class="gap-el-md flex items-center">
+                  <span class="bg-blue-4 flex size-6 shrink-0 items-center justify-center rounded-xl">
+                    <svg
+                      class="text-light-1 size-3.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="3"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                  </span>
+                  <p class="text-body-md text-dark-3 font-medium">{benefit}</p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Backed by Protection -->
+    <section class="px-page py-section-md bg-blue-5">
+      <div class="contained">
+        <div data-animate class="mb-section-sm">
+          <span
+            class="px-el-md py-el-sm bg-warm-4 text-light-1 mb-el-xl text-body-sm inline-block rounded-sm uppercase"
+          >
+            Protection Program
+          </span>
+          <h2 class="text-title-md text-light-1 mb-el-md font-semibold">
+            Backed by Solid Protection
+          </h2>
+          <p class="text-body-md text-light-4 max-w-3xl">
+            Every inspection comes with industry-leading warranties to give your
+            buyers total peace of mind, and remove common roadblocks to closing.
+          </p>
+        </div>
+        <ul
+          data-animate-stagger
+          class="gap-gutter grid grid-cols-2 md:grid-cols-4"
+        >
+          {
+            warranties.map((warranty) => (
+              <li
+                class="p-el-lg flex items-center justify-center rounded-lg border-2 bg-white/95"
+                style={`border-color: ${warranty.color};`}
+              >
+                <a href={warranty.href} aria-label={`View ${warranty.label}`}>
+                  <Image
+                    src={warranty.img}
+                    alt={warranty.label}
+                    class="h-auto w-full object-contain object-center"
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Meet Mike -->
+    <section class="px-page py-section-md bg-white">
+      <div class="contained gap-gutter grid items-center md:grid-cols-2">
+        <div
+          data-animate="fade-in"
+          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl"
+        >
+          <Image
+            src={mikeImg}
+            alt="Mike Bunch, Owner and Lead Inspector at Reliable Inspections."
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div data-animate-stagger class="gap-el-lg flex flex-col items-start">
+          <div>
+            <h2 class="text-title-xs font-bold">Meet Mike Bunch</h2>
+            <p class="text-body-md text-warm-4 font-semibold">
+              Owner & Lead Inspector
+            </p>
+          </div>
+          <p class="text-body-sm text-dark-1">
+            With more than 15 years of experience, Mike Bunch brings
+            architectural precision, structural insight, and straightforward
+            communication to every inspection.
+          </p>
+          <p class="text-body-sm text-dark-1">
+            Reliable Inspections was founded in Mount Washington with a clear
+            mission: to go beyond the standard checklist and give buyers a
+            complete, practical understanding of the property they are
+            considering.
+          </p>
+          <p class="text-body-sm text-dark-1">
+            We provide realtors with an inspector they can recommend with
+            complete confidence.
+          </p>
+          <div
+            class="p-el-lg border-light-2 bg-light-1 gap-el-xs flex w-full flex-col rounded-lg border sm:flex-row sm:items-center sm:justify-between"
+          >
+            <p class="text-body-sm text-dark-3 font-semibold">
+              Mike Bunch, InterNACHI Certified Inspector
+            </p>
+            <p class="text-body-sm text-dark-1">
+              Mount Washington, KY & surrounding areas
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA: Let's Partner Together -->
+    <section class="bg-light-1 overflow-hidden md:flex">
+      <div class="relative h-52 overflow-hidden md:contents">
+        <Image
+          data-animate="fade-in"
+          src={pipes}
+          alt=""
+          aria-hidden="true"
+          class="absolute top-1/2 left-1/2 h-[100vw] w-52 -translate-x-1/2 -translate-y-1/2 rotate-90 object-cover object-right md:static md:h-auto md:w-72 md:translate-x-0 md:translate-y-0 md:rotate-0 md:self-stretch md:object-left"
+        />
+      </div>
+      <div
+        data-animate-stagger
+        class="px-page py-section-sm md:py-section-md flex flex-1 flex-col items-center justify-center text-center"
+      >
+        <StarEmblem class="mb-el-xl size-20" />
+        <h2 class="text-title-lg mb-el-sm font-semibold">
+          Let's Partner Together
+        </h2>
+        <p class="text-body-md text-dark-1 mb-el-xl max-w-2xl">
+          One trusted inspector. More ways to serve your clients. Give your
+          clients an inspector you can recommend with absolute confidence.
+        </p>
+        <div class="gap-el-xl text-body-sm flex flex-wrap justify-center">
+          <p class="gap-el-sm flex">
+            <span class="text-blue-5 font-semibold">Phone:</span>
+            <a href="tel:+15029018427" class="text-warm-3 hover:underline">
+              (502) 901-8427
+            </a>
+          </p>
+          <p class="gap-el-sm flex">
+            <span class="text-blue-5 font-semibold">Email:</span>
+            <a
+              href="mailto:mike@reliableinspectionsky.com"
+              class="text-warm-3 hover:underline"
+            >
+              mike@reliableinspectionsky.com
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="relative h-52 overflow-hidden md:contents">
+        <Image
+          data-animate="fade-in"
+          src={pipes}
+          alt=""
+          aria-hidden="true"
+          class="absolute top-1/2 left-1/2 h-[100vw] w-52 -translate-x-1/2 -translate-y-1/2 -scale-x-100 -scale-y-100 rotate-90 object-cover object-right md:static md:h-auto md:w-72 md:translate-x-0 md:translate-y-0 md:rotate-0 md:self-stretch"
+        />
+      </div>
+    </section>
+  </main>
+</Layout>
