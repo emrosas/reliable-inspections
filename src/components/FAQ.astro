@@ -1,6 +1,76 @@
 ---
 //SVG
 import PlusIcon from '@svgs/plus.svg'
+
+export interface Props {
+  // Defaults to the general inspection FAQs; pass a set to tailor them per page
+  items?: { question: string; answer: string }[]
+}
+
+const defaultItems = [
+  {
+    question: 'How much does a home inspection cost?',
+    answer:
+      'The cost of a home inspection depends on the size, age, and condition of the property, as well as any additional services like radon or mold testing. We provide upfront pricing so you know exactly what to expect before we begin.',
+  },
+  {
+    question: 'What does a home inspection include?',
+    answer:
+      'Our inspections cover all major components of the home including the roof, foundation, structure, electrical systems, plumbing, HVAC, insulation, windows, doors, and more. We carefully evaluate both the interior and exterior to identify any potential issues or safety concerns.',
+  },
+  {
+    question: 'Do you offer additional services like radon or mold testing?',
+    answer:
+      'Yes. In addition to standard home inspections, we offer radon testing, mold testing, and thermal imaging to help uncover hidden issues and ensure your home is safe.',
+  },
+  {
+    question: 'How long does a home inspection take?',
+    answer:
+      'Most inspections take between 2 to 4 hours depending on the size and condition of the home. We take the time needed to ensure a thorough and accurate evaluation.',
+  },
+  {
+    question: 'When will I receive my inspection report?',
+    answer:
+      "You will typically receive your detailed inspection report within 24 to 48 hours. Each report includes photos, clear explanations, and recommendations so you can confidently understand the property's condition.",
+  },
+  {
+    question: 'Should I attend the inspection?',
+    answer:
+      "While it's not required, we highly recommend attending. This allows you to ask questions, see findings firsthand, and better understand the home before making a decision.",
+  },
+  {
+    question: 'What happens if issues are found during the inspection?',
+    answer:
+      "It's normal for inspections to uncover issues. Our job is to clearly explain what we find, how serious it is, and what steps you may want to take next so you can make an informed decision.",
+  },
+  {
+    question: 'Do you offer commercial inspections?',
+    answer:
+      'Yes, we provide commercial inspections that evaluate the structure, systems, and overall condition of commercial properties to help investors and business owners make informed decisions.',
+  },
+  {
+    question: 'Why should I hire a licensed home inspector?',
+    answer:
+      'A licensed inspector ensures your inspection follows industry standards and is conducted professionally and thoroughly. This gives you an unbiased and accurate understanding of the property before moving forward.',
+  },
+  {
+    question: 'What should I do before the inspection?',
+    answer:
+      'Make sure all areas of the home are accessible, including the attic, basement, crawl spaces, and major systems. This helps ensure a complete and efficient inspection.',
+  },
+  {
+    question: 'Can I use the inspection report to negotiate?',
+    answer:
+      'Yes. Many buyers use the inspection report to request repairs, credits, or price adjustments based on the findings.',
+  },
+  {
+    question: 'Do you inspect new construction homes?',
+    answer:
+      'Yes. Even newly built homes can have issues. An inspection ensures everything was properly installed and meets expected standards before you move in.',
+  },
+]
+
+const { items = defaultItems } = Astro.props
 ---
 
 <!-- FAQ -->
@@ -17,186 +87,24 @@ import PlusIcon from '@svgs/plus.svg'
         </div>
       </div>
       <div data-animate-stagger class="md:col-span-7">
-        <details class="group border-light-4 py-el-xl border-b first:border-t">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">How much does a home inspection cost?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">The cost of a home inspection depends on the size, age, and condition of the property, as well as any additional services like radon or mold testing. We provide upfront pricing so you know exactly what to expect before we begin.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">What does a home inspection include?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">Our inspections cover all major components of the home including the roof, foundation, structure, electrical systems, plumbing, HVAC, insulation, windows, doors, and more. We carefully evaluate both the interior and exterior to identify any potential issues or safety concerns.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">Do you offer additional services like radon or mold testing?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">Yes. In addition to standard home inspections, we offer radon testing, mold testing, and thermal imaging to help uncover hidden issues and ensure your home is safe.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">How long does a home inspection take?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">Most inspections take between 2 to 4 hours depending on the size and condition of the home. We take the time needed to ensure a thorough and accurate evaluation.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">When will I receive my inspection report?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">You will typically receive your detailed inspection report within 24 to 48 hours. Each report includes photos, clear explanations, and recommendations so you can confidently understand the property's condition.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">Should I attend the inspection?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">While it's not required, we highly recommend attending. This allows you to ask questions, see findings firsthand, and better understand the home before making a decision.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">What happens if issues are found during the inspection?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">It's normal for inspections to uncover issues. Our job is to clearly explain what we find, how serious it is, and what steps you may want to take next so you can make an informed decision.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">Do you offer commercial inspections?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">Yes, we provide commercial inspections that evaluate the structure, systems, and overall condition of commercial properties to help investors and business owners make informed decisions.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">Why should I hire a licensed home inspector?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">A licensed inspector ensures your inspection follows industry standards and is conducted professionally and thoroughly. This gives you an unbiased and accurate understanding of the property before moving forward.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">What should I do before the inspection?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">Make sure all areas of the home are accessible, including the attic, basement, crawl spaces, and major systems. This helps ensure a complete and efficient inspection.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">Can I use the inspection report to negotiate?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">Yes. Many buyers use the inspection report to request repairs, credits, or price adjustments based on the findings.</p>
-        </details>
-        <details class="group border-light-4 py-el-xl border-b">
-          <summary
-            class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden"
-          >
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]"
-            >
-              <PlusIcon
-                class="size-6 transition-transform duration-200 group-open:rotate-45"
-              />
-            </div>
-            <span class="text-body-lg font-medium">Do you inspect new construction homes?</span>
-          </summary>
-          <p class="mt-el-lg text-body-md text-dark-1" style="padding-left: calc(2.5rem + var(--spacing-el-xl))">Yes. Even newly built homes can have issues. An inspection ensures everything was properly installed and meets expected standards before you move in.</p>
-        </details>
+        {
+          items.map((item) => (
+            <details class="group border-light-4 py-el-xl border-b first:border-t">
+              <summary class="gap-el-xl flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden">
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#FEE6D7] transition-colors group-open:bg-[#FECCAF]">
+                  <PlusIcon class="size-6 transition-transform duration-200 group-open:rotate-45" />
+                </div>
+                <span class="text-body-lg font-medium">{item.question}</span>
+              </summary>
+              <p
+                class="mt-el-lg text-body-md text-dark-1"
+                style="padding-left: calc(2.5rem + var(--spacing-el-xl))"
+              >
+                {item.answer}
+              </p>
+            </details>
+          ))
+        }
       </div>
     </div>
   </div>

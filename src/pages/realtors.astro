@@ -4,59 +4,259 @@ import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import Button from '@components/Button.astro'
 import GoldLabel from '@components/GoldLabel.astro'
+import PageHero from '@components/PageHero.astro'
+import FaqSection from '@components/FAQ.astro'
 
 // Images
 import heroImg from '@images/realtors-hero.png'
 import referralImg from '@images/realtors-referral.png'
-import clientsImg from '@images/realtors-clients.png'
-import mikeImg from '@images/realtors-mike.png'
 import pipes from '@images/pipes.png'
 import ninetyDayImg from '@images/90-day.png'
 import sewerGuardImg from '@images/sewer-guard.png'
 import moldSafeImg from '@images/mold-safe.png'
 import platinumImg from '@images/platinum.png'
+// Placeholder until the transaction-type photography is delivered
+import placeholderImg from '@images/placeholder.jpg'
 
 // SVGs
 import ArrowRight from '@svgs/arrow-right.svg'
 import StarEmblem from '@svgs/star-emblem.svg'
+import Shield from '@svgs/shield.svg'
+import Award from '@svgs/award.svg'
+import Clock from '@svgs/clock.svg'
+import FileText from '@svgs/file-text.svg'
+import CalendarCheck from '@svgs/calendar-check.svg'
+import ShieldCheck from '@svgs/shield-check.svg'
+import Handshake from '@svgs/handshake.svg'
+import Check from '@svgs/check.svg'
+import NinetyDayIcon from '@svgs/90-day.svg'
+import SewerGuardIcon from '@svgs/sewer-guard.svg'
+import MoldSafeIcon from '@svgs/mold-safe.svg'
+import PlatinumIcon from '@svgs/platinum.svg'
+
+// The Reliable Realtor Service Promise
+const servicePromise = [
+  'Responsive scheduling for time-sensitive transactions',
+  'Appointment confirmation and clear communication',
+  'Professional treatment of buyers, sellers, and agents',
+  'Detailed digital inspection reports',
+  'Clear explanations of major concerns and maintenance items',
+  'Availability to answer client questions after the inspection',
+  'Updates if access problems or scheduling issues occur',
+  'Multiple inspection services available during one appointment',
+]
+
+// Why realtors choose Reliable
+const whyCards = [
+  {
+    icon: FileText,
+    title: 'Clear Communication for Every Client',
+    body: 'Mike explains inspection findings in a calm, practical, and easy-to-understand way. Clients receive the information they need without unnecessary technical language or exaggerated concerns.',
+  },
+  {
+    icon: Handshake,
+    title: 'Professional Throughout the Transaction',
+    body: 'Reliable Inspections understands that inspections involve important deadlines, financial decisions, and multiple parties. Communication remains professional, objective, and respectful from scheduling through report delivery.',
+  },
+  {
+    icon: Clock,
+    title: 'Reports Designed for Easy Review',
+    body: 'Clients receive a clear digital inspection report with photos, explanations, and organized findings that make it easier to understand the condition of the property.',
+  },
+  {
+    icon: Clock,
+    title: 'Support After the Inspection',
+    body: 'Mike remains available after the inspection to answer questions and help clients better understand the findings in their report.',
+  },
+]
+
+// Inspection support by transaction type
+const transactionTypes = [
+  {
+    image: placeholderImg,
+    imageAlt: 'A buyer touring a home with their agent.',
+    title: "Buyer's Agents",
+    body: 'Help buyers understand the property with clear findings, organized reports, and access to Mike for post-inspection questions.',
+    tags: [
+      'Buyer inspections',
+      'First-time homebuyer support',
+      'Inspection add-ons',
+      'Digital reports',
+      'Post-inspection questions',
+    ],
+  },
+  {
+    image: placeholderImg,
+    imageAlt: 'A home being prepared for listing.',
+    title: 'Listing Agents',
+    body: 'Help sellers identify potential concerns before listing the property and reduce unexpected issues after accepting an offer.',
+    tags: [
+      'Pre-listing inspections',
+      'Seller preparation',
+      'Documentation of property conditions',
+      'Time to address concerns before showings',
+      "Fewer surprises during the buyer's inspection",
+    ],
+  },
+  {
+    image: placeholderImg,
+    imageAlt: 'A newly built home under construction.',
+    title: 'New Construction Agents',
+    body: 'Help buyers identify construction concerns before finalizing a newly built home or before the builder warranty expires.',
+    tags: [
+      'Pre-drywall inspections',
+      'Final new construction inspections',
+      'Builder warranty inspections',
+      'Documentation for builder correction requests',
+    ],
+  },
+  {
+    image: placeholderImg,
+    imageAlt: 'A multi-unit investment property.',
+    title: 'Investors and Multi-Property Clients',
+    body: 'Support investors and agents evaluating rental properties, multi-unit properties, and commercial opportunities.',
+    tags: [
+      'Multi-unit inspections',
+      'Commercial inspections',
+      'Rental property evaluations',
+      'Maintenance prioritization',
+      'Re-inspections',
+    ],
+  },
+]
+
+// Trust bar credentials
+const trustItems = [
+  { icon: Shield, label: 'Kentucky Licensed Home Inspector' },
+  { icon: Award, label: 'InterNACHI Certified' },
+  { icon: Clock, label: '15+ Years of Industry Experience' },
+  { icon: FileText, label: 'Digital Reports' },
+  { icon: CalendarCheck, label: 'Responsive Scheduling' },
+  { icon: ShieldCheck, label: 'Client Warranty Protection' },
+]
 
 // Warranty badges (same set featured on the homepage)
 const warranties = [
   {
     img: ninetyDayImg,
+    icon: NinetyDayIcon,
     label: '90-Day Warranty',
     href: '/#warranty-90-day',
     color: '#A42536',
+    body: 'You need a professional you can rely on even after the job is complete. That’s why we support all our inspections with a 90-Day Limited Structural and Mechanical Warranty.',
   },
   {
     img: sewerGuardImg,
+    icon: SewerGuardIcon,
     label: 'SewerGard',
     href: '/#warranty-sewer-gard',
     color: '#FBBF11',
+    body: 'Offered for a period of 90 days following the date of the inspection, SewerGard covers your water line and sewer against failure due to normal wear and tear, giving you peace of mind.',
   },
   {
     img: moldSafeImg,
+    icon: MoldSafeIcon,
     label: 'MoldSafe',
     href: '/#warranty-mold-safe',
     color: '#DD5631',
+    body: 'For up to 90 days after the inspection date, if you move into your new home and discover mold that was not identified during the inspection, you are covered for remediation.',
   },
   {
     img: platinumImg,
+    icon: PlatinumIcon,
     label: 'Platinum Roof Protection Plan',
     href: '/#warranty-platinum',
     color: '#296CA3',
+    body: 'Handles the repair of leaks to your home’s roof for a period of 5 years following the date of the inspection.',
   },
 ]
 
-// What clients receive
-const clientBenefits = [
-  'A thorough and unbiased home inspection',
-  'Clear, educational explanations of important findings',
-  'Professional and respectful communication at all times',
-  'An easy-to-understand interactive digital report',
-  'Ongoing support when questions arise post-inspection',
-  'Greater confidence in their purchasing decision',
+// Realtor-specific FAQs
+const faqs = [
+  {
+    question: 'How quickly can an inspection be scheduled?',
+    answer:
+      'Scheduling is typically available within a few days, and we do our best to accommodate time-sensitive transactions. Call or text Mike directly at (502) 901-8427 when a closing timeline is tight.',
+  },
+  {
+    question: 'When will the inspection report be delivered?',
+    answer:
+      'The digital report is typically delivered within 24 hours of the inspection. It includes photos, clear explanations, and organized findings so your client can review it quickly.',
+  },
+  {
+    question: 'Can a Realtor schedule an inspection for a client?',
+    answer:
+      'Yes. Either the Realtor or the buyer can request an inspection using the Reliable Inspections booking link. We then confirm the property information, requested services, appointment time, and access instructions.',
+  },
+  {
+    question: 'Can the buyer attend the inspection?',
+    answer:
+      'Absolutely. Clients are welcome to attend and ask questions. Mike walks through the findings in plain language so buyers understand the property without unnecessary alarm.',
+  },
+  {
+    question: 'Does the Realtor need to stay during the inspection?',
+    answer:
+      'No. You are welcome to attend, but it is not required. We handle access, communicate directly with your client, and keep you informed throughout.',
+  },
+  {
+    question:
+      'Can multiple inspection services be completed during one appointment?',
+    answer:
+      'Yes. Add-on services such as radon, mold, sewer scope, thermal imaging, and water testing can usually be completed during the same visit, which keeps the transaction moving.',
+  },
+  {
+    question: 'Does Reliable Inspections offer reinspections after repairs?',
+    answer:
+      'Yes. We offer re-inspections to verify that agreed-upon repairs were completed, with documentation you and your client can rely on.',
+  },
+  {
+    question: 'Are warranties included with every inspection?',
+    answer:
+      'Eligible inspections include the 90-Day Limited Structural and Mechanical Warranty, SewerGard, MoldSafe, and the Platinum Roof Protection Plan at no additional cost.',
+  },
+  {
+    question: 'Can the client contact Mike after receiving the report?',
+    answer:
+      'Yes. Mike remains available after the inspection to answer questions and help clients better understand the findings in their report.',
+  },
+  {
+    question:
+      'Which Kentucky cities and counties does Reliable Inspections serve?',
+    answer:
+      'We are based in Mount Washington and serve Louisville, Lexington, Frankfort, and the surrounding Kentucky communities. Reach out if you are unsure whether a property is in our area.',
+  },
+  {
+    question: 'Does Reliable Inspections offer pre-listing inspections?',
+    answer:
+      'Yes. A pre-listing inspection helps sellers identify potential concerns before the property goes on the market, which means fewer surprises during the buyer’s inspection.',
+  },
+  {
+    question: 'Does Reliable Inspections inspect new construction homes?',
+    answer:
+      'Yes. We offer pre-drywall inspections, final new construction inspections, and builder warranty inspections before the warranty period expires.',
+  },
 ]
+
+// How the realtor partnership works
+const partnershipSteps = [
+  {
+    title: 'Share the Booking Link',
+    body: 'The Realtor or buyer can use the Reliable Inspections booking link to request an inspection.',
+  },
+  {
+    title: 'We Confirm the Details',
+    body: 'Reliable Inspections confirms the property information, requested services, preferred appointment time, and access instructions.',
+  },
+  {
+    title: 'Mike Performs the Inspection',
+    body: 'Mike completes a thorough and objective inspection while communicating clearly with the client.',
+  },
+  {
+    title: 'The Report Is Delivered',
+    body: 'The client receives the digital report and can contact Mike with questions about the findings.',
+  },
+]
+
 ---
 
 <Layout
@@ -65,275 +265,78 @@ const clientBenefits = [
 >
   <main>
     <!-- Hero -->
-    <section class="px-page py-section-md bg-blue-5">
-      <div class="contained gap-gutter grid items-center md:grid-cols-2">
-        <div data-animate-stagger class="gap-el-xl flex flex-col items-start">
-          <GoldLabel text="Kentucky Realtor Partner" />
-          <h1 class="text-title-lg text-light-1 font-semibold">
-            Your Partner in
-            <span class="text-warm-1"> Smooth, Confident Closings</span>
-          </h1>
-          <p class="text-body-lg text-light-4 text-balance">
-            Helping Kentucky Realtors navigate inspections with clarity,
-            integrity, and speed. We protect your transactions and keep your
-            clients calm.
-          </p>
-          <div class="pt-el-lg gap-el-lg flex flex-wrap">
-            <Button href="/contact">
-              Schedule Your Next Inspection
-              <ArrowRight class="size-el-lg" />
-            </Button>
-            <Button intent="secondary" href="#why-us">
-              Learn Partner Benefits
-            </Button>
-          </div>
+    <PageHero
+      label="Building Trust Daily"
+      paragraph="Reliable Inspections helps Kentucky Realtors protect their reputation by providing thorough inspections, clear reporting, responsive communication, and calm explanations that help clients understand the property without unnecessary confusion or alarm."
+      image={heroImg}
+      imageAlt="A Kentucky home ready for inspection at dusk."
+    >
+      <Fragment slot="title">
+        A Reliable <span class="text-blue-1">Inspection Partner</span> for You and
+        Your Clients
+      </Fragment>
+      <Fragment slot="cta">
+        <Button href="/contact">
+          Schedule an Inspection
+          <ArrowRight class="size-el-lg" />
+        </Button>
+        <div class="gap-el-md flex flex-col self-end">
+          <p class="text-body-md text-dark-1">Call or text Mike:</p>
+          <a
+            href="tel:+15029018427"
+            class="text-body-lg text-blue-1 font-medium hover:underline"
+          >
+            (502) 901-8427
+          </a>
         </div>
-        <div
-          data-animate="fade-in"
-          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl"
-        >
-          <Image
-            src={heroImg}
-            alt="A Kentucky home ready for inspection at dusk."
-            class="h-full w-full object-cover"
-            loading="eager"
-          />
-        </div>
-      </div>
+      </Fragment>
+    </PageHero>
+
+    <!-- Trust Bar -->
+    <section class="p-page bg-blue-5 border-warm-1/30 border-t">
+      <ul
+        data-animate-stagger
+        class="contained gap-gutter grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
+      >
+        {
+          trustItems.map((item) => (
+            <li class="gap-el-lg flex items-center">
+              <span class="bg-warm-1/15 text-warm-1 flex size-10.5 shrink-0 items-center justify-center rounded-full">
+                <item.icon class="size-5.5" aria-hidden="true" />
+              </span>
+              <p class="text-body-sm text-light-2 leading-snug font-medium">
+                {item.label}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
     </section>
 
     <!-- Why Us -->
     <section id="why-us" class="px-page py-section-md bg-light-1">
       <div class="contained">
-        <div data-animate class="mb-section-sm">
-          <GoldLabel text="Realtor Focus" />
+        <div data-animate class="mb-gutter">
+          <GoldLabel text="Our Focus on Realtors" />
           <h2 class="text-title-md mb-el-md font-semibold">
-            Why Top-Performing Realtors Choose Reliable
+            Why Kentucky Realtors Choose Reliable
           </h2>
-          <p class="text-body-md text-dark-1 max-w-2xl">
+          <p class="text-body-md text-dark-1">
             We do not just find issues; we understand the delicate nature of
             real estate transactions.
           </p>
         </div>
-        <ul class="gap-gutter grid md:grid-cols-3">
-          <li
-            data-animate-stagger
-            data-animate
-            class="gap-el-lg p-el-xl flex flex-col rounded-xl bg-white shadow-sm"
-          >
-            <div class="bg-light-1 w-fit rounded-lg p-3">
-              <svg
-                class="text-blue-3 size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8m8 4H8m8 4H8"></path>
-              </svg>
-            </div>
-            <h3 class="text-body-lg font-semibold">Contextual Reporting</h3>
-            <p class="text-body-sm text-dark-1">
-              We document findings with professional nuance, helping your buyers
-              distinguish between genuine deal-breakers and manageable
-              maintenance items.
-            </p>
-          </li>
-          <li
-            data-animate-stagger
-            data-animate
-            class="gap-el-lg p-el-xl flex flex-col rounded-xl bg-white shadow-sm"
-          >
-            <div class="bg-light-1 w-fit rounded-lg p-3">
-              <svg
-                class="text-blue-3 size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m11 17 2 2a1 1 0 1 0 3-3"></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m21 3 1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"></path>
-              </svg>
-            </div>
-            <h3 class="text-body-lg font-semibold">Transaction-First</h3>
-            <p class="text-body-sm text-dark-1">
-              Our goal is the same as yours: a successful closing. We provide
-              clear, objective, and timely information that keeps your clients
-              calm and informed.
-            </p>
-          </li>
-          <li
-            data-animate-stagger
-            data-animate
-            class="gap-el-lg p-el-xl flex flex-col rounded-xl bg-white shadow-sm"
-          >
-            <div class="bg-light-1 w-fit rounded-lg p-3">
-              <svg
-                class="text-blue-3 size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <h3 class="text-body-lg font-semibold">Responsive Scheduling</h3>
-            <p class="text-body-sm text-dark-1">
-              We know your timeline. We offer fast, flexible scheduling to keep
-              your transaction moving forward smoothly without delays.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Reputation -->
-    <section class="px-page py-section-md bg-white">
-      <div class="contained gap-gutter grid items-center md:grid-cols-2">
-        <div data-animate-stagger class="gap-el-lg flex flex-col items-start">
-          <GoldLabel text="Your Reputation Is Part of Every Referral" />
-          <h2 class="text-title-md font-semibold">
-            Refer with Complete Peace of Mind
-          </h2>
-          <p class="text-body-md text-dark-1">
-            When you recommend an inspector, their communication,
-            professionalism, and treatment of your client reflect directly on
-            you.
-          </p>
-          <p class="text-body-md text-dark-1">
-            Mike Bunch treats every referral with the same level of care,
-            responsiveness, and integrity that you would expect from your own
-            team. Your client's journey is guided in safe hands.
-          </p>
-          <blockquote
-            class="p-el-lg border-light-2 bg-light-1 text-body-sm rounded-lg border"
-          >
-            "Mike represents my team beautifully. He explains things with
-            perfect clarity, never alarmist, always professional." — Louisville
-            Area Realtor
-          </blockquote>
-        </div>
-        <div
-          data-animate="fade-in"
-          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl"
-        >
-          <Image
-            src={referralImg}
-            alt="A realtor and inspector shaking hands in front of a home."
-            class="h-full w-full object-cover"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- What Clients Receive -->
-    <section class="px-page py-section-md bg-light-1">
-      <div class="contained gap-gutter grid items-center md:grid-cols-2">
-        <div
-          data-animate="fade-in"
-          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl md:order-1"
-        >
-          <Image
-            src={clientsImg}
-            alt="A couple reviewing their inspection report with the inspector."
-            class="h-full w-full object-cover"
-          />
-        </div>
-        <div class="gap-el-xl flex flex-col md:order-2">
-          <div data-animate>
-            <GoldLabel text="Delivering Value" />
-            <h2 class="text-title-md font-semibold">
-              What Your Clients Receive
-            </h2>
-          </div>
-          <ul data-animate-stagger class="gap-el-md flex flex-col">
-            {
-              clientBenefits.map((benefit) => (
-                <li class="gap-el-md flex items-center">
-                  <span class="bg-blue-4 flex size-6 shrink-0 items-center justify-center rounded-xl">
-                    <svg
-                      class="text-light-1 size-3.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="3"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="m4.5 12.75 6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p class="text-body-md text-dark-3 font-medium">{benefit}</p>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Backed by Protection -->
-    <section class="px-page py-section-md bg-blue-5">
-      <div class="contained">
-        <div data-animate class="mb-section-sm">
-          <span
-            class="px-el-md py-el-sm bg-warm-4 text-light-1 mb-el-xl text-body-sm inline-block rounded-sm uppercase"
-          >
-            Protection Program
-          </span>
-          <h2 class="text-title-md text-light-1 mb-el-md font-semibold">
-            Backed by Solid Protection
-          </h2>
-          <p class="text-body-md text-light-4 max-w-3xl">
-            Every inspection comes with industry-leading warranties to give your
-            buyers total peace of mind, and remove common roadblocks to closing.
-          </p>
-        </div>
-        <ul
-          data-animate-stagger
-          class="gap-gutter grid grid-cols-2 md:grid-cols-4"
-        >
+        <ul data-animate-stagger class="gap-el-lg grid md:grid-cols-2">
           {
-            warranties.map((warranty) => (
-              <li
-                class="p-el-lg flex items-center justify-center rounded-lg border-2 bg-white/95"
-                style={`border-color: ${warranty.color};`}
-              >
-                <a href={warranty.href} aria-label={`View ${warranty.label}`}>
-                  <Image
-                    src={warranty.img}
-                    alt={warranty.label}
-                    class="h-auto w-full object-contain object-center"
-                  />
-                </a>
+            whyCards.map((card) => (
+              <li class="gap-el-lg p-el-xl flex flex-col rounded-xl bg-white shadow-md">
+                <div class="bg-light-1 text-blue-4 w-fit rounded-lg p-3">
+                  <card.icon class="size-6" aria-hidden="true" />
+                </div>
+                <div class="gap-el-sm flex flex-col">
+                  <h3 class="text-body-lg font-semibold">{card.title}</h3>
+                  <p class="text-body-sm text-dark-1">{card.body}</p>
+                </div>
               </li>
             ))
           }
@@ -341,54 +344,174 @@ const clientBenefits = [
       </div>
     </section>
 
-    <!-- Meet Mike -->
-    <section class="px-page py-section-md bg-white">
-      <div class="contained gap-gutter grid items-center md:grid-cols-2">
-        <div
-          data-animate="fade-in"
-          class="inset-shadow aspect-[4/3] overflow-hidden rounded-2xl"
-        >
+    <!-- Reputation -->
+    <section class="px-page py-section-md gap-gutter flex flex-col bg-white">
+      <div class="contained gap-gutter grid w-full items-center md:grid-cols-2">
+        <div data-animate-stagger>
+          <GoldLabel text="Your Reputation Is Part of Every Referral" />
+          <h2 class="text-title-md mb-el-lg font-semibold">
+            The Reliable Realtor Service Promise
+          </h2>
+          <p class="text-body-md text-dark-1">
+            When you refer a client to Reliable Inspections, you should know
+            exactly what kind of experience they will receive. Our goal is to
+            provide a professional, responsive, and organized inspection process
+            that reflects positively on you and your brokerage.
+          </p>
+        </div>
+        <div data-animate="fade-in" class="aspect-video overflow-hidden rounded-2xl">
           <Image
-            src={mikeImg}
-            alt="Mike Bunch, Owner and Lead Inspector at Reliable Inspections."
+            src={referralImg}
+            alt="A realtor and inspector shaking hands in front of a home."
             class="h-full w-full object-cover"
           />
         </div>
-        <div data-animate-stagger class="gap-el-lg flex flex-col items-start">
-          <div>
-            <h2 class="text-title-xs font-bold">Meet Mike Bunch</h2>
-            <p class="text-body-md text-warm-4 font-semibold">
-              Owner & Lead Inspector
-            </p>
-          </div>
-          <p class="text-body-sm text-dark-1">
-            With more than 15 years of experience, Mike Bunch brings
-            architectural precision, structural insight, and straightforward
-            communication to every inspection.
-          </p>
-          <p class="text-body-sm text-dark-1">
-            Reliable Inspections was founded in Mount Washington with a clear
-            mission: to go beyond the standard checklist and give buyers a
-            complete, practical understanding of the property they are
-            considering.
-          </p>
-          <p class="text-body-sm text-dark-1">
-            We provide realtors with an inspector they can recommend with
-            complete confidence.
-          </p>
-          <div
-            class="p-el-lg border-light-2 bg-light-1 gap-el-xs flex w-full flex-col rounded-lg border sm:flex-row sm:items-center sm:justify-between"
-          >
-            <p class="text-body-sm text-dark-3 font-semibold">
-              Mike Bunch, InterNACHI Certified Inspector
-            </p>
-            <p class="text-body-sm text-dark-1">
-              Mount Washington, KY & surrounding areas
-            </p>
-          </div>
+      </div>
+      <ul
+        data-animate-stagger
+        class="contained pt-el-xl grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      >
+        {
+          servicePromise.map((promise) => (
+            <li class="gap-el-sm flex items-center">
+              <span class="text-blue-1 flex size-10 shrink-0 items-center justify-center">
+                <Check class="size-4.5" aria-hidden="true" />
+              </span>
+              <p class="text-body-sm text-dark-3 font-medium">{promise}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- Transaction Types -->
+    <section class="px-page py-section-md bg-light-1">
+      <div class="contained">
+        <div data-animate class="mb-gutter">
+          <GoldLabel text="On Transactions" />
+          <h2 class="text-title-md font-semibold">
+            Inspection Support for Every Type of Transaction
+          </h2>
         </div>
+        <ul
+          data-animate-stagger
+          class="gap-el-lg grid sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {
+            transactionTypes.map((type) => (
+              <li class="gap-el-lg flex flex-col rounded-xl bg-white p-2 shadow-md">
+                <Image
+                  src={type.image}
+                  alt={type.imageAlt}
+                  class="aspect-video w-full rounded-sm object-cover"
+                />
+                <div class="gap-el-xs flex flex-col px-1 pb-1">
+                  <h3 class="text-body-lg font-semibold">{type.title}</h3>
+                  <p class="text-body-sm text-dark-1">{type.body}</p>
+                  <ul class="mt-el-md gap-x-el-xl gap-y-el-sm flex flex-wrap">
+                    {type.tags.map((tag) => (
+                      <li class="gap-el-sm flex items-center">
+                        <span class="bg-blue-1 size-1 shrink-0 rounded-full" />
+                        <span class="text-body-xs text-dark-3 font-medium">
+                          {tag}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </section>
+
+    <!-- Warranties -->
+    <section class="px-page py-section-md bg-white">
+      <div class="contained">
+        <div data-animate class="mb-section-md">
+          <GoldLabel text="Our Free Warranties" />
+          <h2 class="text-title-md mb-el-md font-semibold">
+            More Protection for Your Clients After Closing
+          </h2>
+          <p class="text-body-md text-dark-1 max-w-3xl">
+            Your relationship with your client does not end at the closing
+            table, and neither does ours. Eligible inspections include
+            additional warranty protection for common concerns that may appear
+            after the inspection.
+          </p>
+        </div>
+        <ul
+          data-animate-stagger
+          class="gap-x-gutter grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-y-16"
+        >
+          {
+            warranties.map((warranty) => (
+              <li
+                class="gap-el-lg px-el-xl pb-el-xl relative flex flex-col items-center border-[3px] bg-white pt-12 text-center"
+                style={`border-color: ${warranty.color};`}
+              >
+                <a
+                  href={warranty.href}
+                  aria-label={`View ${warranty.label}`}
+                  class="absolute -top-9"
+                >
+                  <warranty.icon class="size-18 rounded-full" />
+                </a>
+                <Image
+                  src={warranty.img}
+                  alt={warranty.label}
+                  class="h-18 w-auto object-contain"
+                />
+                <p class="text-body-md text-blue-4">{warranty.body}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Partnership Steps -->
+    <section class="px-page py-section-md bg-blue-5">
+      <div class="contained">
+        <div data-animate class="mb-section-sm">
+          <GoldLabel text="Our Partnership" intent="rust" />
+          <h2 class="text-title-md text-light-1 font-semibold">
+            How the Realtor Partnership Works
+          </h2>
+        </div>
+        <ol
+          data-animate-stagger="fade-left"
+          class="gap-el-lg flex flex-col lg:flex-row lg:gap-0"
+        >
+          {
+            partnershipSteps.map((step, i) => (
+              <li
+                class:list={[
+                  'bg-light-1 px-el-xl py-el-lg gap-el-xs flex flex-col rounded-xl',
+                  'lg:py-el-xl lg:border-blue-5 lg:flex-1 lg:rounded-none lg:rounded-r-full lg:border-y-8 lg:border-r-8',
+                  i === 0 ? 'lg:pl-4' : 'lg:-ml-16 lg:pl-20',
+                ]}
+                style={`z-index: ${partnershipSteps.length - i};`}
+              >
+                <span class="bg-blue-1 text-light-1 text-body-lg flex h-8 w-12 items-center justify-center rounded-sm font-bold">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 class="text-body-md text-dark-3 font-semibold">
+                  {step.title}
+                </h3>
+                <p class="text-body-sm lg:text-body-xs text-dark-1 font-medium">
+                  {step.body}
+                </p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <FaqSection items={faqs} />
 
     <!-- CTA: Let's Partner Together -->
     <section class="bg-light-1 overflow-hidden md:flex">
@@ -406,29 +529,28 @@ const clientBenefits = [
         class="px-page py-section-sm md:py-section-md flex flex-1 flex-col items-center justify-center text-center"
       >
         <StarEmblem class="mb-el-xl size-20" />
-        <h2 class="text-title-lg mb-el-sm font-semibold">
-          Let's Partner Together
+        <h2 class="text-title-sm mb-el-sm max-w-4xl font-semibold">
+          Give Your Clients an Inspection Experience That Reflects Well on You
         </h2>
-        <p class="text-body-md text-dark-1 mb-el-xl max-w-2xl">
-          One trusted inspector. More ways to serve your clients. Give your
-          clients an inspector you can recommend with absolute confidence.
+        <p class="text-body-md text-dark-1 mb-el-xl max-w-4xl">
+          Partner with Reliable Inspections for responsive scheduling, thorough
+          inspections, clear reports, and professional communication throughout
+          the process.
         </p>
-        <div class="gap-el-xl text-body-sm flex flex-wrap justify-center">
-          <p class="gap-el-sm flex">
-            <span class="text-blue-5 font-semibold">Phone:</span>
-            <a href="tel:+15029018427" class="text-warm-3 hover:underline">
+        <div class="gap-el-xl flex flex-wrap items-center justify-center">
+          <Button href="/contact">
+            Schedule an Inspection
+            <ArrowRight class="size-el-lg" />
+          </Button>
+          <div class="gap-el-md flex flex-col text-left">
+            <p class="text-body-md text-dark-1">Call or text Mike:</p>
+            <a
+              href="tel:+15029018427"
+              class="text-body-lg text-blue-1 font-medium hover:underline"
+            >
               (502) 901-8427
             </a>
-          </p>
-          <p class="gap-el-sm flex">
-            <span class="text-blue-5 font-semibold">Email:</span>
-            <a
-              href="mailto:mike@reliableinspectionsky.com"
-              class="text-warm-3 hover:underline"
-            >
-              mike@reliableinspectionsky.com
-            </a>
-          </p>
+          </div>
         </div>
       </div>
       <div class="relative h-52 overflow-hidden md:contents">

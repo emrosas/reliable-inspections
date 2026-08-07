@@ -3,14 +3,19 @@ import type { HTMLAttributes } from 'astro/types'
 
 interface Props extends HTMLAttributes<'span'> {
   text: string
+  // 'rust' is used on dark sections, where warm-1 lacks contrast
+  intent?: 'gold' | 'rust'
 }
 
-const { text, ...rest } = Astro.props
+const { text, intent = 'gold', ...rest } = Astro.props
 ---
 
 <span
   {...rest}
-  class="px-el-md py-el-sm bg-warm-1 text-light-1 mb-el-xl text-body-sm inline-block rounded-sm uppercase"
+  class:list={[
+    'px-el-md py-el-sm text-light-1 mb-el-xl text-body-sm inline-block rounded-sm uppercase',
+    intent === 'rust' ? 'bg-warm-4' : 'bg-warm-1',
+  ]}
 >
   {text}
 </span>
